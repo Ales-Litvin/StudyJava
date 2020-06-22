@@ -6,6 +6,9 @@ import java.awt.event.ActionListener;
 
 public class View extends JFrame implements ActionListener {
     private Controller controller;
+    private JTabbedPane tabbedPane = new JTabbedPane();
+    private JTextPane htmlTextPane = new JTextPane();
+    private JEditorPane plainTextPane = new JEditorPane();
 
     public Controller getController() {
         return controller;
@@ -16,7 +19,9 @@ public class View extends JFrame implements ActionListener {
     }
 
     @Override
-    public void actionPerformed(ActionEvent e) {
+    public void actionPerformed(ActionEvent e) { }
 
-    }
+    public void init() { }
+
+    public void exit() { controller.exit(); }
 }
