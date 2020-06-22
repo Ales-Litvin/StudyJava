@@ -11,5 +11,5 @@ public class RedoAction extends AbstractAction {
     public RedoAction(View view) { this.view = view; }
 
     @Override
-    public void actionPerformed(ActionEvent e) { }
+    public void actionPerformed(ActionEvent e) { view.redo(); }
 }
