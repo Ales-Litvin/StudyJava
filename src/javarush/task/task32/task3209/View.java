@@ -14,6 +14,20 @@ public class View extends JFrame implements ActionListener {
     private JTextPane htmlTextPane = new JTextPane();
     private JEditorPane plainTextPane = new JEditorPane();
 
+    public View(){
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (UnsupportedLookAndFeelException e) {
+            e.printStackTrace();
+        }
+    }
+
     public Controller getController() {
         return controller;
     }
@@ -34,7 +48,17 @@ public class View extends JFrame implements ActionListener {
 
     public void exit() { controller.exit(); }
 
-    public void initMenuBar() { }
+    public void initMenuBar() {
+        JMenuBar jMenuBar = new JMenuBar();
+        MenuHelper.initFileMenu(this, jMenuBar);
+        MenuHelper.initEditMenu(this, jMenuBar);
+        MenuHelper.initStyleMenu(this, jMenuBar);
+        MenuHelper.initAlignMenu(this, jMenuBar);
+        MenuHelper.initColorMenu(this, jMenuBar);
+        MenuHelper.initFontMenu(this, jMenuBar);
+        MenuHelper.initHelpMenu(this, jMenuBar);
+        getContentPane().add(jMenuBar, BorderLayout.NORTH);
+    }
 
     public void initEditor() {
         htmlTextPane.setContentType("text/html");
@@ -54,6 +78,5 @@ public class View extends JFrame implements ActionListener {
         pack();
     }
 
-    public void selectedTabChanged() {
-    }
+    public void selectedTabChanged() { }
 }
