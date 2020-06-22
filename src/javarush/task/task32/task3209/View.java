@@ -1,5 +1,7 @@
 package javarush.task.task32.task3209;
 
+import javarush.task.task32.task3209.listeners.FrameListener;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -21,7 +23,25 @@ public class View extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) { }
 
-    public void init() { }
+    public void init() {
+        initGui();
+        FrameListener frameListener = new FrameListener(this);
+        addWindowListener(frameListener);
+        setVisible(true);
+    }
 
     public void exit() { controller.exit(); }
+
+    public void initMenuBar() { }
+
+    public void initEditor() { }
+
+    public void initGui() {
+        initMenuBar();
+        initEditor();
+        pack();
+    }
+
+    public void selectedTabChanged() {
+    }
 }
