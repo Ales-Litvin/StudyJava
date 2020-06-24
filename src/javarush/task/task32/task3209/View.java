@@ -45,7 +45,22 @@ public class View extends JFrame implements ActionListener {
     public UndoListener getUndoListener() { return undoListener; }
 
     @Override
-    public void actionPerformed(ActionEvent e) { }
+    public void actionPerformed(ActionEvent actionEvent) {
+        switch (actionEvent.getActionCommand()){
+            case "Новый": controller.createNewDocument();
+            break;
+            case "Открыть": controller.openDocument();
+                break;
+            case "Сохранить": controller.saveDocument();
+                break;
+            case "Сохранить как...": controller.saveDocumentAs();
+                break;
+            case "Выход": exit();
+                break;
+            case "О программе": showAbout();
+                break;
+        }
+    }
 
     public void init() {
         initGui();
@@ -86,7 +101,15 @@ public class View extends JFrame implements ActionListener {
         pack();
     }
 
-    public void selectedTabChanged() { }
+    public void selectedTabChanged() {
+        switch (tabbedPane.getSelectedIndex()){
+            case 0: controller.setPlainText(plainTextPane.getText());
+            break;
+            case 1: plainTextPane.setText(controller.getPlainText());
+            break;
+        }
+        resetUndo();
+    }
 
     public boolean canUndo() { return undoManager.canUndo(); }
 
@@ -105,4 +128,24 @@ public class View extends JFrame implements ActionListener {
     }
 
     public void resetUndo() { undoManager.discardAllEdits(); }
+
+    public boolean isHtmlTabSelected() {
+        if (tabbedPane.getSelectedIndex() == 0) return true;
+        else return false;
+    }
+
+    public void selectHtmlTab(){
+        tabbedPane.setSelectedIndex(0);
+        resetUndo();
+    }
+
+    public void update() { htmlTextPane.setDocument(controller.getDocument()); }
+
+    public void showAbout(){
+        JOptionPane.showMessageDialog(tabbedPane,
+                new String("Автор: Александр"),
+                "О программе",
+
+                JOptionPane.INFORMATION_MESSAGE);
+    }
 }
