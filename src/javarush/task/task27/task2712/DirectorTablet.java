@@ -1,10 +1,11 @@
 package javarush.task.task27.task2712;
 
+import javarush.task.task27.task2712.ad.Advertisement;
+import javarush.task.task27.task2712.ad.StatisticAdvertisementManager;
 import javarush.task.task27.task2712.statistic.StatisticManager;
 
 import java.time.LocalDate;
-import java.util.Locale;
-import java.util.Map;
+import java.util.*;
 
 public class DirectorTablet {
     public void printAdvertisementProfit() {
@@ -40,7 +41,18 @@ public class DirectorTablet {
         }
     }
 
-    public void printActiveVideoSet() { }
+    public void printActiveVideoSet() {
+        for (Advertisement advertisement : StatisticAdvertisementManager.getInstance().getActiveVideoSet(true)){
+            ConsoleHelper.writeMessage(String.format(Locale.ROOT, "%s - %d",
+                    advertisement.getName(),
+                    advertisement.getHits()));
+        }
+    }
 
-    public void printArchivedVideoSet() { }
+    public void printArchivedVideoSet() {
+        for (Advertisement advertisement : StatisticAdvertisementManager.getInstance().getActiveVideoSet(false)){
+            ConsoleHelper.writeMessage(String.format(Locale.ROOT, "%s",
+                    advertisement.getName()));
+        }
+    }
 }
