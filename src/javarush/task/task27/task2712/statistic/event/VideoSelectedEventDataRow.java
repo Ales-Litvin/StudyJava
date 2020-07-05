@@ -26,12 +26,10 @@ public class VideoSelectedEventDataRow implements EventDataRow {
     }
 
     @Override
-    public Date getDate() {
-        return null;
-    }
+    public Date getDate() { return currentDate; }
 
     @Override
     public int getTime() {
-        return 0;
+        return totalDuration;
     }
 }
