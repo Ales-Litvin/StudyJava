@@ -28,8 +28,8 @@ public class CookedOrderEventDataRow implements EventDataRow {
     }
 
     @Override
-    public Date getDate() { return null; }
+    public Date getDate() { return currentDate; }
 
     @Override
-    public int getTime() { return 0; }
+    public int getTime() { return cookingTimeSeconds; }
 }
