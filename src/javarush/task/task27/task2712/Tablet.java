@@ -3,6 +3,7 @@ package javarush.task.task27.task2712;
 import javarush.task.task27.task2712.ad.AdvertisementManager;
 import javarush.task.task27.task2712.ad.NoVideoAvailableException;
 import javarush.task.task27.task2712.kitchen.Order;
+import javarush.task.task27.task2712.kitchen.TestOrder;
 
 import java.util.Observable;
 import java.util.logging.Level;
@@ -15,9 +16,17 @@ public class Tablet extends Observable {
     public Tablet(int number) { this.number = number; }
 
     public Order createOrder(){
-        Order order = null;
+        Order order = new Order(this);
+        return getOrder(order);
+    }
+
+    public void createTestOrder(){
+        TestOrder order = new TestOrder(this);
+        getOrder(order);
+    }
+
+    private Order getOrder(Order order) {
         try {
-            order = new Order(this);
             ConsoleHelper.writeMessage(order.toString());
             if (!order.isEmpty()) {
                 setChanged();
