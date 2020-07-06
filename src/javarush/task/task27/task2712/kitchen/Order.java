@@ -17,7 +17,7 @@ public class Order {
 
     public Order(Tablet tablet) {
         this.tablet = tablet;
-        this.dishes = ConsoleHelper.getAllDishesForOrder();
+        initDishes();
     }
 
     @Override
@@ -47,4 +47,8 @@ public class Order {
     }
 
     public boolean isEmpty(){ return dishes.isEmpty(); }
+
+    protected void initDishes(){
+        this.dishes = ConsoleHelper.getAllDishesForOrder();
+    }
 }
