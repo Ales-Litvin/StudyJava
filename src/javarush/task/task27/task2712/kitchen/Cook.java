@@ -14,13 +14,24 @@ public class Cook extends Observable{
     }
 
     public void startCookingOrder(Order order){
+        busy = true;
         ConsoleHelper.writeMessage("Start cooking - " +  order);
+        try {
+            Thread.sleep(order.getTotalCookingTime() * 10);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         setChanged();
         StatisticManager.getInstance().register(
                 new CookedOrderEventDataRow(order.getTablet().toString(), name,
                         order.getTotalCookingTime(),  order.dishes));
         notifyObservers(order);
+        busy = false;
     }
+
+    private boolean busy;
+
+    public boolean isBusy() { return busy; }
 
     @Override
     public String toString() { return name; }
