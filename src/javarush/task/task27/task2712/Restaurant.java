@@ -22,12 +22,11 @@ public class Restaurant {
         statisticManager.register(cookOne);
         statisticManager.register(cookFirst);
 
+        OrderManager orderManager = new OrderManager();
+
         List<Tablet> tablets = new ArrayList<>();
         for (int i = 0; i < 5; i++){
             Tablet tablet = new Tablet(i);
-            tablet.addObserver(cookFirst);
-            tablet.addObserver(cookOne);
-            tablets.add(tablet);
         }
 
         Thread thread = new Thread(new RandomOrderGeneratorTask(tablets, ORDER_CREATING_INTERVAL));
