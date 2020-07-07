@@ -6,11 +6,11 @@ import java.util.List;
 public class RandomOrderGeneratorTask implements Runnable {
     // тут храниться список всех планшетов
     private List<Tablet> tablets = new ArrayList<>();
-    private int orderCreatingInterval;
+    private int interval;
 
-    public RandomOrderGeneratorTask(List<Tablet> tablets, int orderCreatingInterval) {
+    public RandomOrderGeneratorTask(List<Tablet> tablets, int interval) {
         this.tablets = tablets;
-        this.orderCreatingInterval = orderCreatingInterval;
+        this.interval = interval;
     }
 
     @Override
@@ -22,7 +22,7 @@ public class RandomOrderGeneratorTask implements Runnable {
             randomTablet.createOrder();
 
             try {
-                Thread.sleep(orderCreatingInterval);
+                Thread.sleep(interval);
             } catch (InterruptedException e) {
                 return;
             }
