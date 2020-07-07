@@ -47,9 +47,9 @@ public class StatisticManager {
 
     private Set<Cook> cooks = new HashSet<Cook>();
 
-    public void register(Cook cook){
-        cooks.add(cook);
-    }
+    public void register(Cook cook){ cooks.add(cook); }
+
+    public Set<Cook> getCooks() { return cooks; }
 
     public Map<LocalDate, Long> getAmountForDay(){
         // Map с обратым порядком
