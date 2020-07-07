@@ -51,4 +51,6 @@ public class Order {
     protected void initDishes(){
         this.dishes = ConsoleHelper.getAllDishesForOrder();
     }
+
+    public Tablet getTablet() { return tablet; }
 }
