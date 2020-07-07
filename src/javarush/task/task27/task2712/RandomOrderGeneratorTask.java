@@ -16,7 +16,6 @@ public class RandomOrderGeneratorTask implements Runnable {
     @Override
     public void run() {
         // Выбор случайного планшета из массива tablets
-
         while (true) {
             Tablet randomTablet = tablets.get((int) (Math.random() * tablets.size()));
             randomTablet.createOrder();
