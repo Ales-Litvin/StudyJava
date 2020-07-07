@@ -1,6 +1,5 @@
 package javarush.task.task27.task2712.statistic;
 
-import javarush.task.task27.task2712.kitchen.Cook;
 import javarush.task.task27.task2712.statistic.event.CookedOrderEventDataRow;
 import javarush.task.task27.task2712.statistic.event.EventDataRow;
 import javarush.task.task27.task2712.statistic.event.EventType;
@@ -44,12 +43,6 @@ public class StatisticManager {
             return storage.get(eventType);
         }
     }
-
-    private Set<Cook> cooks = new HashSet<Cook>();
-
-    public void register(Cook cook){ cooks.add(cook); }
-
-    public Set<Cook> getCooks() { return cooks; }
 
     public Map<LocalDate, Long> getAmountForDay(){
         // Map с обратым порядком
