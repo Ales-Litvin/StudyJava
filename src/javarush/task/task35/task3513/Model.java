@@ -88,4 +88,39 @@ public class Model {
         }
         if (wasMoved) addTile();
     }
+
+    public void right(){
+        turnClockwise();
+        turnClockwise();
+        left();
+        turnClockwise();
+        turnClockwise();
+    }
+
+    public void up(){
+        turnClockwise();
+        turnClockwise();
+        turnClockwise();
+        left();
+        turnClockwise();
+
+    }
+
+    public void down(){
+        turnClockwise();
+        left();
+        turnClockwise();
+        turnClockwise();
+        turnClockwise();
+    }
+
+    private void turnClockwise(){
+        Tile[][] result = new Tile[FIELD_WIDTH][FIELD_WIDTH];
+        for (int i = 0; i < FIELD_WIDTH; i++) {
+            for (int j = 0; j < FIELD_WIDTH; j++){
+                result[i][FIELD_WIDTH - 1 - j] = gameTiles[j][i];
+            }
+        }
+        gameTiles = result;
+    }
 }
