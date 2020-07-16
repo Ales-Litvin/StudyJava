@@ -13,6 +13,8 @@ public class Model {
         maxTile = 2;
     }
 
+    public Tile[][] getGameTiles() { return gameTiles; }
+
     void resetGameTiles(){
         gameTiles = new Tile[FIELD_WIDTH][FIELD_WIDTH];
         for (int i = 0; i < FIELD_WIDTH; i++) {
@@ -122,5 +124,24 @@ public class Model {
             }
         }
         gameTiles = result;
+    }
+
+    public boolean canMove(){
+        // Метод возвращающий true если возможно сделать ход так чтобы состояние поля изменилось
+        for (int i = 0; i < FIELD_WIDTH - 1; i++) {
+            for (int j = 0; j < FIELD_WIDTH - 1; j++){
+                if (gameTiles[i][j].isEmpty()) return true;
+                if (gameTiles[i][j].value == gameTiles[i][j + 1].value ||
+                        gameTiles[i][j].value == gameTiles[i + 1][j].value) return true;
+            }
+        }
+        for (int i = FIELD_WIDTH - 1; i > 1; i--) {
+            for (int j = FIELD_WIDTH - 1; j > 1; j--){
+                if (gameTiles[i][j].isEmpty()) return true;
+                if (gameTiles[i][j].value == gameTiles[i][j - 1].value ||
+                        gameTiles[i][j].value == gameTiles[i - 1][j].value) return true;
+            }
+        }
+        return false;
     }
 }
