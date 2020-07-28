@@ -21,7 +21,7 @@ public class Solution {
         File path = new File(args[0]);
         // имя (полный путь) сущесвующего фала, который будет содержать результат
         File resultFileAbsolutePath = new File(args[1]);
-        String newName = resultFileAbsolutePath.getParent() + "/allFilesContent.txt";
+        String newName = resultFileAbsolutePath.getParent() + "/test.txt";
         File newFile = new File(newName);
         FileUtils.renameFile(resultFileAbsolutePath, newFile);
 

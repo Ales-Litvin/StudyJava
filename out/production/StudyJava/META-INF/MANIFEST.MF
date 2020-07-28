@@ -1,3 +1,0 @@
-Manifest-Version: 1.0
-Main-Class: javarush.task.task35.task3513.Main
-
