@@ -1,7 +1,6 @@
 package javarush.task.task22.task2213;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Класс Field описывает "поле клеток" игры Тетрис
@@ -14,23 +13,23 @@ public class Field {
     //матрица поля: 1 - клетка занята, 0 - свободна
     private int[][] matrix;
 
-    public Field(int width, int height, int[][] matrix) {
-        this.width = width;
-        this.height = height;
-        this.matrix = matrix;
-    }
-
-    public Field(int height, int width) {
+    public Field(int width, int height) {
         this.width = width;
         this.height = height;
         matrix = new int[height][width];
     }
 
-    public int getWidth() { return width; }
+    public int getWidth() {
+        return width;
+    }
 
-    public int getHeight() { return height; }
+    public int getHeight() {
+        return height;
+    }
 
-    public int[][] getMatrix() { return matrix; }
+    public int[][] getMatrix() {
+        return matrix;
+    }
 
     /**
      * Метод возвращает значение, которое содержится в матрице с координатами (x,y)
@@ -39,6 +38,7 @@ public class Field {
     public Integer getValue(int x, int y) {
         if (x >= 0 && x < width && y >= 0 && y < height)
             return matrix[y][x];
+
         return null;
     }
 
@@ -105,34 +105,28 @@ public class Field {
      * Удаляем заполненные линии
      */
     public void removeFullLines() {
-        //Например так:
         //Создаем список для хранения линий
-        List<int[]> lines = new ArrayList<>();
+        ArrayList<int[]> lines = new ArrayList<int[]>();
+
         //Копируем все непустые линии в список.
-        for (int i = 0; i < height; i++){
-            List<Integer> line = new ArrayList<Integer>(matrix[i].length);
-            for (int x : matrix[i]) {
-                line.add(x);
+        for (int i = 0; i < height; i++) {
+            //подсчитываем количество единиц в строке - просто суммируем все ее значения
+            int count = 0;
+            for (int j = 0; j < width; j++) {
+                count += matrix[i][j];
             }
-            if (line.contains(1)){
-                if (line.contains(0)){
-                    lines.add(matrix[i]);
-                } else {
-                    matrix[i] = null;
-                }
-            }
+
+            //Если сумма строки не равна ее ширине - добавляем в список
+            if (count != width)
+                lines.add(matrix[i]);
         }
+
         //Добавляем недостающие строки в начало списка.
-        while (lines.size() < height){
-            int[] newLine = new int[width];
-            for (int i = 0; i < newLine.length; i++){
-                newLine[i] = 0;
-            }
-            lines.add(0, newLine);
+        while (lines.size() < height) {
+            lines.add(0, new int[width]);
         }
+
         //Преобразуем список обратно в матрицу
-        for (int i = 0; i < height; i++){
-            matrix[i] = lines.get(i);
-        }
+        matrix = lines.toArray(new int[height][width]);
     }
 }
