@@ -1,0 +1,6 @@
+DEBUG - Argument n is 9
+INFO - Result is 362880
+ERROR - negative argument
+java.lang.IllegalArgumentException: argument -3 less then zero
+	at javarush.task.task34.demoLog.DemoLog.factorial(DemoLog.java:21)
+	at javarush.task.task34.demoLog.DemoLog.main(DemoLog.java:12)
