@@ -18,5 +18,8 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="libraries" level="project" />
+    <orderEntry type="library" name="log4j:log4j:1.2.17" level="project" />
+    <orderEntry type="library" name="org.slf4j:slf4j-simple:1.6.2" level="project" />
+    <orderEntry type="library" name="org.slf4j:slf4j-api:1.6.2" level="project" />
   </component>
 </module>
