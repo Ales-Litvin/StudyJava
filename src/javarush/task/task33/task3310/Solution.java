@@ -1,6 +1,8 @@
 package javarush.task.task33.task3310;
 
+import javarush.task.task33.task3310.strategy.FileStorageStrategy;
 import javarush.task.task33.task3310.strategy.HashMapStorageStrategy;
+import javarush.task.task33.task3310.strategy.OurHashMapStorageStrategy;
 import javarush.task.task33.task3310.strategy.StorageStrategy;
 
 import java.util.Date;
@@ -9,7 +11,11 @@ import java.util.Set;
 
 public class Solution {
     public static void main(String[] args) {
-        testStrategy(new HashMapStorageStrategy(), 10000);
+        //testStrategy(new HashMapStorageStrategy(), 10000);
+        System.out.println("==========================");
+        //testStrategy(new OurHashMapStorageStrategy(), 10000);
+        System.out.println("==========================");
+        testStrategy(new FileStorageStrategy(), 100);
     }
 
     public static Set<Long> getIds(Shortener shortener, Set<String> strings){
