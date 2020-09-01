@@ -8,15 +8,17 @@ import java.util.Set;
 
 public class Solution {
     public static void main(String[] args) {
-        testStrategy(new HashMapStorageStrategy(), 10000);
+        testStrategy(new HashMapStorageStrategy(), 5000);
         System.out.println("==========================");
-        testStrategy(new OurHashMapStorageStrategy(), 10000);
+        testStrategy(new OurHashMapStorageStrategy(), 5000);
         System.out.println("==========================");
         testStrategy(new FileStorageStrategy(), 100);
         System.out.println("==========================");
-        testStrategy(new OurHashBiMapStorageStrategy(), 10000);
+        testStrategy(new OurHashBiMapStorageStrategy(), 5000);
         System.out.println("==========================");
-        testStrategy(new HashBiMapStorageStrategy(), 10000);
+        testStrategy(new HashBiMapStorageStrategy(), 5000);
+        System.out.println("==========================");
+        testStrategy(new DualHashBidiMapStorageStrategy(), 5000);
     }
 
     public static Set<Long> getIds(Shortener shortener, Set<String> strings){
