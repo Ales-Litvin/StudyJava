@@ -1,6 +1,7 @@
 package javarush.task.task39.task3913;
 
 import javarush.task.task39.task3913.query.IPQuery;
+import javarush.task.task39.task3913.query.UserQuery;
 
 import java.io.*;
 import java.nio.file.DirectoryStream;
@@ -14,7 +15,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
-public class LogParser implements IPQuery{
+public class LogParser implements IPQuery, UserQuery {
 
     /**
      * Path to directory with log files
@@ -115,6 +116,119 @@ public class LogParser implements IPQuery{
                 e.printStackTrace();
             }
         }
+    }
+
+    @Override
+    public Set<String> getAllUsers() {
+        Set<String> users = new HashSet<>();
+        for (LogEntry entry : logEntries){
+                users.add(entry.user);
+        }
+        return users;
+    }
+
+    @Override
+    public int getNumberOfUsers(Date after, Date before) {
+        Set<String> users = new HashSet<>();
+        for (LogEntry entry : logEntries){
+            if (isBetweenDates(entry, after, before))
+                users.add(entry.user);
+        }
+        return users.size();
+    }
+
+    @Override
+    public int getNumberOfUserEvents(String user, Date after, Date before) {
+        Set<Event> events = new HashSet<>();
+        for (LogEntry entry : logEntries){
+            if (entry.user.equals(user) & isBetweenDates(entry, after, before))
+                events.add(entry.event);
+        }
+        return events.size();
+    }
+
+    @Override
+    public Set<String> getUsersForIP(String ip, Date after, Date before) {
+        Set<String> users = new HashSet<>();
+        for (LogEntry entry : logEntries){
+            if (entry.ip.equals(ip) & isBetweenDates(entry, after, before))
+                users.add(entry.user);
+        }
+        return users;
+    }
+
+    @Override
+    public Set<String> getLoggedUsers(Date after, Date before) {
+        Set<String> users = new HashSet<>();
+        for (LogEntry entry : logEntries){
+            if (entry.event.equals(Event.LOGIN) & isBetweenDates(entry, after, before))
+                users.add(entry.user);
+        }
+        return users;
+    }
+
+    @Override
+    public Set<String> getDownloadedPluginUsers(Date after, Date before) {
+        Set<String> users = new HashSet<>();
+        for (LogEntry entry : logEntries){
+            if (entry.event.equals(Event.DOWNLOAD_PLUGIN) & isBetweenDates(entry, after, before))
+                users.add(entry.user);
+        }
+        return users;
+    }
+
+    @Override
+    public Set<String> getWroteMessageUsers(Date after, Date before) {
+        Set<String> users = new HashSet<>();
+        for (LogEntry entry : logEntries){
+            if (entry.event.equals(Event.WRITE_MESSAGE) & isBetweenDates(entry, after, before))
+                users.add(entry.user);
+        }
+        return users;
+    }
+
+    @Override
+    public Set<String> getSolvedTaskUsers(Date after, Date before) {
+        Set<String> users = new HashSet<>();
+        for (LogEntry entry : logEntries){
+            if (entry.event.equals(Event.SOLVE_TASK) & isBetweenDates(entry, after, before))
+                users.add(entry.user);
+        }
+        return users;
+    }
+
+    @Override
+    public Set<String> getSolvedTaskUsers(Date after, Date before, int task) {
+        Set<String> users = new HashSet<>();
+        for (LogEntry entry : logEntries){
+            if (entry.event.equals(Event.SOLVE_TASK) &&
+                    entry.numberTask == task &&
+                    isBetweenDates(entry, after, before))
+                users.add(entry.user);
+        }
+        return users;
+    }
+
+    @Override
+    public Set<String> getDoneTaskUsers(Date after, Date before) {
+        Set<String> users = new HashSet<>();
+        for (LogEntry entry : logEntries){
+            if (entry.event.equals(Event.DONE_TASK) & isBetweenDates(entry, after, before))
+                users.add(entry.user);
+        }
+        return users;
+    }
+
+    @Override
+    public Set<String> getDoneTaskUsers(Date after, Date before, int task) {
+        Set<String> users = new HashSet<>();
+        for (LogEntry entry : logEntries){
+            if (entry.event.equals(Event.DONE_TASK) &&
+                    entry.numberTask == task &&
+                    isBetweenDates(entry, after, before))
+                users.add(entry.user);
+        }
+        return users;
     }
 
     public static class LogEntry {
