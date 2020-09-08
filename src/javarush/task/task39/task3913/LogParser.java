@@ -185,7 +185,7 @@ public class LogParser implements IPQuery{
         }
 
         /**
-         *
+         * Just method toString
          * @return   {@link String} in format "ip username date event status"
          */
         @Override
