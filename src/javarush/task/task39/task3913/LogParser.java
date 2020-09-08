@@ -38,6 +38,7 @@ public class LogParser implements IPQuery{
     public Set<String> getUniqueIPs(Date after, Date before) {
         Set<String> ips = new HashSet<>();
         for (LogEntry entry : logEntries){
+            if (isBetweenDates(entry, after, before))
                 ips.add(entry.ip);
         }
         return ips;
@@ -77,11 +78,11 @@ public class LogParser implements IPQuery{
         if (after == null & before == null) {
             return true;
         } else if (after == null){
-            return entry.date.getTime() <= before.getTime();
+            return entry.date.before(before);
         } else if (before == null){
-            return entry.date.getTime() >= after.getTime();
+            return entry.date.after(after);
         } else {
-            return entry.date.getTime() <= before.getTime() & entry.date.getTime() >= after.getTime();
+            return entry.date.after(after) & entry.date.before(before);
         }
     }
 
@@ -146,7 +147,6 @@ public class LogParser implements IPQuery{
         private static  final SimpleDateFormat simpleDateFormat =
                 new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
 
-
         /**
          * Does parsing strings for LogEntry
          * ip username date event status
@@ -184,7 +184,10 @@ public class LogParser implements IPQuery{
             return new LogEntry(ip, user, date, event, numberTask, status);
         }
 
-
+        /**
+         *
+         * @return   {@link String} in format "ip username date event status"
+         */
         @Override
         public String toString() {
             final StringBuilder sb = new StringBuilder("");
