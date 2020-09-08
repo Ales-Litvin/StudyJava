@@ -136,13 +136,16 @@ public class LogParser implements IPQuery{
         /**
          * Regular expression for strings formatted "ip username date event status"
          */
-        private final Pattern pattern = Pattern.compile("(?<ip>[\\d]+.[\\d]+.[\\d]+.[\\d]+)\\s" +
+        private static final Pattern pattern = Pattern.compile("(?<ip>[\\d]+.[\\d]+.[\\d]+.[\\d]+)\\s" +
                 "(?<name>[a-zA-Z ]+)\\s" +
                 "(?<date>[\\d]+.[\\d]+.[\\d]+ [\\d]+:[\\d]+:[\\d]+)\\s" +
                 "(?<event>[\\w]+)\\s?(" +
                 "(?<taskNumber>[\\d]+)|)\\s" +
                 "(?<status>[\\w]+)");
-                
+
+        private static  final SimpleDateFormat simpleDateFormat =
+                new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
+
 
         /**
          * Does parsing strings for LogEntry
@@ -154,45 +157,29 @@ public class LogParser implements IPQuery{
          * That is shame
          */
         public static LogEntry getLogEntry(String string){
-            String ip = "";
-            String user = "";
-            Date date = null;
-            Event event = null;
-            Integer numberTask = null;
-            Status status = null;
+            Matcher matcher = pattern.matcher(string); // Type of "log" this "String"
+            matcher.find();
 
-            ip = string.substring(0, string.indexOf(" "));
-            status = Status.valueOf(string.substring(string.lastIndexOf(" ") + 1));
+            String ip = matcher.group("ip");
+            String user = matcher.group("name");
 
-            string = string.substring(string.indexOf(" ") + 1, string.lastIndexOf(" "));
-
-            String eventString = string.substring(string.lastIndexOf(" ") + 1);
-
-            if (eventString.matches("\\d+")){
-                numberTask = Integer.parseInt(eventString);
-                string = string.substring(0, string.lastIndexOf(" "));
-                eventString = string.substring(string.lastIndexOf(" ") + 1);
-            }
-
-            event = Event.valueOf(eventString);
-
-            string = string.substring(0, string.lastIndexOf(" "));
-
-            String[] strings = string.split(" ");
-
-            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
+            Date date;
             try {
-                date = simpleDateFormat.parse(strings[strings.length - 2] + " " + strings[strings.length - 1]);
+                date = simpleDateFormat.parse(matcher.group("date"));
             } catch (ParseException e) {
                 e.printStackTrace();
                 date = null;
             }
 
-            user = strings[0];
-            for (int i = 1; i < strings.length - 2; i++){
-                user += " ";
-                user += strings[i];
+            Event event = Event.valueOf(matcher.group("event"));
+
+            Integer numberTask = null;
+
+            if (event.equals(Event.SOLVE_TASK) || event.equals(Event.DONE_TASK)){
+                numberTask = Integer.parseInt(matcher.group("taskNumber"));
             }
+
+            Status status = Status.valueOf(matcher.group("status"));
 
             return new LogEntry(ip, user, date, event, numberTask, status);
         }
