@@ -12,7 +12,7 @@ public class Test {
         System.out.println(entry.toString());
          */
 
-        for (LogParser.LogEntry entry : logParser.list){
+        for (LogParser.LogEntry entry : logParser.logEntries){
             System.out.println(entry.toString());
         }
 
