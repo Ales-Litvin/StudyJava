@@ -23,5 +23,25 @@ public class Test {
         System.out.println("==================");
 
         System.out.println(logParser.getIPsForUser("See Son You", null, new Date()));
+
+        System.out.println("==================");
+        System.out.println("get ip:");
+        System.out.println(logParser.execute("get ip"));
+        System.out.println("get user:");
+        System.out.println(logParser.execute("get user"));
+
+        System.out.println("==================");
+
+        System.out.println("get ip for user = \"Eduard Petrovich Azzz\"");
+        System.out.println(logParser.execute("get ip for user = \"Eduard Petrovich Azzz\""));
+
+        System.out.println("get event for date = \"04.09.2020 12:54:11\"");
+        System.out.println(logParser.execute("get event for date = \"04.09.2020 12:54:11\""));
+
+        System.out.println("get user for event = \"DONE_TASK\"");
+        System.out.println(logParser.execute("get user for event = \"DONE_TASK\""));
+
+        System.out.println("get ip for date = \"04.09.2020 12:54:11\"");
+        System.out.println(logParser.execute("get ip for date = \"04.09.2020 12:54:11\""));
     }
 }
