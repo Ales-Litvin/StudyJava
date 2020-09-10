@@ -1,6 +1,7 @@
 package javarush.task.task39.task3913;
 
 import javarush.task.task39.task3913.query.*;
+import org.omg.Messaging.SYNC_WITH_TRANSPORT;
 
 import java.io.*;
 import java.nio.file.DirectoryStream;
@@ -468,8 +469,67 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
     }
 
     // // Implementation interface QLQuery
+
+    private static final Pattern REQUEST_PATTERN = Pattern.compile(
+        "get (?<field1>[\\w]+) for (?<field2>[\\w]+) = \"(?<value1>.+)\"");
+
+    private static final Pattern JUST_REQUEST_PATTERN = Pattern.compile("get\\s[a-zA-Z]+");
+
+    private static  final SimpleDateFormat DATE_FORMAT =
+            new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
+
     @Override
     public Set<Object> execute(String query) {
+        if (query.matches(String.valueOf(JUST_REQUEST_PATTERN)))
+            return justExecute(query);
+
+        Matcher matcher = REQUEST_PATTERN.matcher(query);
+
+        matcher.find();
+
+        String field1 = matcher.group("field1");
+        String field2 = matcher.group("field2");
+        String value = matcher.group("value1");
+
+        Date date = null;
+        if (field2.equals("date")) {
+            try {
+                date = DATE_FORMAT.parse(value);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+        }
+
+        Set<Object> result = new HashSet<>();
+        for (LogEntry entry : logEntries){
+            if (entry.ip.equals(value) ||
+                    entry.user.equals(value) ||
+                    entry.date.equals(date) ||
+                    entry.event.toString().equals(value) ||
+                    entry.status.toString().equals(value)){
+                switch (field1){
+                    case "ip" :
+                        result.add(entry.ip);
+                        break;
+                    case "user" :
+                        result.add(entry.user);
+                        break;
+                    case "date" :
+                        result.add(entry.date);
+                        break;
+                    case "event" :
+                        result.add(entry.event);
+                        break;
+                    case "status" :
+                        result.add(entry.status);
+                        break;
+                }
+            }
+        }
+        return result;
+    }
+
+    private Set<Object> justExecute(String query){
         Set<Object> result;
         switch (query){
             case "get ip" :
