@@ -468,10 +468,15 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
         return map;
     }
 
-    // // Implementation interface QLQuery
+    // Implementation interface QLQuery
 
     private static final Pattern REQUEST_PATTERN = Pattern.compile(
         "get (?<field1>[\\w]+) for (?<field2>[\\w]+) = \"(?<value1>.+)\"");
+
+    private static final Pattern REQUEST_PATTERN_SECOND = Pattern.compile(
+            "get (?<field1>[\\w]+) for (?<field2>[\\w]+) = \"(?<value1>.+)\"" +
+                    "( and date between \"(?<after>[\\d]+.[\\d]+.[\\d]+ [\\d]+:[\\d]+:[\\d]+)\"" +
+                    " and \"(?<before>[\\d]+.[\\d]+.[\\d]+ [\\d]+:[\\d]+:[\\d]+)\")");
 
     private static final Pattern JUST_REQUEST_PATTERN = Pattern.compile("get\\s[a-zA-Z]+");
 
@@ -483,9 +488,22 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
         if (query.matches(String.valueOf(JUST_REQUEST_PATTERN)))
             return justExecute(query);
 
-        Matcher matcher = REQUEST_PATTERN.matcher(query);
-
-        matcher.find();
+        Matcher matcher = null;
+        Date after = null;
+        Date before = null;
+        if (query.contains(" and date between ")){
+            matcher = REQUEST_PATTERN_SECOND.matcher(query);
+            matcher.find();
+            try {
+                after = DATE_FORMAT.parse(matcher.group("after"));
+                before = DATE_FORMAT.parse(matcher.group("before"));
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+        } else {
+            matcher = REQUEST_PATTERN.matcher(query);
+            matcher.find();
+        }
 
         String field1 = matcher.group("field1");
         String field2 = matcher.group("field2");
@@ -502,11 +520,12 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
 
         Set<Object> result = new HashSet<>();
         for (LogEntry entry : logEntries){
-            if (entry.ip.equals(value) ||
+            if ((entry.ip.equals(value) ||
                     entry.user.equals(value) ||
                     entry.date.equals(date) ||
                     entry.event.toString().equals(value) ||
-                    entry.status.toString().equals(value)){
+                    entry.status.toString().equals(value)) &&
+            isBetweenDates(entry, after, before)){
                 switch (field1){
                     case "ip" :
                         result.add(entry.ip);
