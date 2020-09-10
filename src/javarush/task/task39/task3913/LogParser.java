@@ -1,9 +1,6 @@
 package javarush.task.task39.task3913;
 
-import javarush.task.task39.task3913.query.DateQuery;
-import javarush.task.task39.task3913.query.EventQuery;
-import javarush.task.task39.task3913.query.IPQuery;
-import javarush.task.task39.task3913.query.UserQuery;
+import javarush.task.task39.task3913.query.*;
 
 import java.io.*;
 import java.nio.file.DirectoryStream;
@@ -17,7 +14,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
-public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery {
+public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQuery {
 
     /**
      * Path to directory with log files
@@ -470,7 +467,36 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery {
         return map;
     }
 
-
+    // // Implementation interface QLQuery
+    @Override
+    public Set<Object> execute(String query) {
+        Set<Object> result;
+        switch (query){
+            case "get ip" :
+                return new HashSet<Object>(getUniqueIPs(null, null));
+            case "get user" :
+                return new HashSet<Object>(getAllUsers());
+            case "get date" :
+                result = new HashSet<>();
+                for (LogEntry entry : logEntries){
+                    result.add(entry.date);
+                }
+                return result;
+            case "get event" :
+                result = new HashSet<>();
+                for (LogEntry entry : logEntries){
+                    result.add(entry.event);
+                }
+                return result;
+            case "get status" :
+                result = new HashSet<>();
+                for (LogEntry entry : logEntries){
+                    result.add(entry.status);
+                }
+                return result;
+        }
+        return null;
+    }
 
     public static class LogEntry {
         String ip;
