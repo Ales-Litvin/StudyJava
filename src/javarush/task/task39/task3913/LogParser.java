@@ -1,5 +1,6 @@
 package javarush.task.task39.task3913;
 
+import javarush.task.task39.task3913.query.DateQuery;
 import javarush.task.task39.task3913.query.IPQuery;
 import javarush.task.task39.task3913.query.UserQuery;
 
@@ -15,7 +16,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
-public class LogParser implements IPQuery, UserQuery {
+public class LogParser implements IPQuery, UserQuery, DateQuery {
 
     /**
      * Path to directory with log files
@@ -229,6 +230,127 @@ public class LogParser implements IPQuery, UserQuery {
                 users.add(entry.user);
         }
         return users;
+    }
+
+    @Override
+    public Set<Date> getDatesForUserAndEvent(String user, Event event, Date after, Date before) {
+        Set<Date> dates = new HashSet<>();
+        for (LogEntry entry : logEntries){
+            if (entry.event.equals(event) &&
+                    entry.user.equals(user)&&
+                    isBetweenDates(entry, after, before))
+                dates.add(entry.date);
+        }
+        return dates;
+    }
+
+    @Override
+    public Set<Date> getDatesWhenSomethingFailed(Date after, Date before) {
+        Set<Date> dates = new HashSet<>();
+        for (LogEntry entry : logEntries){
+            if (entry.status.equals(Status.FAILED) &&
+                    isBetweenDates(entry, after, before))
+                dates.add(entry.date);
+        }
+        return dates;
+    }
+
+    @Override
+    public Set<Date> getDatesWhenErrorHappened(Date after, Date before) {
+        Set<Date> dates = new HashSet<>();
+        for (LogEntry entry : logEntries){
+            if (entry.status.equals(Status.ERROR) &&
+                    isBetweenDates(entry, after, before))
+                dates.add(entry.date);
+        }
+        return dates;
+    }
+
+    private static final Comparator<Date> DATE_COMPARATOR = new Comparator<Date>() {
+        @Override
+        public int compare(Date o1, Date o2) {
+            return o1.compareTo(o2);
+        }
+    };
+
+    @Override
+    public Date getDateWhenUserLoggedFirstTime(String user, Date after, Date before) {
+        List<Date> dates = new ArrayList<>();
+        for (LogEntry entry : logEntries){
+            if (entry.event.equals(Event.LOGIN) &&
+                    entry.user.equals(user) &&
+                    isBetweenDates(entry, after, before))
+                dates.add(entry.date);
+        }
+        if (dates.isEmpty()) {
+            return null;
+        }
+        else {
+            dates.sort(DATE_COMPARATOR);
+            return dates.get(0);
+        }
+    }
+
+    @Override
+    public Date getDateWhenUserSolvedTask(String user, int task, Date after, Date before) {
+        List<Date> dates = new ArrayList<>();
+        for (LogEntry entry : logEntries){
+            if (entry.event.equals(Event.SOLVE_TASK) &&
+                    entry.user.equals(user) &&
+                    entry.numberTask == task &&
+                    isBetweenDates(entry, after, before))
+                dates.add(entry.date);
+        }
+        if (dates.isEmpty()) {
+            return null;
+        }
+        else {
+            dates.sort(DATE_COMPARATOR);
+            return dates.get(0);
+        }
+    }
+
+    @Override
+    public Date getDateWhenUserDoneTask(String user, int task, Date after, Date before) {
+        List<Date> dates = new ArrayList<>();
+        for (LogEntry entry : logEntries){
+            if (entry.event.equals(Event.DONE_TASK) &&
+                    entry.user.equals(user) &&
+                    entry.numberTask == task &&
+                    isBetweenDates(entry, after, before))
+                dates.add(entry.date);
+        }
+        if (dates.isEmpty()) {
+            return null;
+        }
+        else {
+            dates.sort(DATE_COMPARATOR);
+            return dates.get(0);
+        }
+    }
+
+    @Override
+    public Set<Date> getDatesWhenUserWroteMessage(String user, Date after, Date before) {
+        Set<Date> dates = new HashSet<>();
+        for (LogEntry entry : logEntries){
+            if (entry.event.equals(Event.WRITE_MESSAGE) &&
+                    entry.user.equals(user) &&
+                    isBetweenDates(entry, after, before))
+                dates.add(entry.date);
+        }
+        return dates;
+    }
+
+    @Override
+    public Set<Date> getDatesWhenUserDownloadedPlugin(String user, Date after, Date before) {
+        Set<Date> dates = new HashSet<>();
+        for (LogEntry entry : logEntries){
+            if (entry.event.equals(Event.DOWNLOAD_PLUGIN) &&
+                    entry.user.equals(user) &&
+                    isBetweenDates(entry, after, before))
+                dates.add(entry.date);
+        }
+        return dates;
     }
 
     public static class LogEntry {
