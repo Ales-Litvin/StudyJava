@@ -1,6 +1,7 @@
 package javarush.task.task39.task3913;
 
 import javarush.task.task39.task3913.query.DateQuery;
+import javarush.task.task39.task3913.query.EventQuery;
 import javarush.task.task39.task3913.query.IPQuery;
 import javarush.task.task39.task3913.query.UserQuery;
 
@@ -16,7 +17,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
-public class LogParser implements IPQuery, UserQuery, DateQuery {
+public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery {
 
     /**
      * Path to directory with log files
@@ -352,6 +353,124 @@ public class LogParser implements IPQuery, UserQuery, DateQuery {
         }
         return dates;
     }
+
+    // Implementation interface EventQuery
+    @Override
+    public int getNumberOfAllEvents(Date after, Date before) {
+        return getAllEvents(after, before).size();
+    }
+
+    @Override
+    public Set<Event> getAllEvents(Date after, Date before) {
+        Set<Event> events = new HashSet<>();
+        for (LogEntry entry : logEntries){
+            if (isBetweenDates(entry, after, before))
+                events.add(entry.event);
+        }
+        return events;
+    }
+
+    @Override
+    public Set<Event> getEventsForIP(String ip, Date after, Date before) {
+        Set<Event> events = new HashSet<>();
+        for (LogEntry entry : logEntries){
+            if (entry.ip.equals(ip) &&
+                    isBetweenDates(entry, after, before))
+                events.add(entry.event);
+        }
+        return events;
+    }
+
+    @Override
+    public Set<Event> getEventsForUser(String user, Date after, Date before) {
+        Set<Event> events = new HashSet<>();
+        for (LogEntry entry : logEntries){
+            if (entry.user.equals(user) &&
+                    isBetweenDates(entry, after, before))
+                events.add(entry.event);
+        }
+        return events;
+    }
+
+    @Override
+    public Set<Event> getFailedEvents(Date after, Date before) {
+        Set<Event> events = new HashSet<>();
+        for (LogEntry entry : logEntries){
+            if (entry.status.equals(Status.FAILED) &&
+                    isBetweenDates(entry, after, before))
+                events.add(entry.event);
+        }
+        return events;
+    }
+
+    @Override
+    public Set<Event> getErrorEvents(Date after, Date before) {
+        Set<Event> events = new HashSet<>();
+        for (LogEntry entry : logEntries){
+            if (entry.status.equals(Status.ERROR) &&
+                    isBetweenDates(entry, after, before))
+                events.add(entry.event);
+        }
+        return events;
+    }
+
+    @Override
+    public int getNumberOfAttemptToSolveTask(int task, Date after, Date before) {
+        int numberOfAttempts = 0;
+        for (LogEntry entry : logEntries){
+            if (entry.event.equals(Event.SOLVE_TASK) &&
+                    entry.numberTask == task &&
+                    isBetweenDates(entry, after, before))
+                numberOfAttempts++;
+        }
+        return numberOfAttempts;
+    }
+
+    @Override
+    public int getNumberOfSuccessfulAttemptToSolveTask(int task, Date after, Date before) {
+        int numberOfAttempts = 0;
+        for (LogEntry entry : logEntries){
+            if (entry.event.equals(Event.DONE_TASK) &&
+                    entry.numberTask == task &&
+                    isBetweenDates(entry, after, before))
+                numberOfAttempts++;
+        }
+        return numberOfAttempts;
+    }
+
+    @Override
+    public Map<Integer, Integer> getAllSolvedTasksAndTheirNumber(Date after, Date before) {
+        Map<Integer, Integer> map = new HashMap<>();
+        for (LogEntry entry : logEntries){
+            if (entry.event.equals(Event.SOLVE_TASK) &&
+                    isBetweenDates(entry, after, before)){
+                if (map.containsKey(entry.numberTask)){
+                    map.put(entry.numberTask, map.get(entry.numberTask) + 1);
+                } else {
+                    map.put(entry.numberTask, 1);
+                }
+            }
+        }
+        return map;
+    }
+
+    @Override
+    public Map<Integer, Integer> getAllDoneTasksAndTheirNumber(Date after, Date before) {
+        Map<Integer, Integer> map = new HashMap<>();
+        for (LogEntry entry : logEntries){
+            if (entry.event.equals(Event.DONE_TASK) &&
+                    isBetweenDates(entry, after, before)){
+                if (map.containsKey(entry.numberTask)){
+                    map.put(entry.numberTask, map.get(entry.numberTask) + 1);
+                } else {
+                    map.put(entry.numberTask, 1);
+                }
+            }
+        }
+        return map;
+    }
+
+
 
     public static class LogEntry {
         String ip;
