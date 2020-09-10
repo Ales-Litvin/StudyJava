@@ -43,5 +43,13 @@ public class Test {
 
         System.out.println("get ip for date = \"04.09.2020 12:54:11\"");
         System.out.println(logParser.execute("get ip for date = \"04.09.2020 12:54:11\""));
+
+        System.out.println(
+                "get user for event = \"DONE_TASK\" and date between \"04.02.2017 13:15:14\" and \"10.09.2020 13:34:12\"");
+        System.out.println(
+                logParser.execute(
+                        "get user for event = \"DONE_TASK\" and date between \"04.02.2017 13:15:14\" and \"10.09.2020 13:34:12\""));
+
+
     }
 }
