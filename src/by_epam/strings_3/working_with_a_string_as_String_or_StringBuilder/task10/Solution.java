@@ -6,6 +6,7 @@ package by_epam.strings_3.working_with_a_string_as_String_or_StringBuilder.task1
  *     восклицательным или вопросительным знаком.
  *     Определить количество предложений в строке X.
  */
+
 public class Solution {
     public static void main(String[] args) {
         String string = "Hi, Friend! It's been a while since we have been in touch. " +
