@@ -1,4 +1,4 @@
-
+<notes>
     <note id = "1">
         <to>Вася</to>
         <from>Света</from>
@@ -11,3 +11,4 @@
         <heading>Важное напоминание</heading>
         <body/>
     </note>
+</notes>

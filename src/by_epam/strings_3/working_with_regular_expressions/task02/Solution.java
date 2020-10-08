@@ -34,9 +34,24 @@ public class Solution {
 
         String string = xmlLoader.getXml();
 
+        /*
         XmlRoot xmlRoot = XmlParser.getRootElement(string);
 
         System.out.println(xmlRoot);
+
+
+        List<XmlElement> list = XmlParser.getElements(string);
+
+        System.out.println(list);
+
+        System.out.println(list.get(0).list);
+        */
+
+        List<String> list = XmlParser.getStrings(string);
+
+        System.out.println(list);
+
+
     }
 
     

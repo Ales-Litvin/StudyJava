@@ -10,15 +10,13 @@ public class XmlRoot {
 
     private List<XmlElement> elements; // тут будем хранить элементы
 
+    private List<String> strings;
+
     public XmlRoot(String tagName, String tagContent) {
         this.tagName = tagName;
         this.tagContent = tagContent;
-        System.out.println(tagContent);
-        //try {
-        //this.elements = XmlParser.getElements(tagContent);
-        //} catch (NullPointerException e){
-        // e.printStackTrace();
-        //}
+        this.strings = XmlParser.getStrings(tagContent);
+        this.elements = XmlParser.getElements(tagContent);
     }
 
     public void getContent(){
@@ -34,6 +32,7 @@ public class XmlRoot {
         return "XmlRoot{" +
                 "tagName='" + tagName + '\'' +
                 ", elements=" + elements +
+                ", strings=" + strings +
                 '}';
     }
 }
