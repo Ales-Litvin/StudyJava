@@ -1,5 +1,5 @@
 <notes>
-    <note>
+    <note id = "1">
         <to>Вася</to>
         <from>Света</from>
         <heading>Напоминание</heading>

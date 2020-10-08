@@ -39,10 +39,6 @@ public class XmlParser {
 
     }
 
-    private static final Pattern XML_ROOT_PATTERN = Pattern.compile(
-            "<(\\w+)>(.+)</\\1>"
-    );
-
     private static final Pattern XML_PATTERN = Pattern.compile(
             "<(\\w+)(\\s*(?<attributeName>\\w+)\\s*=\\s*[\"'](?<value>\\d+)[\"'])>(?<text>.+)</\\1"
     );
@@ -62,22 +58,73 @@ public class XmlParser {
     );
      */
 
-    private static final Pattern STRANGE_PATTERN_TWO = Pattern.compile(
-            "<(\\w+)(\\s*(?<attributeName>\\w+)\\s*=\\s*[\"'](?<value>\\d+)[\"'])*>(?<text>.+)<\\/\\1>|<\\w+\\/>"
+    private static final Pattern XML_ROOT_PATTERN = Pattern.compile(
+            "^<(\\w+)>(.+)</\\1>$"
     );
 
-
-
-
-
     public static XmlRoot getRootElement(String data){
-        Matcher matcher = XML_PATTERN.matcher(data);
+        Matcher matcher = XML_ROOT_PATTERN.matcher(data);
 
         if (matcher.find()) {
-
-            return new XmlRoot(matcher.group(1), matcher.group("text"));
+            return new XmlRoot(matcher.group(1), matcher.group(2));
         }
         return null;
+    }
+
+    private static final Pattern STRANGE_PATTERN_TWO = Pattern.compile(
+            //"<(\\w+)(\\s*(?<attributeName>\\w+)\\s*=\\s*[\"'](?<value>\\d+)[\"'])*>(?<text>.+)<\\/\\1>|<\\w+\\/>"
+            //"^((?:<(\\w+)(\\s*(?<attributeName>\\w+)\\s*=\\s*[\"'](?<value>\\d+)[\"'])*>(?<text>.+)<\\/\\3>|<\\w+\\/>)*)$"
+            //"(?:<(\\w+)(\\s*(?<attributeName>\\w+)\\s*=\\s*[\"'](?<value>\\d+)[\"'])*>(?<text>.+)<\\/\\1>|<\\w+\\/>)"
+            //"^((?:<(\\w+)(\\s*(?<attributeName>\\w+)\\s*=\\s*[\"'](?<value>\\d+)[\"'])*>(.+)<\\/\\2>|<\\w+\\/>)*)$"
+            "^((?:<(\\w+)(\\s*(?<attributeName>\\w+)\\s*=\\s*[\"'](?<value>\\d+)[\"'])*>(.+)<\\/\\2>|<\\w+\\/>)*)$"
+    );
+
+    private static final Pattern STRANGE_PATTERN_Three = Pattern.compile(
+
+    "<(\\w+)(\\s*(?<attributeName>\\w+)\\s*=\\s*[\"'](?<value>\\d+)[\"'])*>(.+)<\\/\\1>|<\\w+\\/>"
+
+            );
+
+    private static final Pattern STRANGE_PATTERN_Four = Pattern.compile(
+            "<(\\w+)>(.+)<\\/\\1>|<\\w+\\/>"
+    );
+
+    private static final Pattern STRANGE_PATTERN_FIVE = Pattern.compile(
+            "<(\\w+)(\\s*(?<attributeName>\\w+)\\s*=\\s*[\"'](?<value>\\d+)[\"'])*>([а-яА-Я0-9_\\s]+)<\\/\\1>|<\\w+\\/>"
+    );
+
+    private static final Pattern STRANGE_PATTERN_SIX = Pattern.compile(
+            "<(\\w+)(\\s*(?<attributeName>\\w+)\\s*=\\s*[\"'](?<value>\\d+)[\"'])*>([а-яА-Я0-9_\\s]+)<\\/\\1>|<\\w+\\/>"
+    );
+
+    private static final Pattern STRANGE_PATTERN_SEVEN = Pattern.compile(
+            "(?:<(\\w+)(\\s*(?<attributeName>\\w+)\\s*=\\s*[\"'](?<value>\\d+)[\"'])*>([а-яА-Я0-9_\\s<\\/>]+)<\\/\\1>|<\\w+\\/>)+"
+    );
+
+    public static List<String> getStrings(String data){
+        Matcher matcher = STRANGE_PATTERN_SEVEN.matcher(data);
+
+        List<String> elements = new ArrayList<>();
+
+        while (matcher.find()){
+            System.out.println("=====================");
+            System.out.println(matcher.group(0));
+            System.out.println(matcher.group(1));
+            /*System.out.println(matcher.group("attributeName"));
+            System.out.println(matcher.group("value"));*/
+            System.out.println(matcher.group(2));
+
+            matcher.end();
+
+
+            elements.add(matcher.group(0));
+            elements.add(matcher.group(1));
+            /*elements.add(matcher.group("attributeName"));
+            elements.add(matcher.group("value"));*/
+            elements.add(matcher.group(2));
+        }
+
+        return elements;
     }
 
     public static List<XmlElement> getElements(String data){
@@ -87,47 +134,20 @@ public class XmlParser {
         List<XmlElement> elements = new ArrayList<>();
 
         while (matcher.find()){
-            XmlElement current = new XmlElement(
-                    matcher.group(1),
-                    matcher.group("attributeName"), matcher.group("value"),
-                    matcher.group("text"));
+            XmlElement current = null;
+            try {
+                current = new XmlElement(
+                        matcher.group(2),
+                        matcher.group("attributeName"), matcher.group("value"),
+                        matcher.group(6));
+                elements.add(current);
+            } catch (NullPointerException e){
+                e.printStackTrace();
+            } finally {
+                return elements;
+            }
 
-            elements.add(current);
         }
-
-        if (elements.isEmpty()) {
-            return null;
-        } else {
-            return elements;
-        }
-    }
-
-    public static String getTagName(String data){
-        Matcher matcher = XML_ROOT_PATTERN.matcher(data);
-        matcher.find();
-        return matcher.group(0);
-    }
-
-    public static String getAttributeName(String data){
-        Matcher matcher = XML_ROOT_PATTERN.matcher(data);
-        matcher.find();
-        return matcher.group(5);
-    }
-
-    public static String getAttribute(String data){
-        Matcher matcher = XML_ROOT_PATTERN.matcher(data);
-        matcher.find();
-        return matcher.group(6);
-    }
-
-    public static List<String> getInnerTag(String data){
-        Matcher matcher = XML_ROOT_PATTERN.matcher(data);
-
-        List<String> list = new ArrayList<>();
-
-        while (matcher.find()){
-            list.add(matcher.group(7));
-        }
-        return list;
+        return null;
     }
 }
