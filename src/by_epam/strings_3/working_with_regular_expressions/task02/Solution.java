@@ -33,7 +33,7 @@ import java.util.List;
 public class Solution {
     public static void main(String[] args) {
         XmlLoader xmlLoader = new XmlLoader(
-                "E:\\Library\\Books\\Study\\src\\by_epam\\strings_3\\working_with_regular_expressions\\task02\\test_file\\text1.xml"
+                "G:\\Programming\\Work\\StudyJava\\src\\by_epam\\strings_3\\working_with_regular_expressions\\task02\\test_file\\text1.xml"
         );
 
         System.out.println();

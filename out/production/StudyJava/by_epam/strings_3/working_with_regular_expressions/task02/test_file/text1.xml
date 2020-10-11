@@ -11,4 +11,18 @@
         <heading>Важное напоминание</heading>
         <body/>
     </note>
+    <note id = "3">
+        <to>Миша</to>
+        <from>Катя</from>
+        <heading>Событие</heading>
+        <body>Встреча</body>
+    </note>
+    <note id = "4">
+        <to>Alex</to>
+        <from>Addon</from>
+        <heading>Famous Event</heading>
+        <body>Meet</body>
+        <hour>one</hour>
+        <minute>ten</minute>
+    </note>
 </notes>
