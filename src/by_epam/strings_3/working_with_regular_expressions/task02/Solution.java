@@ -25,37 +25,30 @@ package by_epam.strings_3.working_with_regular_expressions.task02;
  */
 
 
-import java.sql.ClientInfoStatus;
+import by_epam.strings_3.working_with_regular_expressions.task02.node.Node;
+
+import java.util.Iterator;
 import java.util.List;
 
 public class Solution {
     public static void main(String[] args) {
-        XmlLoader xmlLoader = new XmlLoader("G:\\Programming\\Work\\StudyJava\\src\\by_epam\\strings_3\\working_with_regular_expressions\\task02\\text.xml");
+        XmlLoader xmlLoader = new XmlLoader(
+                "E:\\Library\\Books\\Study\\src\\by_epam\\strings_3\\working_with_regular_expressions\\task02\\test_file\\text1.xml"
+        );
 
-        String string = xmlLoader.getXml();
+        System.out.println();
+        // загружем из файла в строку содержимео xml-документа
+        String string = xmlLoader.getStringXml();
 
-        /*
-        XmlRoot xmlRoot = XmlParser.getRootElement(string);
+        // корневой элемент
+        Node root = XmlParser.getRootNode(string);
 
-        System.out.println(xmlRoot);
+        // последовательно возвращает содержимое узлов xml-документа в виде объекта Node
+        Iterator<Node> iterator = root.iterator();
 
-
-        List<XmlElement> list = XmlParser.getElements(string);
-
-        System.out.println(list);
-
-        System.out.println(list.get(0).list);
-        */
-
-        List<String> list = XmlParser.getStrings(string);
-
-        System.out.println(list);
-
+        while (iterator.hasNext()){
+            System.out.println(iterator.next());
+        }
 
     }
-
-    
-
-
-
 }
