@@ -10,7 +10,11 @@ public class XmlLoader {
         this.file = new File(string);
     }
 
-    public  String getXml(){
+    /**
+     * Returns a string with the content of the file
+     * @return a string with the content of the file
+     */
+    public  String getStringXml(){
 
         StringBuilder builder = new StringBuilder();
 
@@ -26,4 +30,8 @@ public class XmlLoader {
         }
         return builder.toString();
     }
+
+    public File getFile() { return file; }
+
+    public void setFile(File file) { this.file = file; }
 }
