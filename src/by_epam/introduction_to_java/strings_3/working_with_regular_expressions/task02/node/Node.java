@@ -1,7 +1,5 @@
 package by_epam.introduction_to_java.strings_3.working_with_regular_expressions.task02.node;
 
-import by_epam.strings_3.working_with_regular_expressions.task02.node.Attribute;
-
 import java.util.*;
 
 public class Node {

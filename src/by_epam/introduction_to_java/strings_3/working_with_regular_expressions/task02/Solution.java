@@ -24,9 +24,7 @@ package by_epam.introduction_to_java.strings_3.working_with_regular_expressions.
  * Пользоваться готовыми парсерами XML для решения данной задачи нельзя.
  */
 
-import by_epam.strings_3.working_with_regular_expressions.task02.XmlLoader;
-import by_epam.strings_3.working_with_regular_expressions.task02.XmlParser;
-import by_epam.strings_3.working_with_regular_expressions.task02.node.Node;
+import by_epam.introduction_to_java.strings_3.working_with_regular_expressions.task02.node.Node;
 
 import java.util.Iterator;
 

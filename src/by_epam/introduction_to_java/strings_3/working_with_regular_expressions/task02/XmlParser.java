@@ -1,8 +1,9 @@
 package by_epam.introduction_to_java.strings_3.working_with_regular_expressions.task02;
 
-import by_epam.strings_3.working_with_regular_expressions.task02.node.Attribute;
-import by_epam.strings_3.working_with_regular_expressions.task02.node.CloseNode;
-import by_epam.strings_3.working_with_regular_expressions.task02.node.Node;
+
+import by_epam.introduction_to_java.strings_3.working_with_regular_expressions.task02.node.Attribute;
+import by_epam.introduction_to_java.strings_3.working_with_regular_expressions.task02.node.CloseNode;
+import by_epam.introduction_to_java.strings_3.working_with_regular_expressions.task02.node.Node;
 
 import java.util.ArrayList;
 import java.util.List;
