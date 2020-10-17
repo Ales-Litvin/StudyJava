@@ -11,18 +11,18 @@ import java.util.Iterator;
 import java.util.List;
 
 public class Library {
-    private final List<Airline> airlines;
+    private final List<Book> books;
 
     public Library() {
-        this.airlines = new ArrayList<>();
+        this.books = new ArrayList<>();
     }
 
     // getter
-    public List<Airline> getBooks() { return airlines; }
+    public List<Book> getBooks() { return books; }
 
-    public void add(Airline airline){ airlines.add(airline); }
+    public void add(Book book){ books.add(book); }
 
-    public boolean remove(Airline airline){ return airlines.remove(airline); }
+    public boolean remove(Book book){ return books.remove(book); }
 
     /**
      * Removes book by id
@@ -30,7 +30,7 @@ public class Library {
      * @return <tt>true</tt> if this list contained the specified element
      */
     public boolean remove(int id){
-        Iterator<Airline> itr = airlines.iterator();
+        Iterator<Book> itr = books.iterator();
 
         while (itr.hasNext()){
             if (itr.next().getId() == id){
@@ -46,12 +46,12 @@ public class Library {
      * @param author author of book
      * @return books with a givens author
      */
-    public List<Airline> getBooksByAuthor(String author){
-        List<Airline> result = new ArrayList<>();
+    public List<Book> getBooksByAuthor(String author){
+        List<Book> result = new ArrayList<>();
 
-        for (Airline airline : airlines) {
-            if (airline.getAuthors().equals(author)){
-                result.add(airline);
+        for (Book book : books) {
+            if (book.getAuthors().equals(author)){
+                result.add(book);
             }
         }
         return result;
@@ -62,12 +62,12 @@ public class Library {
      * @param publishingHouse name of publishing house
      * @return books with a givens publishing house
      */
-    public List<Airline> getBooksByPublishingHouse(String publishingHouse){
-        List<Airline> result = new ArrayList<>();
+    public List<Book> getBooksByPublishingHouse(String publishingHouse){
+        List<Book> result = new ArrayList<>();
 
-        for (Airline airline : airlines) {
-            if (airline.getPublishingHouse().equals(publishingHouse)){
-                result.add(airline);
+        for (Book book : books) {
+            if (book.getPublishingHouse().equals(publishingHouse)){
+                result.add(book);
             }
         }
         return result;
@@ -78,12 +78,12 @@ public class Library {
      * @param calendar a year
      * @return books created after a givens date
      */
-    public List<Airline> getBooksFromYear(Calendar calendar){
-        List<Airline> result = new ArrayList<>();
+    public List<Book> getBooksFromYear(Calendar calendar){
+        List<Book> result = new ArrayList<>();
 
-        for (Airline airline : airlines) {
-            if (airline.getYearOfPublishing().after(calendar)){
-                result.add(airline);
+        for (Book book : books) {
+            if (book.getYearOfPublishing().after(calendar)){
+                result.add(book);
             }
         }
         return result;
