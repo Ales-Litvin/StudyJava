@@ -6,6 +6,7 @@ import org.omg.CORBA.ObjectHelper;
 import java.math.BigDecimal;
 import java.nio.charset.Charset;
 import java.util.Arrays;
+import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -134,4 +135,20 @@ public class LearnMain {
             this.arr = arrMain;
         }
     }
+
+    Object object;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof LearnMain)) return false;
+        LearnMain learnMain = (LearnMain) o;
+        return Objects.equals(object, learnMain.object);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(object);
+    }
 }
+
