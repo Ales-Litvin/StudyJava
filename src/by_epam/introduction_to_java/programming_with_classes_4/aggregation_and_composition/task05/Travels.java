@@ -40,9 +40,9 @@ public class Travels {
         this.travels.sort(new Comparator<Travel>() {
             @Override
             public int compare(Travel o1, Travel o2) {
-                int one = o1.getType() == travel.getType() ? 2 : -1;
-                int two = o2.getType() == travel.getType() ? 2 : -1;
-                return Integer.compare(one, two);
+                int one = o1.getType() == travel.getType() ? 0 : -1;
+                int two = o2.getType() == travel.getType() ? 0 : -1;
+                return Integer.compare(two, one);
             }
         }.thenComparing(new Comparator<Travel>() {
             @Override
@@ -54,16 +54,16 @@ public class Travels {
         }.thenComparing(new Comparator<Travel>() {
             @Override
             public int compare(Travel o1, Travel o2) {
-                int one = o1.getTransport().compareTo(travel.getTransport());
-                int two = o2.getTransport().compareTo(travel.getTransport());
-                return Integer.compare(one, two);
+                int one = o1.getTransport() == travel.getTransport()  ? 0 : -1;
+                int two = o2.getTransport() == travel.getTransport()  ? 0 : -1;
+                return Integer.compare(two, one);
             }
         }.thenComparing(new Comparator<Travel>() {
             @Override
             public int compare(Travel o1, Travel o2) {
-                int one = o1.getFood().compareTo(travel.getFood());
-                int two = o1.getFood().compareTo(travel.getFood());
-                return Integer.compare(one, two);
+                int one = o1.getFood() == travel.getFood()  ? 0 : -1;
+                int two = o2.getFood() == travel.getFood()  ? 0 : -1;
+                return Integer.compare(two, one);
             }
         }))));
     }
