@@ -46,11 +46,19 @@ public class Solution {
                 8,
                 Food.ALL_INCLUSIVE);
 
+        Travel six = new Travel("Five",
+                "description",
+                TypeOfTour.THERAPY,
+                Transport.SHIP,
+                11,
+                Food.ALL_INCLUSIVE);
+
         travels.add(one);
         travels.add(two);
         travels.add(three);
         travels.add(four);
         travels.add(three);
+        travels.add(six);
 
         System.out.println(travels.toString());
 
@@ -69,8 +77,5 @@ public class Solution {
 
         System.out.println("Поиск лучшего совпадения: ");
         System.out.println(travels.getBetter(clientsDream));
-
-
-
     }
 }
