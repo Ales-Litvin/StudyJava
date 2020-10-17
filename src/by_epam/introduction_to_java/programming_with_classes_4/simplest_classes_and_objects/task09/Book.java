@@ -15,7 +15,7 @@ package by_epam.introduction_to_java.programming_with_classes_4.simplest_classes
 
 import java.util.Calendar;
 
-public class Airline {
+public class Book {
     private long id;
     private String name;
     private String authors;
@@ -25,7 +25,7 @@ public class Airline {
     private double price;
     private Binding binding; // тип переплета
 
-    public Airline(long id, String name, String authors, String publishingHouse, Calendar yearOfPublishing, int numberOfPages, double price, Binding binding) {
+    public Book(long id, String name, String authors, String publishingHouse, Calendar yearOfPublishing, int numberOfPages, double price, Binding binding) {
         this.id = id;
         this.name = name;
         this.authors = authors;

@@ -14,7 +14,7 @@ public class Solution {
 
         Library library = new Library();
 
-        library.add(new Airline(
+        library.add(new Book(
                 (int) Helper.generateRandomNumber(9),
                 "All Quiet on the Western Front",
                 "Erich Maria Remarque",
@@ -26,7 +26,7 @@ public class Solution {
 
         ));
 
-        library.add(new Airline(
+        library.add(new Book(
                 (int) Helper.generateRandomNumber(9),
                 "Three Comrades",
                 "Erich Maria Remarque",
@@ -37,7 +37,7 @@ public class Solution {
                 Binding.PERFECT
                 ));
 
-        library.add(new Airline(
+        library.add(new Book(
                 (int) Helper.generateRandomNumber(9),
                 "The Catcher in the Rye",
                 "J.D. Salinger's",
