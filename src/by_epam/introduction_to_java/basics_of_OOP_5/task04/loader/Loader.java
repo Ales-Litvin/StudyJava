@@ -32,6 +32,9 @@ import java.util.List;
 /**
  * A loader for getting and stores data from resource.
  * @see DataLoader
+ *
+ * @author Aliaksandr Rachko
+ * @version 1.0
  */
 public interface Loader {
 

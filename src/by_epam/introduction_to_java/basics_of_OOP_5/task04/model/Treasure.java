@@ -29,7 +29,9 @@ import java.io.Serializable;
 import java.util.Objects;
 
 /**
- * Class treasure stories
+ * Treasure.
+ * @author Aliaksandr Rachko
+ * @version 1.0
  */
 public class Treasure implements Serializable {
     private String name;
