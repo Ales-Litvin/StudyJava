@@ -1,9 +1,38 @@
+/*
+ * Copyright (c) 2020, Rachko and/or its affiliates. All rights reserved.
+ * RACHKO PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ */
+
 package by_epam.introduction_to_java.basics_of_OOP_5.task04.model;
 
 import java.util.*;
 
 /**
  * Class for process data about treasures.
+ * @see Treasure
+ * @author Aliaksandr Rachko
+ * @version 1.0
  */
 public class Cave {
     private List<Treasure> treasures;
@@ -21,7 +50,7 @@ public class Cave {
         treasures.sort(new Comparator<Treasure>() {
             @Override
             public int compare(Treasure o1, Treasure o2) {
-                return Double.compare(o1.getPrice(), o2.getPrice());
+                return Double.compare(o2.getPrice(), o1.getPrice());
             }
         });
     }

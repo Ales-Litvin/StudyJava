@@ -36,7 +36,7 @@ import java.util.*;
 
 /**
  * This class stores information about events.
- * @autor Rachko Aliaksandr
+ * @author Aliaksandr Rachko
  * @version 1.0
  */
 public class Calendar {

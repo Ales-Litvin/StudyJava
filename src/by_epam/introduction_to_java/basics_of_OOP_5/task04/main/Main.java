@@ -24,6 +24,7 @@
  */
 
 package by_epam.introduction_to_java.basics_of_OOP_5.task04.main;
+
 /*
  * Условие задачи:
  * Задача 4.
@@ -42,42 +43,25 @@ package by_epam.introduction_to_java.basics_of_OOP_5.task04.main;
  * и выбора сокровищ на заданную сумму.
  */
 
-/*
- * I recommend see:
- * task3513
- * task3310
- * task3209
- */
-
+import by_epam.introduction_to_java.basics_of_OOP_5.task04.controller.Controller;
+import by_epam.introduction_to_java.basics_of_OOP_5.task04.model.Cave;
 import by_epam.introduction_to_java.basics_of_OOP_5.task04.view.View;
 import by_epam.introduction_to_java.basics_of_OOP_5.task04.loader.DataLoader;
-import by_epam.introduction_to_java.basics_of_OOP_5.task04.model.Treasure;
 
-import java.util.ArrayList;
-import java.util.List;
-
+/**
+ * Main class. Starts program.
+ * @author Aliaksandr Rachko
+ * @version 1.0
+ */
 public class Main {
     public static void main(String[] args) {
-        List<Treasure> list = new ArrayList<>();
-        list.add(new Treasure("The Amber Room", 10000));
-        list.add(new Treasure("Sarcophagus of Menkaure", 20000));
-        list.add(new Treasure("Ark of the Covenant", 15000));
-        list.add(new Treasure("Honjo Masamune Sword", 35000));
-        list.add(new Treasure("Lost Library of the Moscow Tsars", 80000));
-        list.add(new Treasure("Crown jewels of Ireland", 90000));
-        list.add(new Treasure("Sappho's lost poems", 15000));
-        list.add(new Treasure("Efrosinya's of Polotsk cross", 10000));
-        list.add(new Treasure("Dead Bishop's Treasure Stolen by Pirates", 15000));
-        list.add(new Treasure("The Just Judges", 50000));
-        list.add(new Treasure("The Florentine Diamond", 60000));
-        list.add(new Treasure("Q Source", 5000));
-
-
         DataLoader loader = new DataLoader("G:\\Programming\\Work\\StudyJava\\src\\by_epam\\introduction_to_java\\basics_of_OOP_5\\task04\\resources\\treasures.txt");
-        loader.store(list);
-        list.clear();
-        View.printTreasures(list);
-        list = loader.getTreasures();
-        View.printTreasures(list);
+
+        Cave cave = new Cave(loader.getTreasures());
+
+        Controller controller = new Controller(cave);
+
+        View view = new View(controller);
+        view.action();
     }
 }

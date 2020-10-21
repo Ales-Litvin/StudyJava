@@ -33,6 +33,8 @@ import java.util.List;
 
 /**
  * Load data about treasures from file.
+ * @author Aliaksandr Rachko
+ * @version 1.0
  */
 public class DataLoader implements Loader{
     private String filename;
@@ -43,6 +45,10 @@ public class DataLoader implements Loader{
 
     public void setFilename(String filename) { this.filename = filename; }
 
+    /**
+     * Returns list of treasures form file.
+     * In the file saved serialized list of treasures.
+     */
     @Override
     public List<Treasure> getTreasures() {
         List<Treasure> treasures= new ArrayList<>();
@@ -54,11 +60,14 @@ public class DataLoader implements Loader{
         return treasures;
     }
 
+    /**
+     * Saves list of treasures in the file, serializing its.
+     */
     @Override
     public void store(List<Treasure> treasures) {
         try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(filename))) {
             oos.writeObject(treasures);
-            System.out.println("File has been written");
+            System.out.println("File has been written.");
         } catch (IOException e) {
             e.printStackTrace();
         }
