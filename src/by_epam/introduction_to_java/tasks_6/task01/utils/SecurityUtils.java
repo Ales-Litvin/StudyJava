@@ -1,8 +1,5 @@
 package by_epam.introduction_to_java.tasks_6.task01.utils;
 
-import by_epam.introduction_to_java.tasks_6.task01.config.SecurityConfig;
-import by_epam.introduction_to_java.tasks_6.task01.entity.User;
-
 import java.util.List;
 import java.util.Set;
 
@@ -14,24 +11,9 @@ import java.util.Set;
 public class SecurityUtils {
 
     // Проверить имеет ли данный 'user' подходящую роль?
-    public static boolean hasPermission(User user) {
 
-        Set<String> allRoles = SecurityConfig.getAllRoles();
-
-        for (String role : allRoles) {
-            /*
-            if (!request.isUserInRole(role)) {
-                continue;
-            }
-            */
-
-            List<String> patterns = SecurityConfig.getPatternsForRole(role);
-            /*
-            if (patterns != null && patterns.contains(urlPattern)) {
-                return true;
-            }
-            */
-        }
+    public static boolean hasPermission(){
         return false;
     }
+
 }
