@@ -8,4 +8,13 @@ public class Controller {
     private View view;
     private UserDao userDao;
     private BookDao bookDao;
+
+
+
+
+
+    public static boolean hasPermission(){
+        return false;
+    }
+
 }
