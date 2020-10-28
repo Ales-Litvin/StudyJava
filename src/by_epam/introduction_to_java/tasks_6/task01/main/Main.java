@@ -16,7 +16,7 @@ package by_epam.introduction_to_java.tasks_6.task01.main;
  *       администратору на e-mail.
  * • Каталог книг хранится в текстовом файле.
  * • Данные аутентификации пользователей хранятся в текстовом файле. Пароль
- * не хранится в открытом виде
+ *   не хранится в открытом виде
  */
 public class Main {
     public static void main(String[] args) {
