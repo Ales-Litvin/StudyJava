@@ -26,12 +26,8 @@
 package by_epam.introduction_to_java.tasks_6.task01.utils;
 
 import java.util.List;
-import java.util.Optional;
-
 
 public interface Dao<T> {
-
-    Optional<T> get(String name);
 
     List<T> getAll();
 

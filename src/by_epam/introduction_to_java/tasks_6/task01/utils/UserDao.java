@@ -25,20 +25,39 @@
 
 package by_epam.introduction_to_java.tasks_6.task01.utils;
 
+
 import by_epam.introduction_to_java.tasks_6.task01.entity.User;
+import by_epam.introduction_to_java.tasks_6.task01.loader.DataLoader;
 
 import java.util.*;
 
 /**
  * Implements interface DAO.
+ * @author Aliaksandr Rachko
+ * @version 1.0
  */
 public class UserDao implements Dao<User>{
+    private DataLoader<User> loader;
 
-    private Map<String, User> users = new HashMap<>();
+    private final Map<String, User> users;
 
-    public UserDao() {
-
+    public UserDao(DataLoader<User> loader) {
+        this.loader = loader;
+        this.users = new HashMap<>(getMap());
     }
+
+    /**
+     * Convert List to Map.
+     */
+    private Map<String, User> getMap(){
+        Map<String, User> result = new HashMap<>();
+        for (User user : loader.getList()){
+            result.put(user.getUserName(), user);
+        }
+        return result;
+    }
+
+    public void setLoader(DataLoader<User> loader) { this.loader = loader; }
 
     public User findUser(String userName, String password){
         User user = users.get(userName);
@@ -49,24 +68,20 @@ public class UserDao implements Dao<User>{
     }
 
     @Override
-    public Optional<User> get(String userName) {
-
-        return null;
-    }
-
-    @Override
     public List<User> getAll() {
-        return null;
+        return new ArrayList<User>(users.values());
     }
 
     @Override
     public void save(User user) {
         users.put(user.getUserName(), user);
+        loader.store(new ArrayList<>(users.values()));
     }
 
     @Override
     public void delete(User user) {
-        users.remove(user);
+        if (users.remove(user) != null) {
+            loader.store(new ArrayList<>(users.values()));
+        }
     }
-
 }
