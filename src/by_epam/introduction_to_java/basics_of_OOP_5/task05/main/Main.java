@@ -62,7 +62,5 @@ public class Main {
 
         Controller controller = new Controller(compositionCreator);
 
-        View view = new View(controller);
-        view.action();
     }
 }

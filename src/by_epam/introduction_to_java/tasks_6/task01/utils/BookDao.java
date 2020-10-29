@@ -44,6 +44,7 @@ public class BookDao implements Dao<Book>{
     public BookDao(DataLoader<Book> loader) {
         this.loader = loader;
         this.books = new ArrayList<>(loader.getList());
+        this.numberOfPages = countPages();
     }
 
     public void setLoader(DataLoader<Book> loader) {
@@ -104,7 +105,7 @@ public class BookDao implements Dao<Book>{
      * @param n number of page (start with '1' finish {@see  numberOfPages}).
      */
     public List<Book> getPage(int n){
-        if (0 >= n && n > numberOfPages) return null;
+        if (0 >= n || n > numberOfPages) return null;
         int fromIndex = (n - 1) * COUNT_BOOK_ON_PAGE;
         int toIndex = Math.min((fromIndex + COUNT_BOOK_ON_PAGE + 1), books.size());
 
