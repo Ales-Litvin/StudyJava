@@ -26,7 +26,7 @@
 package by_epam.introduction_to_java.tasks_6.task01.utils;
 
 
-import by_epam.introduction_to_java.tasks_6.task01.entity.User;
+import by_epam.introduction_to_java.tasks_6.task01.entity.user.User;
 import by_epam.introduction_to_java.tasks_6.task01.loader.DataLoader;
 
 import java.util.*;

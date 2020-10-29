@@ -25,9 +25,10 @@
 
 package by_epam.introduction_to_java.tasks_6.task01.entity.book;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Book {
+public class Book implements Serializable {
     private String name;
 
     private TypeBook type;

@@ -25,23 +25,21 @@
 
 package by_epam.introduction_to_java.tasks_6.task01.view;
 
-import by_epam.introduction_to_java.basics_of_OOP_5.task05.entity.Product;
-import by_epam.introduction_to_java.basics_of_OOP_5.task05.entity.flower.FlowerType;
-import by_epam.introduction_to_java.basics_of_OOP_5.task05.entity.pack.PackType;
 import by_epam.introduction_to_java.tasks_6.task01.controller.Controller;
-import by_epam.introduction_to_java.tasks_6.task01.entity.User;
+import by_epam.introduction_to_java.tasks_6.task01.entity.book.Book;
+import by_epam.introduction_to_java.tasks_6.task01.entity.book.TypeBook;
+import by_epam.introduction_to_java.tasks_6.task01.entity.user.User;
+import by_epam.introduction_to_java.tasks_6.task01.exceptions.BookNotExistsException;
+import by_epam.introduction_to_java.tasks_6.task01.exceptions.UserHasNotPermission;
 import by_epam.introduction_to_java.tasks_6.task01.exceptions.UserNotExistsException;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
+import java.util.List;
 
 public class View {
-    private Controller controller;
-
-    // здесь просматреть где устанавливается контроллер
-    // в task 3513 view creates in the controller
+    private final Controller controller;
 
     public View(Controller controller) { this.controller = controller; }
 
@@ -62,6 +60,31 @@ public class View {
                 "-------------------------------------");
     }
 
+    public void action(){
+        writeMessage("Enters number of action: ");
+        printAllCommand();
+        String string;
+        while (!(string = readString()).equals("0")){
+            switch (string){
+                case "1": printAllCommand();
+                    break;
+                case "2": initUser();
+                    break;
+                case "3": lookBooks(1);
+                    break;
+                case "4": findBook();
+                    break;
+                case "5": offerBook();
+                    break;
+                case "6": addBook();
+                    break;
+                default :writeMessage("\"" + string + "\"" + " not a command");
+                    break;
+            }
+        }
+        writeMessage("Bye!");
+    }
+
     /**
      * Initializations user in the controller.
      */
@@ -71,7 +94,9 @@ public class View {
         } catch (UserNotExistsException e) {
             writeMessage(e.getMessage());
             writeMessage("Try again late.");
+            return;
         }
+        writeMessage("Logged in!");
     }
 
     /**
@@ -87,56 +112,100 @@ public class View {
         return new User(username, password, null, null);
     }
 
-
-    public void action(){
-        writeMessage("Enters number of action: ");
-        printAllCommand();
-        String string;
-        while (!(string = readString()).equals("0")){
-            switch (string){
-                case "1": printAllCommand();
-                break;
-                case "2": writeMessage(Arrays.toString(FlowerType.values()));
-                break;
-                case "3": writeMessage(Arrays.toString(PackType.values()));
-                break;
-                case "4":
-                    Product product = getProduct();
-                    if (product == null) {
-                        writeMessage("Product don't created. Try again late.");
-                    } else {
-                        writeMessage(product.getName());
-                    }
-                break;
-                default :writeMessage("\"" + string + "\"" + " not a command");
-                break;
-            }
+    /**
+     * Prints list of books.
+     */
+    private void printPage(List<Book> books) throws NumberFormatException{
+        if (books == null) throw new NullPointerException();
+        writeMessage(
+                "======================================\n" +
+                "Books catalog:\n" +
+                "--------------------------------------");
+        for (Book book : books){
+            writeMessage(
+                    String.format("%30s | %5s |", book.getName(), book.getType()));
         }
-        writeMessage("Bye!");
-    }
-
-
-    public void authorization(){
-
+        writeMessage(
+                "--------------------------------------");
     }
 
     /**
-     * Returns object Product for givens describe.
+     * Looking catalog by pages.
      */
-    public Product getProduct(){
+    public void lookBooks(int numberPage){
+        try {
+            printPage(controller.getPage(numberPage));
+        } catch (UserHasNotPermission | NullPointerException e ) {
+            writeMessage(e.getMessage());
+            return;
+        }
         writeMessage(
-                "Enter the order in the format: <name>\\<amt.>\n" +
-                "example: ROSE\\1\n" +
-                "         ASTER\\2\n" +
-                "         PAPER");
+                String.format("Page %d of %d", numberPage, controller.getCountPages()));
+        writeMessage(
+                "======================================");
 
-        StringBuilder sb = new StringBuilder();
-        String data = null;
-        while (!(data = readString()).isEmpty()){
-            sb.append(data);
+        writeMessage("Inputs the number of page and press 'enter', or '0' so exit.");
+
+        int page = 0;
+
+        while ((page = readInt()) != 0){
+            lookBooks(page);
+        }
+    }
+
+    /**
+     * Finds a book.
+     */
+    public void findBook(){
+        writeMessage("Inputs the name of book and press 'enter'....");
+        try {
+            writeMessage("The " + controller.getBook(readString()).toString() + " are available.");
+        } catch (BookNotExistsException | UserHasNotPermission e) {
+            writeMessage(e.getMessage());
+        }
+    }
+
+    /**
+     * Offer user's book.
+     */
+    public void offerBook(){
+        writeMessage("Now options not implements.");
+    }
+
+    /**
+     * Adds administrator's book.
+     */
+    public void addBook(){
+        writeMessage("Inputs the name of book and press 'enter'....");
+        String name = readString();
+
+        if (name == null || name.isEmpty()){
+            writeMessage("Name of book not be empty. Try again late.");
+            return;
         }
 
-        return null;
+        writeMessage("Choose type of book:\n" +
+                "1 - paper; 2 - e-book\n" +
+                "press 'enter'...");
+
+        TypeBook typeBook;
+        int type = readInt();
+        if (type == 1){
+            typeBook = TypeBook.PAPER;
+        } else if (type == 2){
+            typeBook = TypeBook.E_BOOK;
+        } else {
+            writeMessage("Don't correct give type of book.");
+            return;
+        }
+
+        try {
+            Book book = new Book(name, typeBook);
+            controller.addBook(book);
+            writeMessage("The " + book.toString() + " are available.");
+        } catch (UserHasNotPermission e) {
+           writeMessage(e.getMessage());
+        }
     }
 
     private static final BufferedReader READER = new BufferedReader(new InputStreamReader(System.in));
@@ -166,6 +235,11 @@ public class View {
      */
     public static int readInt() {
         String text = readString();
-        return Integer.parseInt(text.trim());
+        try {
+            return Integer.parseInt(text.trim());
+        } catch (NumberFormatException e){
+            writeMessage("The '" + text + "' is not number. Try again late.");
+            return 0;
+        }
     }
 }

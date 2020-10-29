@@ -1,6 +1,6 @@
 package by_epam.introduction_to_java.tasks_6.task01.exceptions;
 
-import by_epam.introduction_to_java.tasks_6.task01.entity.User;
+import by_epam.introduction_to_java.tasks_6.task01.entity.user.User;
 
 /**
  * The class {@code Exception} describe situation when user

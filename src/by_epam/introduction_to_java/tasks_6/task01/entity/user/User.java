@@ -23,7 +23,7 @@
  *
  */
 
-package by_epam.introduction_to_java.tasks_6.task01.entity;
+package by_epam.introduction_to_java.tasks_6.task01.entity.user;
 
 import java.io.Externalizable;
 import java.io.IOException;
@@ -43,9 +43,9 @@ public class User implements Externalizable {
     /**
      * User's role.
      */
-    private String role;
+    private UserRole role;
 
-    public User(String userName, String password, String eMail, String role) {
+    public User(String userName, String password, String eMail, UserRole role) {
         this.userName = userName;
         this.password = password;
         this.email = eMail;
@@ -67,9 +67,9 @@ public class User implements Externalizable {
 
     public void setEmail(String email) { this.email = email; }
 
-    public String getRole() { return role; }
+    public UserRole getRole() { return role; }
 
-    public void setRole(String role) { this.role = role; }
+    public void setRole(UserRole role) { this.role = role; }
 
     @Override
     public boolean equals(Object o) {
@@ -109,7 +109,7 @@ public class User implements Externalizable {
         userName = (String) in.readObject();
         password = this.decryptString((String) in.readObject());
         email = (String) in.readObject();
-        role = (String) in.readObject();
+        role = (UserRole) in.readObject();
     }
 
 
