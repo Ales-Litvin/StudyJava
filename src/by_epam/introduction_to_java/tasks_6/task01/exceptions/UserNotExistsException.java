@@ -22,6 +22,4 @@ public class UserNotExistsException extends Exception{
 
         this.user = user;
     }
-
-
 }
