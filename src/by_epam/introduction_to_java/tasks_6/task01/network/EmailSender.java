@@ -1,4 +1,4 @@
-package by_epam.introduction_to_java.tasks_6.task01.utils;
+package by_epam.introduction_to_java.tasks_6.task01.network;
 
 import java.util.Properties;
 import javax.mail.Message;
@@ -32,7 +32,7 @@ public class EmailSender{
         Properties properties = System.getProperties();
         properties.setProperty("mail.smtp.host", host);
         properties.setProperty("mail.smtp.port", "547");
-        properties.setProperty("mail.smtp.port", "457");
+        properties.setProperty("mail.smtps.user", "457");
 
         Session session = Session.getDefaultInstance(properties);
         // default session
@@ -66,4 +66,5 @@ public class EmailSender{
         }
 
     }
+
 }
