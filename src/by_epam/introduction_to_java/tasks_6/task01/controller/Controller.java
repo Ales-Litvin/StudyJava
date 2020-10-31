@@ -1,16 +1,18 @@
 package by_epam.introduction_to_java.tasks_6.task01.controller;
 
-
 import by_epam.introduction_to_java.tasks_6.task01.entity.user.User;
 import by_epam.introduction_to_java.tasks_6.task01.entity.book.Book;
 import by_epam.introduction_to_java.tasks_6.task01.entity.user.UserRole;
 import by_epam.introduction_to_java.tasks_6.task01.exceptions.BookNotExistsException;
 import by_epam.introduction_to_java.tasks_6.task01.exceptions.UserHasNotPermission;
 import by_epam.introduction_to_java.tasks_6.task01.exceptions.UserNotExistsException;
+import by_epam.introduction_to_java.tasks_6.task01.network.EmailSender;
 import by_epam.introduction_to_java.tasks_6.task01.utils.BookDao;
 import by_epam.introduction_to_java.tasks_6.task01.utils.UserDao;
 import by_epam.introduction_to_java.tasks_6.task01.view.View;
 
+import javax.mail.MessagingException;
+import java.util.Date;
 import java.util.List;
 
 public class Controller {
@@ -107,10 +109,68 @@ public class Controller {
      * @param book book for add.
      * @throws UserHasNotPermission user doesn't have permission for this action.
      */
-    public void addBook(Book book) throws UserHasNotPermission {
+    public void addBook(Book book) throws UserHasNotPermission, MessagingException {
         if (!hasAdminPermission()) throw new UserHasNotPermission(currentUser);
         bookDao.save(book);
-        // this need add sent to email all user's
+
+        String subject = String.format("New book '%s'.", book.getName());
+
+        String text = String.format(
+                "Was adds new book '%s' in the '%s'.\n" +
+                "%3$tA, on %3$td %3$tB %3$tT (%3$tZ) %3$tY\n"+
+                "Your BookCatalog!",
+                book.getName(), book.getType(), new Date());
+
+        sendEmail(userDao.getUsersEmails().toArray(new String[0]),
+                subject,
+                text );
+        View.writeMessage(
+                "==================================\n" +
+                "Sent messages all users:\n" +
+                "__________________________________\n" +
+                "Subject: " + subject + "\n" +
+                "Text: " + text + "\n" +
+                "__________________________________");
+    }
+
+    /**
+     * Sends email.
+     */
+    public void sendEmail(String[] recipients, String subject, String text) throws MessagingException {
+        String[] data = view.getEmailData();
+
+        EmailSender.sendMessage(
+                data[0],
+                data[1],
+                recipients,
+                subject,
+                text);
+    }
+
+    /**
+     * Offers book.
+     */
+    public void offerBook(Book book) throws UserHasNotPermission, MessagingException {
+        if (!hasUserPermission()) throw new UserHasNotPermission(currentUser);
+
+        String subject = String.format("User offer '%s'.", currentUser.getUserName());
+
+        String text = String.format(
+                "Can you adds new book '%s' in the '%s'.\n" +
+                "Yours friend %s!",
+                book.getName(), book.getType(), currentUser.getUserName());
+
+
+        sendEmail(userDao.getAdminsEmails().toArray(new String[0]),
+                subject,
+                text);
+        View.writeMessage(
+                "==================================\n" +
+                "Sent messages all admin:\n" +
+                "__________________________________\n" +
+                "Subject: " + subject + "\n" +
+                "Text: " + text + "\n" +
+                "__________________________________");
     }
 
     /**
@@ -138,8 +198,4 @@ public class Controller {
             return true;
         } else return currentUser.getRole() == UserRole.ADMIN;
     }
-
-
-
-
 }

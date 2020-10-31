@@ -47,13 +47,18 @@ public class InitResources {
         users.add(new User(
                 "admin",
                 "qwerty1234",
-                "laskdf@gmail.com",
+                "AdminEmail@gmail.com",
                 UserRole.ADMIN));
 
         users.add(new User(
                 "user",
                 "1234",
-                "user@gmail.com",
+                "someEmail@gmail.com",
+                UserRole.USER));
+        users.add(new User(
+                "Sam",
+                "1234",
+                "someEmail@gmail.com",
                 UserRole.USER));
     }
 
