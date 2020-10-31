@@ -1,70 +1,67 @@
 package by_epam.introduction_to_java.tasks_6.task01.network;
 
-import java.util.Properties;
-import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.Session;
-import javax.mail.Transport;
+import javax.mail.*;
+import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
+import java.util.Properties;
+
 /**
- * Java Program to send text mail using default SMTP server and without authentication.
- * You need mail.jar, smtp.jar and activation.jar to run this program.
- *
- * @author Javin Paul
+ * This class use for sends email.
  */
-public class EmailSender{
-    public static void main(String args[]){
+public class EmailSender {
+    /**
+     * Sends messages to recipients.
+     * @throws MessagingException if was except situation.
+     */
+    public static void sendMessage(
+            String from,
+            String password,
+            String[] recipients,
+            String subject,
+            String text) throws MessagingException{
 
-        String to = "rachko.a.ch@gmail.com";
-        // sender email
+        // Creates Session using properties.
+        Session mailSession = Session.getDefaultInstance(getProperties(from));
 
-        String from = "ssaannyyaa25@gmail.com";
-        // receiver email
+        // Creates message
+        MimeMessage message = new MimeMessage(mailSession);
 
-        String host = "127.0.0.1";
-        // mail server host
+        message.setFrom(new InternetAddress(from));
+        message.addRecipients(Message.RecipientType.BCC, getAddresses(recipients));
 
-        //mail.smtp.port=547 для TLS и mail.smtp.port=457 для SSL.
+        message.setSubject(subject);
+        message.setText(text);
 
-
-        Properties properties = System.getProperties();
-        properties.setProperty("mail.smtp.host", host);
-        properties.setProperty("mail.smtp.port", "547");
-        properties.setProperty("mail.smtps.user", "457");
-
-        Session session = Session.getDefaultInstance(properties);
-        // default session
-
-
-        try {
-            MimeMessage message = new MimeMessage(session);
-            // email message
-
-            message.setFrom(new InternetAddress(from));
-            // setting header fields
-
-            message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
-
-            message.setSubject("Test Mail from Java Program");
-            // subject line
-
-
-
-            // actual mail body
-
-            message.setText("You can send mail from Java program by using mail API, but you need" +
-                    "couple of more JAR files e.g. smtp.jar and activation.jar");
-
-
-            // Send message
-
-            Transport.send(message); System.out.println("Email Sent successfully....");
-        } catch (MessagingException mex) {
-            mex.printStackTrace();
-        }
-
+        // Sending
+        Transport tr = mailSession.getTransport();
+        tr.connect(null, password);
+        tr.sendMessage(message, message.getAllRecipients());
+        tr.close();
     }
 
+    /**
+     * Returns array fo addresses.
+     */
+    private static Address[] getAddresses(String[] recipients) throws AddressException {
+        Address[] addresses = new Address[recipients.length];
+
+        for (int i = 0; i < recipients.length; i++){
+            addresses[i] = new InternetAddress(recipients[i]);
+        }
+        return addresses;
+    }
+
+    /**
+     * Returns properties for sending email from Gmail.
+     */
+    private static Properties getProperties(String email){
+        Properties properties = new Properties();
+        properties.setProperty("mail.transport.protocol", "smtps");
+        properties.setProperty("mail.smtps.auth", "true");
+        properties.setProperty("mail.smtps.host", "smtp.gmail.com");
+        properties.setProperty("mail.smtps.user", email);
+        return properties;
+    }
 }

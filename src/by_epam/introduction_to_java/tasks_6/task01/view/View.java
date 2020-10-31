@@ -33,6 +33,7 @@ import by_epam.introduction_to_java.tasks_6.task01.exceptions.BookNotExistsExcep
 import by_epam.introduction_to_java.tasks_6.task01.exceptions.UserHasNotPermission;
 import by_epam.introduction_to_java.tasks_6.task01.exceptions.UserNotExistsException;
 
+import javax.mail.MessagingException;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -169,19 +170,48 @@ public class View {
      * Offer user's book.
      */
     public void offerBook(){
-        writeMessage("Now options not implements.");
+        Book book = getBook();
+        if (book == null) {
+            writeMessage("Wrong data. Try again late.");
+            return;
+        }
+
+        try {
+            controller.offerBook(book);
+        } catch (UserHasNotPermission | MessagingException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
      * Adds administrator's book.
      */
     public void addBook(){
+        Book book = getBook();
+        if (book == null) {
+            writeMessage("Wrong data. Try again late.");
+            return;
+        }
+
+        try {
+            controller.addBook(book);
+            writeMessage("The " + book.toString() + " are available.");
+        } catch (UserHasNotPermission | MessagingException e) {
+           e.printStackTrace();
+        }
+        writeMessage("Was send ");
+    }
+
+    /**
+     * Returns book given user.
+     */
+    public Book getBook(){
         writeMessage("Inputs the name of book and press 'enter'....");
         String name = readString();
 
         if (name == null || name.isEmpty()){
             writeMessage("Name of book not be empty. Try again late.");
-            return;
+            return null;
         }
 
         writeMessage("Choose type of book:\n" +
@@ -196,16 +226,21 @@ public class View {
             typeBook = TypeBook.E_BOOK;
         } else {
             writeMessage("Don't correct give type of book.");
-            return;
+            return null;
         }
+        return new Book(name, typeBook);
+    }
 
-        try {
-            Book book = new Book(name, typeBook);
-            controller.addBook(book);
-            writeMessage("The " + book.toString() + " are available.");
-        } catch (UserHasNotPermission e) {
-           writeMessage(e.getMessage());
-        }
+    /**
+     * Returns array with email address and password.
+     */
+    public String[] getEmailData(){
+        writeMessage("Inputs your email address (xxxx@gmail.com) and press 'enter'....");
+        String address = readString().trim();
+
+        writeMessage("Inputs your password for email address: '" + address + "' and press 'enter'....");
+        String password = readString().trim();
+        return new String[]{address, password};
     }
 
     private static final BufferedReader READER = new BufferedReader(new InputStreamReader(System.in));

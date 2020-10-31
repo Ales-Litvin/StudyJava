@@ -27,6 +27,7 @@ package by_epam.introduction_to_java.tasks_6.task01.utils;
 
 
 import by_epam.introduction_to_java.tasks_6.task01.entity.user.User;
+import by_epam.introduction_to_java.tasks_6.task01.entity.user.UserRole;
 import by_epam.introduction_to_java.tasks_6.task01.loader.DataLoader;
 
 import java.util.*;
@@ -66,6 +67,32 @@ public class UserDao implements Dao<User>{
         }
         return null;
     }
+
+
+    /**
+     * Returns list of emails address all admin
+     */
+    public List<String> getAdminsEmails(){
+        List<String> result = new ArrayList<>();
+        for (User user : new ArrayList<>(users.values())){
+            if (user.getRole() == UserRole.ADMIN) {
+                result.add(user.getEmail());
+            }
+        }
+        return result;
+    }
+
+    /**
+     * Returns list of emails address all users.
+     */
+    public List<String> getUsersEmails(){
+        List<String> result = new ArrayList<>();
+        for (User user : new ArrayList<>(users.values())){
+            result.add(user.getEmail());
+        }
+        return result;
+    }
+
 
     @Override
     public List<User> getAll() {
