@@ -18,22 +18,22 @@ public class Note implements Comparable<Note>, Serializable {
     /**
      * Note's subject.
      */
-    private String subject;
+    private final String subject;
 
     /**
      * Date of created.
      */
-    private Date date;
+    private final Date date;
 
     /**
      * Just email.
      */
-    private String email;
+    private final String email;
 
     /**
      * Note's content
      */
-    private String content;
+    private final String content;
 
     public Note(String subject, String email, String content) {
         this.subject = subject;

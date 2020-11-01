@@ -1,7 +1,9 @@
 package by_epam.introduction_to_java.tasks_6.task02.utils;
 
-import java.util.Date;
-import java.util.Set;
+import by_epam.introduction_to_java.tasks_6.task02.entity.Note;
+import by_epam.introduction_to_java.tasks_6.task02.exception.IncorrectDataException;
+
+import java.util.List;
 
 /**
  * Describes Data Access Object (DAO)
@@ -9,34 +11,39 @@ import java.util.Set;
 public interface Dao<T>{
 
     /**
-     * Returns set of notes by the subject.
+     * Returns all notes.
      */
-    Set<T> getNotes(String subject);
+    List<T> getAllNotes();
 
     /**
-     * Returns set of notes by the subject.
+     * Returns list of notes by the subject.
      */
-    Set<T> getNotes(Date date);
+    List<T> getNotes(String subject) throws IncorrectDataException;
 
     /**
-     * Returns set of notes by the subject and the date.
+     * Returns list of notes by the date.
      */
-    Set<T> getNotes(String subject, Date date);
+    List<Note> getNotesByDate(String date) throws IncorrectDataException;
 
     /**
-     * Returns set of notes by the email.
+     * Returns list of notes by the subject and date.
      */
-    Set<T> getNotesByEmail(String email);
+    List<Note> getNotesBySubjectAndDate(String subject, String date) throws IncorrectDataException;
 
     /**
-     * Returns set of notes by the content.
+     * Returns list of notes by the email.
      */
-    Set<T> getNotesByContent(String content);
+    List<T> getNotesByEmail(String email) throws IncorrectDataException;
+
+    /**
+     * Returns list of notes by the content.
+     */
+    List<T> getNotesByContent(String content) throws IncorrectDataException;
 
     /**
      * Adds the note.
      */
-    void add(String subject, String email, String content);
+    void add(String subject, String email, String content) throws IncorrectDataException;
 
     /**
      * Saves notes in the data base.
