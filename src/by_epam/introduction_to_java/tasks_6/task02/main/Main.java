@@ -18,14 +18,22 @@ package by_epam.introduction_to_java.tasks_6.task02.main;
  */
 
 import by_epam.introduction_to_java.tasks_6.task02.entity.Note;
+import by_epam.introduction_to_java.tasks_6.task02.loader.DataLoader;
+import by_epam.introduction_to_java.tasks_6.task02.utils.NoteDao;
+import by_epam.introduction_to_java.tasks_6.task02.view.View;
 
-import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        Map<String, String> map = new HashMap<>();
+        DataLoader<Note> userDataLoader = new DataLoader<>(
+                "./src/by_epam/introduction_to_java/tasks_6/task02/resources/notes.txt"
+        );
 
-        Properties properties = new Properties();
-        Set<Note> set = new HashSet<>();
+        NoteDao noteDao = new NoteDao(userDataLoader);
+
+        View view = new View(noteDao);
+
+        view.action();
+
     }
 }
