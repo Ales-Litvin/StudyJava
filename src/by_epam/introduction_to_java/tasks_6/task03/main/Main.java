@@ -13,4 +13,7 @@ package by_epam.introduction_to_java.tasks_6.task03.main;
  * • Формат хранения данных на сервере – xml-файлы.
  */
 public class Main {
+    public static void main(String[] args) {
+
+    }
 }
