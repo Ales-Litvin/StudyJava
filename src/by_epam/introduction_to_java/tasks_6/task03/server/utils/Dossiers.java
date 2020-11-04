@@ -1,7 +1,6 @@
 package by_epam.introduction_to_java.tasks_6.task03.server.utils;
 
 import by_epam.introduction_to_java.tasks_6.task03.server.entity.Dossier;
-import by_epam.introduction_to_java.tasks_6.task03.server.entity.user.User;
 import by_epam.introduction_to_java.tasks_6.task03.server.loader.ObjectLoader;
 
 import javax.xml.bind.annotation.*;
@@ -19,7 +18,7 @@ import java.util.List;
  * @author Aliaksandr Rachko
  * @version 1.0
  */
-@XmlRootElement(name = "dossiers.xml")
+@XmlRootElement(name = "dossiers")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Dossiers {
 
@@ -48,7 +47,10 @@ public class Dossiers {
             "./src/by_epam/introduction_to_java/tasks_6/task03/server/resources/",
             Dossiers.class);
 
-    public Dossiers() { this.list = new ArrayList<>(); }
+    private Dossiers() {
+        this.list = new ArrayList<>();
+        list.add(new Dossier("Jon", "Billi", "Jon's life history", 1));
+    }
 
     /**
      * Returns the dossier by {@code id} if it exists.
@@ -63,7 +65,6 @@ public class Dossiers {
                 return dossier;
             }
         }
-
         return null;
     }
 
@@ -75,8 +76,9 @@ public class Dossiers {
      */
     public synchronized boolean add(Dossier dossier){
         if (!list.contains(dossier)){
+            list.add(dossier);
             loader.store(instance);
-            return list.add(dossier);
+            return true;
         }
         return false;
     }

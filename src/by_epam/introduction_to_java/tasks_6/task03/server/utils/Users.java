@@ -23,7 +23,7 @@ public class Users{
 
     @XmlElementWrapper(name = "userList")
     @XmlElement(name = "user")
-    private final List<User> list;
+    private final List<User> users;
 
     @XmlTransient
     private static volatile Users instance;
@@ -46,7 +46,7 @@ public class Users{
             "./src/by_epam/introduction_to_java/tasks_6/task03/server/resources/",
             Users.class);
 
-    private Users() { this.list = new ArrayList<>(); }
+    private Users() { this.users = new ArrayList<>(); }
 
     /**
      * Returns the user by {@code name} and {@code password} if it exists.
@@ -57,7 +57,7 @@ public class Users{
      *         doesn't exist.
      */
     public synchronized User get(String name, String password){
-        for (User user : list) {
+        for (User user : users) {
             if (user.getName().equals(name) &&
                     user.getPassword().equals(password)) {
                 return user;
@@ -74,9 +74,10 @@ public class Users{
       *        call
      */
     public synchronized boolean add(User user){
-        if (!list.contains(user)){
+        if (!users.contains(user)){
+            users.add(user);
             loader.store(instance);
-            return list.add(user);
+            return true;
         }
         return false;
     }
@@ -85,6 +86,6 @@ public class Users{
      * Returns all users.
      */
     public synchronized List<User> getAll() {
-        return list;
+        return users;
     }
 }
