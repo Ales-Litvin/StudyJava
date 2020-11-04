@@ -1,6 +1,6 @@
 package by_epam.introduction_to_java.tasks_6.task03.server.utils;
 
-import by_epam.introduction_to_java.tasks_6.task03.server.entity.user.User;
+import by_epam.introduction_to_java.tasks_6.task03.entity.user.User;
 import by_epam.introduction_to_java.tasks_6.task03.server.loader.ObjectLoader;
 
 import javax.xml.bind.annotation.*;

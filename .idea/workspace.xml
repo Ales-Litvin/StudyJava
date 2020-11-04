@@ -32,12 +32,16 @@
   <component name="ChangeListManager">
     <list default="true" id="a8da738f-7dfd-4c1f-bafe-d60eaebbb8ca" name="Changelist1" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/tasks_6/task03/server/entity/Dossier.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/tasks_6/task03/server/entity/Dossier.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/tasks_6/task03/server/resources/Init.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/tasks_6/task03/server/resources/Init.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/tasks_6/task03/server/entity/Dossier.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/tasks_6/task03/server/entity/user/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/tasks_6/task03/server/entity/user/UserRole.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/tasks_6/task03/server/resources/Init.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/tasks_6/task03/server/resources/dossiers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/tasks_6/task03/server/resources/dossiers.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/tasks_6/task03/server/utils/Dossiers.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/tasks_6/task03/server/utils/Dossiers.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/tasks_6/task03/server/utils/Users.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/tasks_6/task03/server/utils/Users.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/by_epam/introduction_to_java/tasks_6/task03/server/entity/Dossier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by_epam/introduction_to_java/tasks_6/task03/server/entity/Dossier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/by_epam/introduction_to_java/tasks_6/task03/server/resources/Init.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/by_epam/introduction_to_java/tasks_6/task03/server/resources/dossiers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/by_epam/introduction_to_java/tasks_6/task03/server/resources/dossiers.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/by_epam/introduction_to_java/tasks_6/task03/server/entity/Dossier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by_epam/introduction_to_java/tasks_6/task03/entity/Dossier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/by_epam/introduction_to_java/tasks_6/task03/server/entity/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by_epam/introduction_to_java/tasks_6/task03/entity/user/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/by_epam/introduction_to_java/tasks_6/task03/server/entity/user/UserRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by_epam/introduction_to_java/tasks_6/task03/entity/user/UserRole.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/by_epam/introduction_to_java/tasks_6/task03/server/utils/Dossiers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by_epam/introduction_to_java/tasks_6/task03/server/utils/Dossiers.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/by_epam/introduction_to_java/tasks_6/task03/server/utils/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by_epam/introduction_to_java/tasks_6/task03/server/utils/Users.java" afterDir="false" />
     </list>
@@ -103,7 +107,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/by_epam/introduction_to_java/tasks_6/task03/user" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/by_epam/introduction_to_java/tasks_6/task03/entity/message" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.31686747" />
@@ -111,13 +115,6 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="javarush.task.task37.task3710.decorators" />
-      <recent name="javarush.task.task37.task3709.connectors" />
-      <recent name="javarush.task.task35.task3512" />
-      <recent name="javarush.task.task35.task3503" />
-      <recent name="javarush.task.task30.task3004" />
-    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="javarush.task.task27.task2712.kitchen" />
     </key>
@@ -131,19 +128,6 @@
       <recent name="by_epam.introduction_to_java.tasks_6.task01.network" />
       <recent name="by_epam.introduction_to_java.tasks_6.task01.entity.user" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="G:\Programming\Work\StudyJava\src\by_epam\introduction_to_java\tasks_6\task03\user" />
-      <recent name="G:\Programming\Work\StudyJava\src\by_epam\introduction_to_java\tasks_6\task01" />
-      <recent name="G:\Programming\Work\StudyJava\src\by_epam\introduction_to_java\basics_of_OOP_5\task05" />
-      <recent name="G:\Programming\Work\StudyJava\src\by_epam\introduction_to_java" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="by_epam.introduction_to_java.tasks_6.task03" />
-      <recent name="by_epam.introduction_to_java.tasks_6.task02.resources" />
-      <recent name="by_epam.introduction_to_java.tasks_6.task02.view" />
-      <recent name="by_epam.introduction_to_java.tasks_6.task02.loader" />
-      <recent name="by_epam.introduction_to_java.tasks_6.task01.entity" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="G:\Programming\Work\StudyJava\src\by_epam\introduction_to_java\tasks_6\task03\server\resources\user" />
       <recent name="G:\Programming\Work\StudyJava\src\by_epam\introduction_to_java\tasks_6\task03\main" />
@@ -151,21 +135,29 @@
       <recent name="G:\Programming\Work\StudyJava\src\by_epam\introduction_to_java\tasks_6\task01" />
       <recent name="G:\Programming\Work\StudyJava\src\by_epam\strings_3\working_with_regular_expressions\task02" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\Programming\Work\StudyJava\src\by_epam\introduction_to_java\tasks_6\task03\entity\message" />
+      <recent name="G:\Programming\Work\StudyJava\src\by_epam\introduction_to_java\tasks_6\task03\user" />
+      <recent name="G:\Programming\Work\StudyJava\src\by_epam\introduction_to_java\tasks_6\task01" />
+      <recent name="G:\Programming\Work\StudyJava\src\by_epam\introduction_to_java\basics_of_OOP_5\task05" />
+      <recent name="G:\Programming\Work\StudyJava\src\by_epam\introduction_to_java" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="by_epam.introduction_to_java.tasks_6.task03.client" />
+      <recent name="by_epam.introduction_to_java.tasks_6.task03.server" />
+      <recent name="by_epam.introduction_to_java.tasks_6.task03" />
+      <recent name="by_epam.introduction_to_java.tasks_6.task02.resources" />
+      <recent name="by_epam.introduction_to_java.tasks_6.task02.view" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="javarush.task.task37.task3710.decorators" />
+      <recent name="javarush.task.task37.task3709.connectors" />
+      <recent name="javarush.task.task35.task3512" />
+      <recent name="javarush.task.task35.task3503" />
+      <recent name="javarush.task.task30.task3004" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.Init">
-    <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="javarush.task.task30.task3008.client.Client" />
-      <module name="StudyJava" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="javarush.task.task30.task3008.client.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.Server (1)">
     <configuration name="ClientGuiController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="javarush.task.task30.task3008.client.ClientGuiController" />
       <module name="StudyJava" />
@@ -205,6 +197,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Server (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="by_epam.introduction_to_java.tasks_6.task03.server.Server" />
+      <module name="StudyJava" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="by_epam.introduction_to_java.tasks_6.task03.server.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="javarush.task.task30.task3008.Server" />
       <module name="StudyJava" />
@@ -220,11 +225,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Server (1)" />
         <item itemvalue="Application.Init" />
         <item itemvalue="Application.Server" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.ClientGuiController" />
-        <item itemvalue="Application.Client" />
       </list>
     </recent_temporary>
   </component>
@@ -309,10 +314,10 @@
       <screen x="0" y="0" width="1117" height="864" />
     </state>
     <state x="327" y="234" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1117.864@0.0.1117.864" timestamp="1604482602070" />
-    <state x="627" y="215" key="#com.intellij.ide.util.MemberChooser" timestamp="1604484884216">
+    <state x="627" y="215" key="#com.intellij.ide.util.MemberChooser" timestamp="1604491281750">
       <screen x="0" y="0" width="1117" height="864" />
     </state>
-    <state x="627" y="215" key="#com.intellij.ide.util.MemberChooser/0.0.1117.864@0.0.1117.864" timestamp="1604484884216" />
+    <state x="627" y="215" key="#com.intellij.ide.util.MemberChooser/0.0.1117.864@0.0.1117.864" timestamp="1604491281750" />
     <state x="317" y="221" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1596130864316">
       <screen x="0" y="0" width="1117" height="864" />
     </state>
@@ -361,22 +366,22 @@
       <screen x="0" y="0" width="1117" height="864" />
     </state>
     <state x="367" y="179" key="FileChooserDialogImpl/0.0.1117.864@0.0.1117.864" timestamp="1604136071824" />
-    <state width="1074" height="413" key="GridCell.Tab.0.bottom" timestamp="1604484808578">
+    <state width="1074" height="413" key="GridCell.Tab.0.bottom" timestamp="1604498995589">
       <screen x="0" y="0" width="1117" height="864" />
     </state>
-    <state width="1074" height="413" key="GridCell.Tab.0.bottom/0.0.1117.864@0.0.1117.864" timestamp="1604484808578" />
-    <state width="1074" height="413" key="GridCell.Tab.0.center" timestamp="1604484808577">
+    <state width="1074" height="413" key="GridCell.Tab.0.bottom/0.0.1117.864@0.0.1117.864" timestamp="1604498995589" />
+    <state width="1074" height="413" key="GridCell.Tab.0.center" timestamp="1604498995589">
       <screen x="0" y="0" width="1117" height="864" />
     </state>
-    <state width="1074" height="413" key="GridCell.Tab.0.center/0.0.1117.864@0.0.1117.864" timestamp="1604484808577" />
-    <state width="1074" height="413" key="GridCell.Tab.0.left" timestamp="1604484808577">
+    <state width="1074" height="413" key="GridCell.Tab.0.center/0.0.1117.864@0.0.1117.864" timestamp="1604498995589" />
+    <state width="1074" height="413" key="GridCell.Tab.0.left" timestamp="1604498995589">
       <screen x="0" y="0" width="1117" height="864" />
     </state>
-    <state width="1074" height="413" key="GridCell.Tab.0.left/0.0.1117.864@0.0.1117.864" timestamp="1604484808577" />
-    <state width="1074" height="413" key="GridCell.Tab.0.right" timestamp="1604484808577">
+    <state width="1074" height="413" key="GridCell.Tab.0.left/0.0.1117.864@0.0.1117.864" timestamp="1604498995589" />
+    <state width="1074" height="413" key="GridCell.Tab.0.right" timestamp="1604498995589">
       <screen x="0" y="0" width="1117" height="864" />
     </state>
-    <state width="1074" height="413" key="GridCell.Tab.0.right/0.0.1117.864@0.0.1117.864" timestamp="1604484808577" />
+    <state width="1074" height="413" key="GridCell.Tab.0.right/0.0.1117.864@0.0.1117.864" timestamp="1604498995589" />
     <state width="1074" height="329" key="GridCell.Tab.1.bottom" timestamp="1604426147339">
       <screen x="0" y="0" width="1117" height="864" />
     </state>

@@ -11,5 +11,10 @@
             <surname>Alvan</surname>
             <content>Bil's life history</content>
         </dossier>
+        <dossier id="3">
+            <firstname>Kim</firstname>
+            <surname>Chan</surname>
+            <content>Kim's life history</content>
+        </dossier>
     </dossiersList>
 </dossiers>
