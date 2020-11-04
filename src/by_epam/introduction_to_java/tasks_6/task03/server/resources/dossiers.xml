@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<dossiers>
+    <dossiersList>
+        <dossier id="1">
+            <firstname>Jon</firstname>
+            <surname>Billi</surname>
+            <content>Jon's life history</content>
+        </dossier>
+        <dossier id="2">
+            <firstname>Bil</firstname>
+            <surname>Alvan</surname>
+            <content>Bil's life history</content>
+        </dossier>
+        <dossier id="3">
+            <firstname>Kim</firstname>
+            <surname>Chan</surname>
+            <content>Kim's life history</content>
+        </dossier>
+    </dossiersList>
+</dossiers>

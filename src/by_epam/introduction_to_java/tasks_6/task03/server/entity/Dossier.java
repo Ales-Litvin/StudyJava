@@ -1,6 +1,12 @@
 package by_epam.introduction_to_java.tasks_6.task03.server.entity;
 
+import by_epam.introduction_to_java.tasks_6.task03.server.entity.user.UserRole;
+
 import javax.xml.bind.annotation.*;
+import java.io.Externalizable;
+import java.io.IOException;
+import java.io.ObjectInput;
+import java.io.ObjectOutput;
 import java.util.Objects;
 
 /**
@@ -9,7 +15,7 @@ import java.util.Objects;
 @XmlRootElement(name = "dossier")
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(propOrder = {"firstname", "surname", "content"})
-public class Dossier {
+public class Dossier implements Externalizable {
 
     private String firstname;
     private String surname;
@@ -25,6 +31,8 @@ public class Dossier {
         this.content = content;
         this.id = id;
     }
+
+    public Dossier() {}
 
     public String getFirstname() { return firstname; }
 
@@ -55,6 +63,22 @@ public class Dossier {
     @Override
     public int hashCode() {
         return Objects.hash(getFirstname(), getSurname(), getId());
+    }
+
+    @Override
+    public void writeExternal(ObjectOutput out) throws IOException {
+        out.writeObject(this.getFirstname());
+        out.writeObject(this.getSurname());
+        out.writeObject(this.getContent());
+        out.writeObject(this.getId());
+    }
+
+    @Override
+    public void readExternal(ObjectInput in) throws IOException, ClassNotFoundException {
+        this.firstname = (String) in.readObject();
+        this.surname = (String) in.readObject();
+        this.content = (String) in.readObject();
+        this.id = (int) in.readObject();
     }
 
     @Override

@@ -33,13 +33,12 @@
     <list default="true" id="a8da738f-7dfd-4c1f-bafe-d60eaebbb8ca" name="Changelist1" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/tasks_6/task03/server/entity/Dossier.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/tasks_6/task03/server/entity/Dossier.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/tasks_6/task03/server/loader/ObjectLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/tasks_6/task03/server/loader/ObjectLoader.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/tasks_6/task03/server/resources/Init.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/tasks_6/task03/server/resources/Init.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/tasks_6/task03/server/utils/Users.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/tasks_6/task03/server/utils/Users.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/by_epam/introduction_to_java/tasks_6/task03/server/entity/Dossier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by_epam/introduction_to_java/tasks_6/task03/server/entity/Dossier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/by_epam/introduction_to_java/tasks_6/task03/server/loader/ObjectLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by_epam/introduction_to_java/tasks_6/task03/server/loader/ObjectLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/by_epam/introduction_to_java/tasks_6/task03/server/resources/Init.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by_epam/introduction_to_java/tasks_6/task03/server/resources/Init.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/by_epam/introduction_to_java/tasks_6/task03/server/resources/users.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/by_epam/introduction_to_java/tasks_6/task03/server/resources/users.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/by_epam/introduction_to_java/tasks_6/task03/server/resources/Init.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/by_epam/introduction_to_java/tasks_6/task03/server/resources/dossiers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/by_epam/introduction_to_java/tasks_6/task03/server/resources/dossiers.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/by_epam/introduction_to_java/tasks_6/task03/server/utils/Dossiers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by_epam/introduction_to_java/tasks_6/task03/server/utils/Dossiers.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/by_epam/introduction_to_java/tasks_6/task03/server/utils/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by_epam/introduction_to_java/tasks_6/task03/server/utils/Users.java" afterDir="false" />
     </list>
     <list id="2d99bcd9-4f88-400e-839b-12d5f1957ffe" name="Default Changelist" comment="" />
@@ -310,10 +309,10 @@
       <screen x="0" y="0" width="1117" height="864" />
     </state>
     <state x="327" y="234" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1117.864@0.0.1117.864" timestamp="1604482602070" />
-    <state x="627" y="215" key="#com.intellij.ide.util.MemberChooser" timestamp="1604481841327">
+    <state x="627" y="215" key="#com.intellij.ide.util.MemberChooser" timestamp="1604484884216">
       <screen x="0" y="0" width="1117" height="864" />
     </state>
-    <state x="627" y="215" key="#com.intellij.ide.util.MemberChooser/0.0.1117.864@0.0.1117.864" timestamp="1604481841327" />
+    <state x="627" y="215" key="#com.intellij.ide.util.MemberChooser/0.0.1117.864@0.0.1117.864" timestamp="1604484884216" />
     <state x="317" y="221" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1596130864316">
       <screen x="0" y="0" width="1117" height="864" />
     </state>
@@ -362,22 +361,22 @@
       <screen x="0" y="0" width="1117" height="864" />
     </state>
     <state x="367" y="179" key="FileChooserDialogImpl/0.0.1117.864@0.0.1117.864" timestamp="1604136071824" />
-    <state width="1074" height="413" key="GridCell.Tab.0.bottom" timestamp="1604483745929">
+    <state width="1074" height="413" key="GridCell.Tab.0.bottom" timestamp="1604484808578">
       <screen x="0" y="0" width="1117" height="864" />
     </state>
-    <state width="1074" height="413" key="GridCell.Tab.0.bottom/0.0.1117.864@0.0.1117.864" timestamp="1604483745929" />
-    <state width="1074" height="413" key="GridCell.Tab.0.center" timestamp="1604483745929">
+    <state width="1074" height="413" key="GridCell.Tab.0.bottom/0.0.1117.864@0.0.1117.864" timestamp="1604484808578" />
+    <state width="1074" height="413" key="GridCell.Tab.0.center" timestamp="1604484808577">
       <screen x="0" y="0" width="1117" height="864" />
     </state>
-    <state width="1074" height="413" key="GridCell.Tab.0.center/0.0.1117.864@0.0.1117.864" timestamp="1604483745929" />
-    <state width="1074" height="413" key="GridCell.Tab.0.left" timestamp="1604483745929">
+    <state width="1074" height="413" key="GridCell.Tab.0.center/0.0.1117.864@0.0.1117.864" timestamp="1604484808577" />
+    <state width="1074" height="413" key="GridCell.Tab.0.left" timestamp="1604484808577">
       <screen x="0" y="0" width="1117" height="864" />
     </state>
-    <state width="1074" height="413" key="GridCell.Tab.0.left/0.0.1117.864@0.0.1117.864" timestamp="1604483745929" />
-    <state width="1074" height="413" key="GridCell.Tab.0.right" timestamp="1604483745929">
+    <state width="1074" height="413" key="GridCell.Tab.0.left/0.0.1117.864@0.0.1117.864" timestamp="1604484808577" />
+    <state width="1074" height="413" key="GridCell.Tab.0.right" timestamp="1604484808577">
       <screen x="0" y="0" width="1117" height="864" />
     </state>
-    <state width="1074" height="413" key="GridCell.Tab.0.right/0.0.1117.864@0.0.1117.864" timestamp="1604483745929" />
+    <state width="1074" height="413" key="GridCell.Tab.0.right/0.0.1117.864@0.0.1117.864" timestamp="1604484808577" />
     <state width="1074" height="329" key="GridCell.Tab.1.bottom" timestamp="1604426147339">
       <screen x="0" y="0" width="1117" height="864" />
     </state>
