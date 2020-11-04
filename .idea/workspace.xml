@@ -32,18 +32,10 @@
   <component name="ChangeListManager">
     <list default="true" id="a8da738f-7dfd-4c1f-bafe-d60eaebbb8ca" name="Changelist1" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/tasks_6/task03/server/entity/Dossier.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/tasks_6/task03/server/entity/user/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/tasks_6/task03/server/entity/user/UserRole.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/tasks_6/task03/server/resources/Init.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/tasks_6/task03/server/resources/dossiers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/tasks_6/task03/server/resources/dossiers.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/tasks_6/task03/server/utils/Dossiers.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/tasks_6/task03/server/utils/Dossiers.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/tasks_6/task03/server/utils/Users.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/tasks_6/task03/server/utils/Users.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/by_epam/introduction_to_java/tasks_6/task03/server/entity/Dossier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by_epam/introduction_to_java/tasks_6/task03/entity/Dossier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/by_epam/introduction_to_java/tasks_6/task03/server/entity/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by_epam/introduction_to_java/tasks_6/task03/entity/user/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/by_epam/introduction_to_java/tasks_6/task03/server/entity/user/UserRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by_epam/introduction_to_java/tasks_6/task03/entity/user/UserRole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/by_epam/introduction_to_java/tasks_6/task03/server/utils/Dossiers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by_epam/introduction_to_java/tasks_6/task03/server/utils/Dossiers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/by_epam/introduction_to_java/tasks_6/task03/server/utils/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by_epam/introduction_to_java/tasks_6/task03/server/utils/Users.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/by_epam/introduction_to_java/tasks_6/task03/ConsoleHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by_epam/introduction_to_java/tasks_6/task03/ConsoleHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/by_epam/introduction_to_java/tasks_6/task03/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by_epam/introduction_to_java/tasks_6/task03/client/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/by_epam/introduction_to_java/tasks_6/task03/entity/message/MessageType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by_epam/introduction_to_java/tasks_6/task03/entity/message/MessageType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/by_epam/introduction_to_java/tasks_6/task03/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by_epam/introduction_to_java/tasks_6/task03/server/Server.java" afterDir="false" />
     </list>
     <list id="2d99bcd9-4f88-400e-839b-12d5f1957ffe" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -314,10 +306,10 @@
       <screen x="0" y="0" width="1117" height="864" />
     </state>
     <state x="327" y="234" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1117.864@0.0.1117.864" timestamp="1604482602070" />
-    <state x="627" y="215" key="#com.intellij.ide.util.MemberChooser" timestamp="1604491281750">
+    <state x="627" y="215" key="#com.intellij.ide.util.MemberChooser" timestamp="1604507081808">
       <screen x="0" y="0" width="1117" height="864" />
     </state>
-    <state x="627" y="215" key="#com.intellij.ide.util.MemberChooser/0.0.1117.864@0.0.1117.864" timestamp="1604491281750" />
+    <state x="627" y="215" key="#com.intellij.ide.util.MemberChooser/0.0.1117.864@0.0.1117.864" timestamp="1604507081808" />
     <state x="317" y="221" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1596130864316">
       <screen x="0" y="0" width="1117" height="864" />
     </state>
