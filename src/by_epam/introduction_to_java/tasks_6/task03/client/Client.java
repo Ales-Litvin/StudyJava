@@ -1,16 +1,33 @@
 package by_epam.introduction_to_java.tasks_6.task03.client;
 
-import javarush.task.task30.task3008.Connection;
-import javarush.task.task30.task3008.ConsoleHelper;
-import javarush.task.task30.task3008.Message;
-import javarush.task.task30.task3008.MessageType;
+import by_epam.introduction_to_java.tasks_6.task03.Connection;
+import by_epam.introduction_to_java.tasks_6.task03.ConsoleHelper;
+import by_epam.introduction_to_java.tasks_6.task03.entity.message.Message;
+import by_epam.introduction_to_java.tasks_6.task03.entity.message.MessageType;
+import by_epam.introduction_to_java.tasks_6.task03.entity.user.User;
+
 
 import java.io.IOException;
 import java.net.Socket;
 
 public class Client {
+    private User currentUser;
     protected Connection connection;
     volatile private boolean clientConnected;
+
+    public Client() {
+        this.currentUser = getUser();
+    }
+
+    protected User getUser(){
+        ConsoleHelper.writeMessage("Введите имя пользователя");
+        String userName = ConsoleHelper.readString();
+
+        ConsoleHelper.writeMessage("Введите парль");
+        String password = ConsoleHelper.readString();
+
+        return new User(userName, password, null);
+    }
 
     protected String getServerAddress(){
         ConsoleHelper.writeMessage("Введите адрес сервера");
@@ -22,6 +39,7 @@ public class Client {
         return ConsoleHelper.readInt();
     }
 
+    @Deprecated
     protected String getUserName(){
         ConsoleHelper.writeMessage("Введите имя пользователя");
         return ConsoleHelper.readString();
@@ -35,10 +53,22 @@ public class Client {
         return new SocketThread();
     }
 
+    // просто отправляет сообщение
+    @Deprecated
     protected void sendTextMessage(String text){
         try {
-            connection.send(new Message(MessageType.TEXT, text));
+            connection.send(new Message(currentUser, MessageType.TEXT, text));
         } catch(IOException e) {
+            ConsoleHelper.writeMessage("Произошла ошибка отправки сообщения!");
+            clientConnected = false;
+        }
+    }
+
+    // Отправляет сообщение с объектом на сервер
+    protected void sendObjectMessage(MessageType type, Object data){
+        try {
+            connection.send(new Message(currentUser, type, data));
+        } catch (IOException e) {
             ConsoleHelper.writeMessage("Произошла ошибка отправки сообщения!");
             clientConnected = false;
         }
@@ -56,11 +86,14 @@ public class Client {
             ConsoleHelper.writeMessage("Ошибка соединения.");
             return;
         }
+
         if (clientConnected) {
             ConsoleHelper.writeMessage("Соединение установлено. Для выхода наберите команду 'exit'.");
+        } else {
+            ConsoleHelper.writeMessage("Произошла ошибка во время работы клиента.");
         }
-        else { ConsoleHelper.writeMessage("Произошла ошибка во время работы клиента."); }
 
+        // пересмотрерть эту часть добавить обработку комманд
         while (clientConnected){
             String text = ConsoleHelper.readString();
             if (text.equals("exit")) break;
@@ -73,7 +106,9 @@ public class Client {
         client.run();
     }
 
+    // нить соединения
     public class SocketThread extends Thread {
+
         public void run(){
             try {
                 Socket  socket = new Socket(getServerAddress(), getServerPort());
@@ -90,10 +125,12 @@ public class Client {
             ConsoleHelper.writeMessage(message);
         }
 
+        @Deprecated
         protected void informAboutAddingNewUser(String  userName){
             ConsoleHelper.writeMessage(String.format("Участник %s присоединился к чату.", userName));
         }
 
+        @Deprecated
         protected void informAboutDeletingNewUser(String userName){
             ConsoleHelper.writeMessage(String.format("Участник %s покинул чат.", userName));
         }
@@ -108,10 +145,10 @@ public class Client {
         protected void clientHandshake() throws IOException, ClassNotFoundException {
             while (true){
                 Message message = connection.receive();
-                if (message.getType() == MessageType.NAME_REQUEST) {
-                    connection.send(new Message(MessageType.USER_NAME, getUserName()));
+                if (message.getType() == MessageType.USER_REQUEST) {
+                    connection.send(new Message(null, MessageType.USER_DATA, getUserName()));
                 }
-                else if (message.getType() == MessageType.NAME_ACCEPTED) {
+                else if (message.getType() == MessageType.USER_ACCEPTED) {
                     notifyConnectionStatusChanged(true);
                     return;
                 }
@@ -126,13 +163,13 @@ public class Client {
             while (true){
                 Message message = connection.receive();
                 if (message.getType() == MessageType.TEXT) {
-                    processIncomingMessage(message.getData());
+                   // processIncomingMessage(message.getData());
                 }
                 else if (message.getType() == MessageType.USER_ADDED) {
-                    informAboutAddingNewUser(message.getData());
+                   // informAboutAddingNewUser(message.getData());
                 }
                 else if (message.getType() == MessageType.USER_REMOVED) {
-                    informAboutDeletingNewUser(message.getData());
+                  //  informAboutDeletingNewUser(message.getData());
                 }
                 else {
                     throw new IOException("Unexpected MessageType");
