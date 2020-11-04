@@ -86,8 +86,7 @@ public class Dossiers {
 
     /**
      * Changes the dosser by {@code id}, if list contains it.
-     * @param id number the dossier for changing.
-     * @param dossier new the dossier.
+     * @param dossier new the dossier for changing.
      * @return <tt>true</tt> if the dossier with giving {@code id} changed.
      */
     public synchronized boolean change(Dossier dossier){

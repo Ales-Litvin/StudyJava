@@ -2,6 +2,7 @@ package by_epam.introduction_to_java.tasks_6.task03.client;
 
 import by_epam.introduction_to_java.tasks_6.task03.Connection;
 import by_epam.introduction_to_java.tasks_6.task03.ConsoleHelper;
+import by_epam.introduction_to_java.tasks_6.task03.entity.Dossier;
 import by_epam.introduction_to_java.tasks_6.task03.entity.message.Message;
 import by_epam.introduction_to_java.tasks_6.task03.entity.message.MessageType;
 import by_epam.introduction_to_java.tasks_6.task03.entity.user.User;
@@ -11,7 +12,12 @@ import java.io.IOException;
 import java.net.Socket;
 
 public class Client {
-    private User currentUser;
+    public static void main(String[] args) {
+        Client client = new Client ();
+        client.run();
+    }
+
+    private final User currentUser;
     protected Connection connection;
     volatile private boolean clientConnected;
 
@@ -21,10 +27,10 @@ public class Client {
 
     protected User getUser(){
         ConsoleHelper.writeMessage("Введите имя пользователя");
-        String userName = ConsoleHelper.readString();
+        String userName = ConsoleHelper.readString().trim();
 
         ConsoleHelper.writeMessage("Введите парль");
-        String password = ConsoleHelper.readString();
+        String password = ConsoleHelper.readString().trim();
 
         return new User(userName, password, null);
     }
@@ -39,29 +45,12 @@ public class Client {
         return ConsoleHelper.readInt();
     }
 
-    @Deprecated
-    protected String getUserName(){
-        ConsoleHelper.writeMessage("Введите имя пользователя");
-        return ConsoleHelper.readString();
-    }
-
     protected boolean shouldSendTextFromConsole(){
         return true;
     }
 
     protected SocketThread getSocketThread(){
         return new SocketThread();
-    }
-
-    // просто отправляет сообщение
-    @Deprecated
-    protected void sendTextMessage(String text){
-        try {
-            connection.send(new Message(currentUser, MessageType.TEXT, text));
-        } catch(IOException e) {
-            ConsoleHelper.writeMessage("Произошла ошибка отправки сообщения!");
-            clientConnected = false;
-        }
     }
 
     // Отправляет сообщение с объектом на сервер
@@ -94,19 +83,58 @@ public class Client {
         }
 
         // пересмотрерть эту часть добавить обработку комманд
-        while (clientConnected){
-            String text = ConsoleHelper.readString();
-            if (text.equals("exit")) break;
-            if (shouldSendTextFromConsole()) sendTextMessage(text);
+        try {
+            action();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
-    public static void main(String[] args) {
-        Client client = new Client ();
-        client.run();
+    public void action() throws IOException {
+        printHelp();
+        while (clientConnected){
+            String text = ConsoleHelper.readString().trim();
+            if (text.equals("exit")) break;
+
+            switch (text){
+                case "help": printHelp();
+                    break;
+                case "get":
+                    ConsoleHelper.writeMessage("Write the dossier's ID number");
+                    long id = (long) ConsoleHelper.readInt();
+                    connection.send(new Message(currentUser, MessageType.GET_DOSSIER, id));
+                    break;
+                case "change":
+                    // late
+                    break;
+                case "add":
+                    // late фывл
+                    break;
+                default:
+                    ConsoleHelper.writeMessage('\'' + text + "' it's not command!");
+                    break;
+            }
+
+        }
     }
 
-    // нить соединения
+    /**
+     * Prints all command.
+     */
+    public void printHelp(){
+        ConsoleHelper.writeMessage(
+                "================================\n" +
+                "help   | get all commands\n" +
+                "get    | get dossier by ID\n" +
+                "change | change dossier\n" +
+                "add    | add dossier\n" +
+                "exit   | exit\n" +
+                "================================\n");
+    }
+
+
+    // нить соединения для приема сообщение с сервера
+    // принимает и обрабатывает сообщение пришедшие с сервера
     public class SocketThread extends Thread {
 
         public void run(){
@@ -125,16 +153,7 @@ public class Client {
             ConsoleHelper.writeMessage(message);
         }
 
-        @Deprecated
-        protected void informAboutAddingNewUser(String  userName){
-            ConsoleHelper.writeMessage(String.format("Участник %s присоединился к чату.", userName));
-        }
-
-        @Deprecated
-        protected void informAboutDeletingNewUser(String userName){
-            ConsoleHelper.writeMessage(String.format("Участник %s покинул чат.", userName));
-        }
-
+        // изменяет статаус подключения
         protected void notifyConnectionStatusChanged(boolean clientConnected){
             Client.this.clientConnected = clientConnected;
             synchronized (Client.this){
@@ -142,37 +161,39 @@ public class Client {
             }
         }
 
+        // ответ на запрос сервера в регистрации
         protected void clientHandshake() throws IOException, ClassNotFoundException {
             while (true){
                 Message message = connection.receive();
+
                 if (message.getType() == MessageType.USER_REQUEST) {
-                    connection.send(new Message(null, MessageType.USER_DATA, getUserName()));
-                }
-                else if (message.getType() == MessageType.USER_ACCEPTED) {
+                    connection.send(new Message(currentUser, MessageType.USER_DATA, null));
+                } else if (message.getType() == MessageType.USER_ACCEPTED) {
                     notifyConnectionStatusChanged(true);
                     return;
+                } else {
+                    throw new IOException("Unexpected MessageType: " + message.getType());
                 }
-                else {
-                    throw new IOException("Unexpected MessageType");
-                }
-
             }
         }
 
+        // цикл отображет информацию пришедшую с сервера
         protected void clientMainLoop() throws IOException, ClassNotFoundException {
             while (true){
                 Message message = connection.receive();
-                if (message.getType() == MessageType.TEXT) {
-                   // processIncomingMessage(message.getData());
-                }
-                else if (message.getType() == MessageType.USER_ADDED) {
-                   // informAboutAddingNewUser(message.getData());
-                }
-                else if (message.getType() == MessageType.USER_REMOVED) {
-                  //  informAboutDeletingNewUser(message.getData());
-                }
-                else {
-                    throw new IOException("Unexpected MessageType");
+
+                switch (message.getType()){
+                    case DOSSIER:
+                        Dossier dossier = (Dossier) message.getData();
+
+                        ConsoleHelper.writeMessage(dossier.toString());
+                    break;
+                    case TEXT:
+                        String text = (String) message.getData();
+                        ConsoleHelper.writeMessage(text);
+                        break;
+                    default:
+                        throw new IOException("Unexpected MessageType: " + message.getType());
                 }
             }
         }

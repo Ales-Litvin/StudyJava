@@ -23,7 +23,6 @@ public class Message implements Serializable {
 
     //getters
 
-
     public User getUser() { return user; }
 
     public MessageType getType() {
@@ -32,5 +31,14 @@ public class Message implements Serializable {
 
     public Object getData() {
         return data;
+    }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Message{");
+        sb.append(user).append(": ");
+        sb.append(type).append(", ");
+        sb.append(data).append('}');
+        return sb.toString();
     }
 }

@@ -1,5 +1,18 @@
 package by_epam.introduction_to_java.tasks_6.task03.server;
 
+/*
+ * Попробуйте решить данную задачу хотя бы на 50%.
+ * Задание 3: создайте клиент-серверное приложение “Архив”.
+ * Общие требования к заданию:
+ * • В архиве хранятся Дела (например, студентов). Архив находится на сервере.
+ * • Клиент, в зависимости от прав, может запросить дело на просмотр, внести в
+ * него изменения, или создать новое дело.
+ *
+ * Требования к коду лабораторной работы:
+ * • Для реализации сетевого соединения используйте сокеты.
+ * • Формат хранения данных на сервере – xml-файлы.
+ */
+
 import by_epam.introduction_to_java.tasks_6.task03.Connection;
 import by_epam.introduction_to_java.tasks_6.task03.ConsoleHelper;
 
@@ -17,8 +30,6 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-
-
 
 /**
  * It's class server.
@@ -51,7 +62,9 @@ public class Server {
      */
     private static final Dossiers DOSSIERS_DATABASE = Dossiers.getInstance();
 
-    // карта для хранения пользователей
+    /**
+     * Map for user and connection.
+     */
     private static final Map<User, Connection> USER_CONNECTION_MAP = new ConcurrentHashMap<>();
 
     /**
@@ -67,15 +80,16 @@ public class Server {
         }
     }
 
-    // Класс для обработки запросов пользователей в отдельной нити.
+    /**
+     * The class for handling user request in the Thread.
+     * (Обрабатывает запросы пользователя в отдельном The thread)
+     */
     private static class Handler extends Thread{
         private final Socket socket;
 
         public Handler(Socket socket) {
             this.socket = socket;
         }
-
-        // регистрирует нового пользователя, соединяется с ним и заносит сооединение в map.
 
         /**
          * Adds new the User in the {@code USER_CONNECTION_MAP}
@@ -109,68 +123,77 @@ public class Server {
             }
         }
 
-        // основной цикл отвечает на соответствующий запрос пользователя
-        //
+        /**
+         * Main loop for handling user's request.
+         * @param connection connection for send message.
+         * @param currentUser original user current connection.
+         * @throws IOException
+         * @throws ClassNotFoundException
+         */
         private void serverMainLoop(Connection connection, User currentUser) throws IOException,  ClassNotFoundException{
             while (true) {
                 Message message = connection.receive();
 
+                // just writes incoming message to console (you need see, how work this method)
+                ConsoleHelper.writeMessage(message.toString());
+
+                Dossier dossier = null;
+
                 switch (message.getType()){
                     case GET_DOSSIER:
-                        int id = (int) message.getData();
+                        long id = (long) message.getData();
+                        dossier = DOSSIERS_DATABASE.get(id);
 
-                        if (SecurityUtils.hasPermission(currentUser, UserRole.USER)){
-                            Dossier dossier = DOSSIERS_DATABASE.get(id);
+                        if (SecurityUtils.hasPermission(currentUser, UserRole.USER) && dossier != null){
                             sendMessage(new Message(null, MessageType.DOSSIER, dossier), currentUser);
+                        } else if (SecurityUtils.hasPermission(currentUser, UserRole.USER) && dossier == null){
+                            String text = "Dossier with the ID number '" + id + "' doesn't exist.";
+
+                            sendMessage(new Message(null, MessageType.TEXT, text), currentUser);
                         } else {
-                            sendMessage(
-                                    new Message(null,
-                                            MessageType.TEXT,
-                                            currentUser.getName() + ": " + "Недостаточно прав доступа"),
-                                    currentUser);
+                            String text = "Недостаточно прав доступа для пользователя '" + currentUser.getName() + "'.";
+
+                            sendMessage(new Message(null, MessageType.TEXT, text), currentUser);
                         }
-                    break;
+                        break;
                     case CHANGE_DOSSIER:
-                        Dossier dossier = (Dossier) message.getData();
+                        dossier = (Dossier) message.getData();
 
-                        if (SecurityUtils.hasPermission(currentUser, UserRole.ADMIN)){
-                            DOSSIERS_DATABASE.change(dossier);
-
+                        if (SecurityUtils.hasPermission(currentUser, UserRole.ADMIN) &&
+                                DOSSIERS_DATABASE.change(dossier)){
                             String text = "Dossier: id{" + dossier.getId() + "} changed!";
 
                             sendMessage(new Message(null, MessageType.TEXT, text), currentUser);
                         } else {
-                            sendMessage(
-                                    new Message(null, MessageType.TEXT,
-                                            currentUser.getName() + ": " + "Недостаточно прав доступа"),
-                                    currentUser);
+                            String text = "Недостаточно прав доступа для пользователя '" + currentUser.getName() + "'.";
+
+                            sendMessage(new Message(null, MessageType.TEXT, text), currentUser);
                         }
                         break;
                     case ADD_DOSSIER:
-                        Dossier dossier1 = (Dossier) message.getData();
+                        dossier = (Dossier) message.getData();
 
-                        if (SecurityUtils.hasPermission(currentUser, UserRole.ADMIN)){
-                            DOSSIERS_DATABASE.add((Dossier) message.getData());
+                        if (SecurityUtils.hasPermission(currentUser, UserRole.ADMIN) &&
+                                DOSSIERS_DATABASE.add((Dossier) message.getData())) {
+                            String text = "Dossier: id{" + dossier.getId() + "} added!";
 
-                            String text = "Dossier: id{" + dossier1.getId() + "} added!";
                             sendMessage(new Message(null, MessageType.TEXT, text), currentUser);
                         } else {
-                            sendMessage(
-                                    new Message(null,
-                                            MessageType.TEXT,
-                                            currentUser.getName() + ": " + "Недостаточно прав доступа!"),
-                                    currentUser);
+                            String text = "Недостаточно прав доступа для пользователя '" + currentUser.getName() + "'.";
+
+                            sendMessage(new Message(null, MessageType.TEXT, text), currentUser);
                         }
                         break;
                     default:
-                        String stringMessage =
-                                "'" + message.getData() + "' - это неизвестная команада.";
-                        sendMessage(new Message(null, MessageType.TEXT, stringMessage), currentUser);
+                        String text = "'" + message.getType() + "' - неизвестный тип запроса.";
+
+                        sendMessage(new Message(null, MessageType.TEXT, text), currentUser);
                         ConsoleHelper.writeMessage("Не удалось разобрать запрос пользователя.");
                         break;
                 }
             }
         }
+
 
         public void run(){
             ConsoleHelper.writeMessage(socket.getRemoteSocketAddress().toString());
