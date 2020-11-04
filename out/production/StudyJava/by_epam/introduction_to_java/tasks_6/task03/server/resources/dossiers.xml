@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<dossiers>
+    <dossiersList>
+        <dossier id="2">
+            <firstname>Jon</firstname>
+            <surname>Bili</surname>
+            <content>Jon's life history</content>
+        </dossier>
+    </dossiersList>
+</dossiers>
