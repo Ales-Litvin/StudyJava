@@ -4,6 +4,14 @@ import javax.xml.bind.annotation.XmlEnum;
 
 @XmlEnum
 public enum UserRole {
-    USER,
-    ADMIN;
+    USER(1),
+    ADMIN(2);
+
+    private int priority;
+
+    UserRole(int priority) {
+        this.priority = priority;
+    }
+
+    public int getPriority() { return priority; }
 }

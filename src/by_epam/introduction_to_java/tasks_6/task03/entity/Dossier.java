@@ -76,7 +76,7 @@ public class Dossier implements Externalizable {
         this.firstname = (String) in.readObject();
         this.surname = (String) in.readObject();
         this.content = (String) in.readObject();
-        this.id = (int) in.readObject();
+        this.id = (long) in.readObject();
     }
 
     @Override
@@ -84,6 +84,7 @@ public class Dossier implements Externalizable {
         final StringBuilder sb = new StringBuilder("Dossier{");
         sb.append("firstname='").append(firstname).append('\'');
         sb.append(", surname='").append(surname).append('\'');
+        sb.append(", content='").append(content).append('\'');
         sb.append(", id=").append(id);
         sb.append('}');
         return sb.toString();

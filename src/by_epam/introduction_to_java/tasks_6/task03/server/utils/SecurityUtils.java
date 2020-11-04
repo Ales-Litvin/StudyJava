@@ -13,6 +13,6 @@ public class SecurityUtils {
      * Checks user's permission.
      */
     public static boolean hasPermission(User user, UserRole requiredRole){
-        return user.getRole() == requiredRole;
+        return user.getRole().getPriority() >= requiredRole.getPriority();
     }
 }
