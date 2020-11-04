@@ -1,10 +1,11 @@
 package by_epam.introduction_to_java.tasks_6.task03.server.utils;
 
-import by_epam.introduction_to_java.tasks_6.task03.server.entity.Dossier;
+import by_epam.introduction_to_java.tasks_6.task03.entity.Dossier;
 import by_epam.introduction_to_java.tasks_6.task03.server.loader.ObjectLoader;
 
 import javax.xml.bind.annotation.*;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -80,6 +81,25 @@ public class Dossiers {
             loader.store(instance);
             return true;
         }
+        return false;
+    }
+
+    /**
+     * Changes the dosser by {@code id}, if list contains it.
+     * @param id number the dossier for changing.
+     * @param dossier new the dossier.
+     * @return <tt>true</tt> if the dossier with giving {@code id} changed.
+     */
+    public synchronized boolean change(Dossier dossier){
+        for (Iterator<Dossier> iterator = list.iterator(); iterator.hasNext();){
+            Dossier dossier1 = iterator.next();
+            if (dossier1.getId() == dossier.getId()) {
+                iterator.remove();
+                list.add(dossier);
+                return true;
+            }
+        }
+
         return false;
     }
 
