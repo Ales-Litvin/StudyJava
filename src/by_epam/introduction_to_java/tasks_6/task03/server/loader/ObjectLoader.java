@@ -10,10 +10,18 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
+/**
+ * Class for loading objects from XML.
+ */
 public class ObjectLoader<T> {
     private String pathToFile;
     private final Class<T>[] types;
 
+    /**
+     *
+     * @param name
+     * @param types
+     */
     public ObjectLoader(String name, Class<T>... types) {
         this.pathToFile = name + '/' + types[0].getSimpleName().toLowerCase() + ".xml";
         this.types = types;

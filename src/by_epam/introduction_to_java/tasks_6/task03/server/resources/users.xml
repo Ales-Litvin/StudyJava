@@ -7,19 +7,23 @@
         </user>
         <user name="user1">
             <password>567</password>
-            <role>ADMIN</role>
+            <role>USER</role>
         </user>
         <user name="user2">
             <password>894123</password>
-            <role>ADMIN</role>
+            <role>USER</role>
         </user>
         <user name="user3">
             <password>3513241</password>
-            <role>ADMIN</role>
+            <role>USER</role>
         </user>
         <user name="user4">
             <password>15341</password>
-            <role>ADMIN</role>
+            <role>USER</role>
+        </user>
+        <user name="user5">
+            <password>qwerty1234</password>
+            <role>USER</role>
         </user>
     </userList>
 </users>
