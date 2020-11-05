@@ -32,15 +32,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a8da738f-7dfd-4c1f-bafe-d60eaebbb8ca" name="Changelist1" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/tasks_6/task03/entity/Dossier.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/tasks_6/task03/entity/Dossier.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/tasks_6/task03/server/utils/Dossiers.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/tasks_6/task03/server/utils/Dossiers.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/by_epam/introduction_to_java/tasks_6/task03/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by_epam/introduction_to_java/tasks_6/task03/client/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/by_epam/introduction_to_java/tasks_6/task03/entity/Dossier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by_epam/introduction_to_java/tasks_6/task03/entity/Dossier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/by_epam/introduction_to_java/tasks_6/task03/entity/message/MessageType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by_epam/introduction_to_java/tasks_6/task03/entity/message/MessageType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/by_epam/introduction_to_java/tasks_6/task03/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by_epam/introduction_to_java/tasks_6/task03/server/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/by_epam/introduction_to_java/tasks_6/task03/server/resources/dossiers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/by_epam/introduction_to_java/tasks_6/task03/server/resources/dossiers.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/by_epam/introduction_to_java/tasks_6/task03/server/resources/users.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/by_epam/introduction_to_java/tasks_6/task03/server/resources/users.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/by_epam/introduction_to_java/tasks_6/task03/server/utils/Dossiers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by_epam/introduction_to_java/tasks_6/task03/server/utils/Dossiers.java" afterDir="false" />
     </list>
     <list id="2d99bcd9-4f88-400e-839b-12d5f1957ffe" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -59,8 +50,8 @@
       <list>
         <option value="JUnit5 Test Class" />
         <option value="FxmlFile" />
-        <option value="Enum" />
         <option value="Interface" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -112,6 +103,13 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="javarush.task.task37.task3710.decorators" />
+      <recent name="javarush.task.task37.task3709.connectors" />
+      <recent name="javarush.task.task35.task3512" />
+      <recent name="javarush.task.task35.task3503" />
+      <recent name="javarush.task.task30.task3004" />
+    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="javarush.task.task27.task2712.kitchen" />
     </key>
@@ -119,18 +117,11 @@
       <recent name="" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="by_epam.introduction_to_java.tasks_6.task04.entity" />
       <recent name="by_epam.introduction_to_java.tasks_6.task03.server.entity" />
       <recent name="by_epam.introduction_to_java.tasks_6.task03" />
       <recent name="by_epam.introduction_to_java.tasks_6.task03.server" />
       <recent name="by_epam.introduction_to_java.tasks_6.task01.network" />
-      <recent name="by_epam.introduction_to_java.tasks_6.task01.entity.user" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="G:\Programming\Work\StudyJava\src\by_epam\introduction_to_java\tasks_6\task03" />
-      <recent name="G:\Programming\Work\StudyJava\src\by_epam\introduction_to_java\tasks_6\task02" />
-      <recent name="G:\Programming\Work\StudyJava\src\by_epam\introduction_to_java\tasks_6\task03\server\resources\user" />
-      <recent name="G:\Programming\Work\StudyJava\src\by_epam\introduction_to_java\tasks_6\task03\main" />
-      <recent name="G:\Programming\Work\StudyJava\src\by_epam\introduction_to_java\tasks_6\task02\main" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="G:\Programming\Work\StudyJava\src\by_epam\introduction_to_java\tasks_6\task03\entity\message" />
@@ -146,12 +137,12 @@
       <recent name="by_epam.introduction_to_java.tasks_6.task02.resources" />
       <recent name="by_epam.introduction_to_java.tasks_6.task02.view" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="javarush.task.task37.task3710.decorators" />
-      <recent name="javarush.task.task37.task3709.connectors" />
-      <recent name="javarush.task.task35.task3512" />
-      <recent name="javarush.task.task35.task3503" />
-      <recent name="javarush.task.task30.task3004" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="G:\Programming\Work\StudyJava\src\by_epam\introduction_to_java\tasks_6\task03" />
+      <recent name="G:\Programming\Work\StudyJava\src\by_epam\introduction_to_java\tasks_6\task02" />
+      <recent name="G:\Programming\Work\StudyJava\src\by_epam\introduction_to_java\tasks_6\task03\server\resources\user" />
+      <recent name="G:\Programming\Work\StudyJava\src\by_epam\introduction_to_java\tasks_6\task03\main" />
+      <recent name="G:\Programming\Work\StudyJava\src\by_epam\introduction_to_java\tasks_6\task02\main" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Client">
@@ -318,10 +309,10 @@
       <screen x="0" y="0" width="1117" height="864" />
     </state>
     <state x="327" y="234" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1117.864@0.0.1117.864" timestamp="1604482602070" />
-    <state x="627" y="215" key="#com.intellij.ide.util.MemberChooser" timestamp="1604511380391">
+    <state x="627" y="215" key="#com.intellij.ide.util.MemberChooser" timestamp="1604596798322">
       <screen x="0" y="0" width="1117" height="864" />
     </state>
-    <state x="627" y="215" key="#com.intellij.ide.util.MemberChooser/0.0.1117.864@0.0.1117.864" timestamp="1604511380391" />
+    <state x="627" y="215" key="#com.intellij.ide.util.MemberChooser/0.0.1117.864@0.0.1117.864" timestamp="1604596798322" />
     <state x="317" y="221" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1596130864316">
       <screen x="0" y="0" width="1117" height="864" />
     </state>
@@ -330,18 +321,18 @@
       <screen x="0" y="0" width="1117" height="864" />
     </state>
     <state x="238" y="167" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1117.864@0.0.1117.864" timestamp="1602705069681" />
-    <state x="287" y="322" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1604426132262">
+    <state x="287" y="322" width="824" height="220" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1604590402349">
       <screen x="0" y="0" width="1117" height="864" />
     </state>
-    <state x="287" y="322" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1117.864@0.0.1117.864" timestamp="1604426132262" />
+    <state x="287" y="322" width="824" height="220" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1117.864@0.0.1117.864" timestamp="1604590402349" />
     <state x="273" y="338" width="844" height="187" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1604428841068">
       <screen x="0" y="0" width="1117" height="864" />
     </state>
     <state x="273" y="338" width="844" height="187" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1117.864@0.0.1117.864" timestamp="1604428841068" />
-    <state x="111" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1604418194994">
+    <state x="111" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1604595107055">
       <screen x="0" y="0" width="1117" height="864" />
     </state>
-    <state x="111" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1117.864@0.0.1117.864" timestamp="1604418194994" />
+    <state x="111" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1117.864@0.0.1117.864" timestamp="1604595107055" />
     <state x="288" y="178" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1599151561450">
       <screen x="0" y="0" width="1117" height="864" />
     </state>
@@ -370,22 +361,22 @@
       <screen x="0" y="0" width="1117" height="864" />
     </state>
     <state x="367" y="179" key="FileChooserDialogImpl/0.0.1117.864@0.0.1117.864" timestamp="1604136071824" />
-    <state width="1074" height="288" key="GridCell.Tab.0.bottom" timestamp="1604585236008">
+    <state width="1074" height="288" key="GridCell.Tab.0.bottom" timestamp="1604597593173">
       <screen x="0" y="0" width="1117" height="864" />
     </state>
-    <state width="1074" height="288" key="GridCell.Tab.0.bottom/0.0.1117.864@0.0.1117.864" timestamp="1604585236008" />
-    <state width="1074" height="288" key="GridCell.Tab.0.center" timestamp="1604585236008">
+    <state width="1074" height="288" key="GridCell.Tab.0.bottom/0.0.1117.864@0.0.1117.864" timestamp="1604597593173" />
+    <state width="1074" height="288" key="GridCell.Tab.0.center" timestamp="1604597593173">
       <screen x="0" y="0" width="1117" height="864" />
     </state>
-    <state width="1074" height="288" key="GridCell.Tab.0.center/0.0.1117.864@0.0.1117.864" timestamp="1604585236008" />
-    <state width="1074" height="288" key="GridCell.Tab.0.left" timestamp="1604585236008">
+    <state width="1074" height="288" key="GridCell.Tab.0.center/0.0.1117.864@0.0.1117.864" timestamp="1604597593173" />
+    <state width="1074" height="288" key="GridCell.Tab.0.left" timestamp="1604597593172">
       <screen x="0" y="0" width="1117" height="864" />
     </state>
-    <state width="1074" height="288" key="GridCell.Tab.0.left/0.0.1117.864@0.0.1117.864" timestamp="1604585236008" />
-    <state width="1074" height="288" key="GridCell.Tab.0.right" timestamp="1604585236008">
+    <state width="1074" height="288" key="GridCell.Tab.0.left/0.0.1117.864@0.0.1117.864" timestamp="1604597593172" />
+    <state width="1074" height="288" key="GridCell.Tab.0.right" timestamp="1604597593173">
       <screen x="0" y="0" width="1117" height="864" />
     </state>
-    <state width="1074" height="288" key="GridCell.Tab.0.right/0.0.1117.864@0.0.1117.864" timestamp="1604585236008" />
+    <state width="1074" height="288" key="GridCell.Tab.0.right/0.0.1117.864@0.0.1117.864" timestamp="1604597593173" />
     <state width="1074" height="329" key="GridCell.Tab.1.bottom" timestamp="1604426147339">
       <screen x="0" y="0" width="1117" height="864" />
     </state>
