@@ -21,22 +21,20 @@ public class Client {
     protected Connection connection;
     volatile private boolean clientConnected;
 
-    public Client() {
-        this.currentUser = getUser();
-    }
+    public Client() { this.currentUser = getUser(); }
 
     protected User getUser(){
         ConsoleHelper.writeMessage("Введите имя пользователя");
         String userName = ConsoleHelper.readString().trim();
 
-        ConsoleHelper.writeMessage("Введите парль");
+        ConsoleHelper.writeMessage("Введите пароль");
         String password = ConsoleHelper.readString().trim();
 
         return new User(userName, password, null);
     }
 
     protected String getServerAddress(){
-        ConsoleHelper.writeMessage("Введите адрес сервера");
+        ConsoleHelper.writeMessage("Введите IP-адрес сервера");
         return ConsoleHelper.readString();
     }
 
@@ -53,7 +51,6 @@ public class Client {
         return new SocketThread();
     }
 
-    // Отправляет сообщение с объектом на сервер
     protected void sendObjectMessage(MessageType type, Object data){
         try {
             connection.send(new Message(currentUser, type, data));
@@ -82,7 +79,6 @@ public class Client {
             ConsoleHelper.writeMessage("Произошла ошибка во время работы клиента.");
         }
 
-        // пересмотрерть эту часть добавить обработку комманд
         try {
             action();
         } catch (IOException e) {
@@ -90,6 +86,10 @@ public class Client {
         }
     }
 
+    /**
+     * Main client's loop. Sends request to server.
+     * @throws IOException
+     */
     public void action() throws IOException {
         printHelp();
         while (clientConnected){
@@ -105,16 +105,16 @@ public class Client {
                     connection.send(new Message(currentUser, MessageType.GET_DOSSIER, id));
                     break;
                 case "change":
-                    // late
+                    ConsoleHelper.writeMessage("Write new data for dossier. ID doesn't change.");
+                    connection.send(new Message(currentUser, MessageType.CHANGE_DOSSIER, getDosser()));
                     break;
                 case "add":
-                    // late фывл
+                    connection.send(new Message(currentUser, MessageType.ADD_DOSSIER, getDosser()));
                     break;
                 default:
                     ConsoleHelper.writeMessage('\'' + text + "' it's not command!");
                     break;
             }
-
         }
     }
 
@@ -132,9 +132,29 @@ public class Client {
                 "================================\n");
     }
 
+    /**
+     * Returns new Dossier.
+     */
+    public Dossier getDosser(){
+        ConsoleHelper.writeMessage("Write the dossier's ID number");
+        long id = (long) ConsoleHelper.readInt();
 
-    // нить соединения для приема сообщение с сервера
-    // принимает и обрабатывает сообщение пришедшие с сервера
+        ConsoleHelper.writeMessage("Write firstname");
+        String firstName = ConsoleHelper.readString();
+
+        ConsoleHelper.writeMessage("Write surname");
+        String surName = ConsoleHelper.readString();
+
+        ConsoleHelper.writeMessage("Write the dossier's content");
+        String content = ConsoleHelper.readString();
+
+        return new Dossier(firstName, surName, content, id);
+    }
+
+
+    /**
+     * The Thread for to process incoming messages from the server.
+     */
     public class SocketThread extends Thread {
 
         public void run(){
@@ -153,7 +173,9 @@ public class Client {
             ConsoleHelper.writeMessage(message);
         }
 
-        // изменяет статаус подключения
+        /**
+         * Notifies connection status changed.
+         */
         protected void notifyConnectionStatusChanged(boolean clientConnected){
             Client.this.clientConnected = clientConnected;
             synchronized (Client.this){
@@ -161,7 +183,11 @@ public class Client {
             }
         }
 
-        // ответ на запрос сервера в регистрации
+        /**
+         * Sends userName and password to server for authorization on server's request.
+         * @throws IOException
+         * @throws ClassNotFoundException
+         */
         protected void clientHandshake() throws IOException, ClassNotFoundException {
             while (true){
                 Message message = connection.receive();
@@ -170,6 +196,7 @@ public class Client {
                     connection.send(new Message(currentUser, MessageType.USER_DATA, null));
                 } else if (message.getType() == MessageType.USER_ACCEPTED) {
                     notifyConnectionStatusChanged(true);
+                    ConsoleHelper.writeMessage((String) message.getData());
                     return;
                 } else {
                     throw new IOException("Unexpected MessageType: " + message.getType());
@@ -177,7 +204,9 @@ public class Client {
             }
         }
 
-        // цикл отображет информацию пришедшую с сервера
+        /**
+         * The main loop for to process incoming messages from the server.
+         */
         protected void clientMainLoop() throws IOException, ClassNotFoundException {
             while (true){
                 Message message = connection.receive();
@@ -189,8 +218,8 @@ public class Client {
                         ConsoleHelper.writeMessage(dossier.toString());
                     break;
                     case TEXT:
-                        String text = (String) message.getData();
-                        ConsoleHelper.writeMessage(text);
+                    case USER_ACCEPTED:
+                        ConsoleHelper.writeMessage((String) message.getData());
                         break;
                     default:
                         throw new IOException("Unexpected MessageType: " + message.getType());

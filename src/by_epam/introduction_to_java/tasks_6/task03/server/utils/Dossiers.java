@@ -95,6 +95,7 @@ public class Dossiers {
             if (dossier1.getId() == dossier.getId()) {
                 iterator.remove();
                 list.add(dossier);
+                loader.store(instance);
                 return true;
             }
         }
