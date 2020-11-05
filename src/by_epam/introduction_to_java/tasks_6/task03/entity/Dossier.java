@@ -53,14 +53,12 @@ public class Dossier implements Externalizable {
         if (this == o) return true;
         if (!(o instanceof Dossier)) return false;
         Dossier dossier = (Dossier) o;
-        return getId() == dossier.getId() &&
-                Objects.equals(getFirstname(), dossier.getFirstname()) &&
-                Objects.equals(getSurname(), dossier.getSurname());
+        return getId() == dossier.getId();
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getFirstname(), getSurname(), getId());
+        return Objects.hash(getId());
     }
 
     @Override

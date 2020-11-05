@@ -113,7 +113,7 @@ public class Server {
 
                     if (dataBaseUser != null && !USER_CONNECTION_MAP.containsKey(dataBaseUser)) {
                         USER_CONNECTION_MAP.put(dataBaseUser, connection);
-
+                        ConsoleHelper.writeMessage("Добавлен пользователь: " + dataBaseUser.toString());
                         connection.send(new Message(null,
                                 MessageType.USER_ACCEPTED,
                                 "Logged in"));
@@ -161,11 +161,12 @@ public class Server {
 
                         if (SecurityUtils.hasPermission(currentUser, UserRole.ADMIN) &&
                                 DOSSIERS_DATABASE.change(dossier)){
-                            String text = "Dossier: id{" + dossier.getId() + "} changed!";
+                            String text = dossier.toString() + " - changed!";
 
                             sendMessage(new Message(null, MessageType.TEXT, text), currentUser);
                         } else {
-                            String text = "Недостаточно прав доступа для пользователя '" + currentUser.getName() + "'.";
+                            String text = "Недостаточно прав доступа для пользователя " +
+                                    "'" + currentUser.getName() + "' или дело с заданным ID не существует.";
 
                             sendMessage(new Message(null, MessageType.TEXT, text), currentUser);
                         }
@@ -175,11 +176,12 @@ public class Server {
 
                         if (SecurityUtils.hasPermission(currentUser, UserRole.ADMIN) &&
                                 DOSSIERS_DATABASE.add((Dossier) message.getData())) {
-                            String text = "Dossier: id{" + dossier.getId() + "} added!";
+                            String text = dossier.toString() + " - added!";
 
                             sendMessage(new Message(null, MessageType.TEXT, text), currentUser);
                         } else {
-                            String text = "Недостаточно прав доступа для пользователя '" + currentUser.getName() + "'.";
+                            String text = "Недостаточно прав доступа для пользователя '"
+                                    + currentUser.getName() + "' или дело с заданным ID уже существует..";
 
                             sendMessage(new Message(null, MessageType.TEXT, text), currentUser);
                         }
@@ -188,7 +190,7 @@ public class Server {
                         String text = "'" + message.getType() + "' - неизвестный тип запроса.";
 
                         sendMessage(new Message(null, MessageType.TEXT, text), currentUser);
-                        ConsoleHelper.writeMessage("Не удалось разобрать запрос пользователя.");
+                        ConsoleHelper.writeMessage("Не удалось разобрать запрос пользователя. Попробуйте позже");
                         break;
                 }
             }
@@ -210,7 +212,7 @@ public class Server {
 
             try {
                 USER_CONNECTION_MAP.remove(currentUser);
-                sendMessage(new Message (null, MessageType.USER_REMOVED, null), currentUser);
+                ConsoleHelper.writeMessage("Удален пользователь: " + currentUser.toString());
                 ConsoleHelper.writeMessage("Сооединение с удаленным сервером закрыто");
             } catch (Exception eE){
                 ConsoleHelper.writeMessage("Произошла ошибка при удалении пользователя");

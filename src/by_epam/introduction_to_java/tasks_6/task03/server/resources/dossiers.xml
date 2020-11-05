@@ -16,5 +16,15 @@
             <surname>Chan</surname>
             <content>Kim's life history</content>
         </dossier>
+        <dossier id="4">
+            <firstname>Alex</firstname>
+            <surname>Didac</surname>
+            <content>Some content</content>
+        </dossier>
+        <dossier id="4">
+            <firstname>Kim</firstname>
+            <surname>Didac</surname>
+            <content>Very bigger content</content>
+        </dossier>
     </dossiersList>
 </dossiers>

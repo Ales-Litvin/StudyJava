@@ -2,11 +2,11 @@
 <users>
     <userList>
         <user name="admin">
-            <password>1234</password>
+            <password>qwerty1234</password>
             <role>ADMIN</role>
         </user>
         <user name="user1">
-            <password>567</password>
+            <password>1111</password>
             <role>USER</role>
         </user>
         <user name="user2">
@@ -22,7 +22,7 @@
             <role>USER</role>
         </user>
         <user name="user5">
-            <password>qwerty1234</password>
+            <password>1234</password>
             <role>USER</role>
         </user>
     </userList>
