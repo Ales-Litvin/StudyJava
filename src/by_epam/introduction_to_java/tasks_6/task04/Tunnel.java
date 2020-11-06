@@ -6,7 +6,7 @@ import by_epam.introduction_to_java.tasks_6.task04.ship.ShipPurpose;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Tunnel {
+public class Tunnel{
 
     private final List<Ship> store;
 
@@ -52,11 +52,12 @@ public class Tunnel {
                 for (Ship ship : store){
                     if (ship.getPurpose() == purpose){
                         shipsCounter--;
+
                         store.remove(ship);
 
                         System.out.printf(
                                 "In the tunnel - %d ships. The ship %s went to pier. Thread: %s.\n",
-                                        store.size(), ship.toString(), Thread.currentThread().getName());
+                                store.size(), ship.toString(), Thread.currentThread().getName());
                         return ship;
                     }
                 }
@@ -84,8 +85,8 @@ public class Tunnel {
                 store.remove(ship);
 
                 System.out.printf(
-                        "In the tunnel - %d ships. The ship went to pier. Thread: %s.\n",
-                        store.size(), Thread.currentThread().getName());
+                        "In the tunnel - %d ships. The ship %s went to pier. Thread: %s.\n",
+                        store.size(), ship.toString(), Thread.currentThread().getName());
 
                 return ship;
             }
@@ -97,7 +98,16 @@ public class Tunnel {
     } catch (InterruptedException e) {
         e.printStackTrace();
     }
-
         return null;
+    }
+
+    // Prints information
+    public String printInfo(){
+        StringBuilder sb = new StringBuilder("");
+        sb.append("\n\n\n");
+        sb.append(Thread.currentThread().getName().toUpperCase());
+        sb.append("\nSTORE: ").append(store);
+        sb.append("\n");
+        return sb.toString();
     }
 }

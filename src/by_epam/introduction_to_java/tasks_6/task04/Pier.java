@@ -45,26 +45,22 @@ public class Pier implements Runnable{
     // Loads ship
     private void loadShip(Ship ship) throws InterruptedException {
         while (ship.countCheck()){
-            if (port.canGive()) {
                 Thread.sleep(100);
                 int count = port.get(10);
                 ship.add(count);
                 System.out.printf("%d loaded to %s from %s.\n",
                         count, ship.toString(), Thread.currentThread().getName());
-            }
         }
     }
 
     // Unloads ship
     private void unloadShip(Ship ship) throws InterruptedException {
         while (ship.countCheck() && port.canTake()){
-            if (port.canTake()) {
                 Thread.sleep(100);
-                int count = port.get(10);
-                ship.add(count);
+                int count = ship.get(10);
+                port.add(count);
                 System.out.printf("%d unloaded from %s to %s.\n",
                         count, ship.toString(), Thread.currentThread().getName());
-            }
         }
     }
 }
