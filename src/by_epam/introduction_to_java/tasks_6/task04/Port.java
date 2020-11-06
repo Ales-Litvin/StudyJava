@@ -71,6 +71,7 @@ public class Port{
                 }
                 System.out.printf("No containers, in the port '%s' containers. Thread: %s.\n",
                       this.count, Thread.currentThread().getName());
+
                 wait();
 
             } catch (InterruptedException e) {
@@ -79,17 +80,4 @@ public class Port{
 
         return 0;
     }
-
-    // Prints information
-    public String printInfo(){
-        StringBuilder sb = new StringBuilder("");
-        sb.append("\n\n\n");
-        sb.append(Thread.currentThread().getName().toUpperCase());
-        sb.append("\nPIERS: ").append(PIERS);
-        sb.append("\nCOUNT: ").append(count);
-        sb.append("\n");
-        return sb.toString();
-    }
-
-
 }

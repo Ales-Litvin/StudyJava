@@ -24,20 +24,19 @@ public class Main {
      * 3. In the port not 'containers' and doesn't any ship for unloading, then it will work infinity.
      *
      * 4. The port crowded and doesn't any ship for loading, then it will work infinity.
+     *
+     * 5. Doesn't any ship in the tunnel.
      */
     public static void main(String[] args) {
         System.out.println("Available number of cores: " + Runtime.getRuntime().availableProcessors());
 
         Tunnel tunnel = new Tunnel();
 
-        ShipGenerator shipGenerator = new ShipGenerator(tunnel, 15);
+        ShipGenerator shipGenerator = new ShipGenerator(tunnel, 20);
 
         Port port = new Port(tunnel);
 
-        PrintInfo info = new PrintInfo(port, tunnel);
-        info.start();
-
-        ExecutorService service = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
+        ExecutorService service = Executors.newCachedThreadPool();
 
         service.execute(shipGenerator);
 

@@ -10,7 +10,7 @@ public class Tunnel{
 
     private final List<Ship> store;
 
-    private static final int MAX_SHIPS_IN_TUNNEL = 5;
+    private static final int MAX_SHIPS_IN_TUNNEL = 10;
     private static final int MIN_SHIPS_IN_TUNNEL = 0;
 
     private int shipsCounter = 0;
