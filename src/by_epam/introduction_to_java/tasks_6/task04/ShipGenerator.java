@@ -18,6 +18,8 @@ public class ShipGenerator implements Runnable{
         this.shipCount = shipCount;
     }
 
+
+    // Creates ship and adds it to tunnel if it ready.
     @Override
     public void run() {
         int count = 0;
@@ -27,7 +29,7 @@ public class ShipGenerator implements Runnable{
             tunnel.add(new Ship(getRandomSize(), getRandomPurpose()));
 
             try {
-                Thread.sleep(1000);
+                Thread.sleep(200);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
