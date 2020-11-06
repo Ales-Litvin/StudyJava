@@ -1,11 +1,9 @@
 package by_epam.introduction_to_java.tasks_6.task04;
 
-import by_epam.introduction_to_java.tasks_6.task04.ship.Ship;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class Port {
+public class Port{
 
     private final List<Pier> PIERS;
 
@@ -36,7 +34,7 @@ public class Port {
         return count != 0;
     }
 
-    public void add(int count){
+    public synchronized void add(int count){
 
         try {
             if (count < MAX_CAPACITY){
@@ -82,7 +80,16 @@ public class Port {
         return 0;
     }
 
-
+    // Prints information
+    public String printInfo(){
+        StringBuilder sb = new StringBuilder("");
+        sb.append("\n\n\n");
+        sb.append(Thread.currentThread().getName().toUpperCase());
+        sb.append("\nPIERS: ").append(PIERS);
+        sb.append("\nCOUNT: ").append(count);
+        sb.append("\n");
+        return sb.toString();
+    }
 
 
 }
