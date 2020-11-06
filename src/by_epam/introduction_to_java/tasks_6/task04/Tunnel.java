@@ -8,7 +8,7 @@ import java.util.List;
 
 public class Tunnel {
 
-    private List<Ship> store;
+    private final List<Ship> store;
 
     private static final int MAX_SHIPS_IN_TUNNEL = 5;
     private static final int MIN_SHIPS_IN_TUNNEL = 0;
@@ -24,13 +24,15 @@ public class Tunnel {
             if (shipsCounter < MAX_SHIPS_IN_TUNNEL){
                 notifyAll();
                 store.add(element);
-                String info = String.format("%s + The ship arrived in the tunnel: %s %s %s",
-                        store.size(), element.getPurpose(), element.getSize(), Thread.currentThread().getName());
-                System.out.println(info);
+
+                System.out.printf(
+                        "In the tunnel - %d ships. Added: %s. Thread: %s.\n",
+                        store.size(), element.toString(), Thread.currentThread().getName());
                 shipsCounter++;
             } else {
-                System.out.println(store.size() + "> There is no place for a ship in the tunnel: "
-                        + Thread.currentThread().getName());
+                System.out.printf(
+                       "No free place, in the tunnel - %d ships. Thread: %s.\n",
+                        store.size(), Thread.currentThread().getName());
                 wait();
                 return false;
             }
@@ -50,20 +52,51 @@ public class Tunnel {
                 for (Ship ship : store){
                     if (ship.getPurpose() == purpose){
                         shipsCounter--;
-                        System.out.println(store.size() +
-                                " - The ship is taken from the tunnel: " + Thread.currentThread().getName());
                         store.remove(ship);
+
+                        System.out.printf(
+                                "In the tunnel - %d ships. The ship %s went to pier. Thread: %s.\n",
+                                        store.size(), ship.toString(), Thread.currentThread().getName());
                         return ship;
                     }
                 }
             }
 
-            System.out.println("0 < There are no ships in the tunnel");
+            System.out.printf("No ships. In the tunnel - %d ships. Thread: %s.\n",
+                    store.size(), Thread.currentThread().getName());
             wait();
 
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+
+        return null;
+    }
+
+    // Returns 'first in' ship from 'store'.
+    public synchronized Ship get(){
+
+        try {
+            if (shipsCounter > MIN_SHIPS_IN_TUNNEL){
+                notifyAll();
+                Ship ship = store.get(0);
+                shipsCounter--;
+                store.remove(ship);
+
+                System.out.printf(
+                        "In the tunnel - %d ships. The ship went to pier. Thread: %s.\n",
+                        store.size(), Thread.currentThread().getName());
+
+                return ship;
+            }
+
+            System.out.printf("No ships. In the tunnel - %d ships. Thread: %s.\n",
+                    store.size(), Thread.currentThread().getName());
+            wait();
+
+    } catch (InterruptedException e) {
+        e.printStackTrace();
+    }
 
         return null;
     }

@@ -6,13 +6,16 @@ public class Ship {
     private int count;
 
     // Size of ship
-    private Size size;
+    private final Size size;
 
     // loading or unloading
-    private ShipPurpose purpose;
+    private final ShipPurpose purpose;
 
     public Ship(Size size, ShipPurpose purpose) {
         this.size = size;
+        if (purpose == ShipPurpose.UNLOADING){
+            this.count = size.getValue();
+        }
         this.purpose = purpose;
     }
 
@@ -29,19 +32,32 @@ public class Ship {
         return count;
     }
 
-    // return true if ship is empty (unnecessary method)
-    public boolean isEmpty(){ return count == 0; }
+    // return true if the ship can unloads 'containers'
+    public boolean canUnloads(){ return count > 0; }
 
-    // return true if ship is full (unnecessary method)
-    public boolean isFull(){ return count >= size.getValue(); }
+    // return true if ship can loads 'containers'
+    public boolean canLoads(){ return count < size.getValue(); }
 
     // return true if I can something to do with ship
     // example: loading or unloading
-    public boolean countCheck() { return count < size.getValue() || count != 0; }
+    public boolean countCheck() {
+        if (purpose == ShipPurpose.LOADING) return canLoads();
+        else return canUnloads();
+    }
 
     public int getCount() { return count; }
 
     public Size getSize() { return size; }
 
     public ShipPurpose getPurpose() { return purpose; }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Ship{");
+        sb.append(count);
+        sb.append(", ").append(size);
+        sb.append(", ").append(purpose);
+        sb.append('}');
+        return sb.toString();
+    }
 }
