@@ -1,4 +1,10 @@
-package by_epam.basics_1.cycles.task02;
+package by_epam.introduction_to_java.basics_1.cycles.task02;
+
+/**
+ * Условие задачи:
+ * 2. Вычислить значения функции на отрезке [а,b] c шагом h:
+ * <br><center><img src="function.PNG">
+ */
 
 public class Solution {
     public static void main(String[] args) {
@@ -10,7 +16,6 @@ public class Solution {
      * @param a - начальная граница отрезка
      * @param b - конечная граниица отрезка
      * @param h - шаг
-     * @return
      */
     public static void isResult(int a, int b, int h){
         double result;

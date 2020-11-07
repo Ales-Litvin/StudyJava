@@ -1,4 +1,10 @@
-package by_epam.basics_1.cycles.task01;
+package by_epam.introduction_to_java.basics_1.cycles.task01;
+
+/*
+ * Условие задачи:
+ * 1.  Напишите  программу,  где  пользователь  вводит любое  целое  положительное  число.
+ *     А  программа  суммирует все числа от 1 до введенного пользователем числа.
+ */
 
 import java.io.BufferedReader;
 import java.io.IOException;

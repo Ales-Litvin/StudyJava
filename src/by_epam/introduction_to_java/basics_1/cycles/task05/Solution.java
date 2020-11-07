@@ -1,5 +1,12 @@
-package by_epam.basics_1.cycles.task05;
+package by_epam.introduction_to_java.basics_1.cycles.task05;
 
+/**
+ * Условие задачи:
+ * 5.  Даны  числовой  ряд  и  некоторое  число  е.
+ *     Найти  сумму  тех  членов  ряда,  модуль  которых  больше  или  равен заданному е.
+ *     Общий член ряда имеет вид:
+ *     a<sub>n</sub> = 1/2<sup>n</sup>+1/3<sup>n</sup><br>
+ */
 public class Solution {
     public static void main(String[] args) {
         System.out.println(returnSumRow(2, 5, 1));

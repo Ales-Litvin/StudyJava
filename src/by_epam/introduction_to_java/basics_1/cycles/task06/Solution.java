@@ -1,5 +1,9 @@
-package by_epam.basics_1.cycles.task06;
+package by_epam.introduction_to_java.basics_1.cycles.task06;
 
+/*
+ * Условие задачи:
+ * 6. Вывести на экран соответствий между символами и их численными обозначениями в памяти компьютера.
+ */
 public class Solution {
     public static void main(String[] args) {
         printAllSymbol();

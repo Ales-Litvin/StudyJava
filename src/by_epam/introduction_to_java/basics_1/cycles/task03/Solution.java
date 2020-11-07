@@ -1,11 +1,19 @@
-package by_epam.basics_1.cycles.task03;
+package by_epam.introduction_to_java.basics_1.cycles.task03;
 
+/*
+ * Условие задачи:
+ * 3. Найти сумму квадратов первых ста чисел.
+ */
 public class Solution {
     public static void main(String[] args) {
+        System.out.println(sumSquaresFirstHundred());
+    }
+
+    public static int sumSquaresFirstHundred(){
         int result = 0;
         for (int i = 1; i <= 100; i++){
             result += i * i;
         }
-        System.out.println(result);
+        return result;
     }
 }
