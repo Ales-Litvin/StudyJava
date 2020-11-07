@@ -1,8 +1,14 @@
-package by_epam.basics_1.branching.task05;
+package by_epam.introduction_to_java.basics_1.branching.task05;
 
+/**
+ * Условие задачи:
+ * 5. Вычислить значение функции:
+ * <p><center><img src="equation.PNG">
+ *
+ */
 public class Solution {
     public static void main(String[] args) {
-
+        System.out.println(isSolution(2));
     }
 
     public static int isSolution(int x){

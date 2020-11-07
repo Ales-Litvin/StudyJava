@@ -1,5 +1,10 @@
-package by_epam.basics_1.branching.task03;
+package by_epam.introduction_to_java.basics_1.branching.task03;
 
+/*
+ * Условие задачи:
+ * 3. Даны три точки А(х1,у1), В(х2,у2) и С(х3,у3).
+ *    Определить, будут ли они расположены на одной прямой.
+ */
 public class Solution {
     public static void main(String[] args) {
         System.out.println(isLine(4 ,5 , 2 ,4 ,6 ,6));
