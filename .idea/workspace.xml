@@ -31,43 +31,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a8da738f-7dfd-4c1f-bafe-d60eaebbb8ca" name="Changelist1" comment="">
-      <change afterPath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/аlgorithmization_2/one_dimensional_arrays/task07/Solution.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/аlgorithmization_2/one_dimensional_arrays/task08/Solution.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/by_epam/introduction_to_java/аlgorithmization_2/arrays_of_arrays/task09/Solution.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/by_epam/introduction_to_java/аlgorithmization_2/one_dimensional_arrays/task08/Solution.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/аlgorithmization_2/arrays_of_arrays/task01/Solution.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/аlgorithmization_2/arrays_of_arrays/task01/Solution.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/аlgorithmization_2/arrays_of_arrays/task02/Solution.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/аlgorithmization_2/arrays_of_arrays/task02/Solution.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/аlgorithmization_2/arrays_of_arrays/task03/Solution.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/аlgorithmization_2/arrays_of_arrays/task03/Solution.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/аlgorithmization_2/arrays_of_arrays/task04/Solution.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/аlgorithmization_2/arrays_of_arrays/task04/Solution.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/аlgorithmization_2/arrays_of_arrays/task05/Solution.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/аlgorithmization_2/arrays_of_arrays/task05/Solution.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/аlgorithmization_2/arrays_of_arrays/task06/Solution.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/аlgorithmization_2/arrays_of_arrays/task06/Solution.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/аlgorithmization_2/arrays_of_arrays/task07/Solution.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/аlgorithmization_2/arrays_of_arrays/task07/Solution.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/аlgorithmization_2/arrays_of_arrays/task08/Solution.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/аlgorithmization_2/arrays_of_arrays/task08/Solution.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/аlgorithmization_2/arrays_of_arrays/task10/Solution.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/аlgorithmization_2/arrays_of_arrays/task10/Solution.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/аlgorithmization_2/arrays_of_arrays/task11/Solution.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/аlgorithmization_2/arrays_of_arrays/task11/Solution.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/аlgorithmization_2/arrays_of_arrays/task12/Solution.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/аlgorithmization_2/arrays_of_arrays/task12/Solution.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/аlgorithmization_2/arrays_of_arrays/task13/Solution.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/аlgorithmization_2/arrays_of_arrays/task13/Solution.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/аlgorithmization_2/arrays_of_arrays/task14/Solution.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/аlgorithmization_2/arrays_of_arrays/task14/Solution.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/аlgorithmization_2/one_dimensional_arrays/task09/Solution.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/аlgorithmization_2/one_dimensional_arrays/task09/Solution.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/аlgorithmization_2/one_dimensional_arrays/task10/Solution.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/аlgorithmization_2/one_dimensional_arrays/task10/Solution.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/by_epam/introduction_to_java/аlgorithmization_2/arrays_of_arrays/task01/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by_epam/introduction_to_java/аlgorithmization_2/arrays_of_arrays/task01/Solution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/by_epam/introduction_to_java/аlgorithmization_2/arrays_of_arrays/task02/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by_epam/introduction_to_java/аlgorithmization_2/arrays_of_arrays/task02/Solution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/by_epam/introduction_to_java/аlgorithmization_2/arrays_of_arrays/task03/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by_epam/introduction_to_java/аlgorithmization_2/arrays_of_arrays/task03/Solution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/by_epam/introduction_to_java/аlgorithmization_2/arrays_of_arrays/task04/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by_epam/introduction_to_java/аlgorithmization_2/arrays_of_arrays/task04/Solution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/by_epam/introduction_to_java/аlgorithmization_2/arrays_of_arrays/task05/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by_epam/introduction_to_java/аlgorithmization_2/arrays_of_arrays/task05/Solution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/by_epam/introduction_to_java/аlgorithmization_2/arrays_of_arrays/task06/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by_epam/introduction_to_java/аlgorithmization_2/arrays_of_arrays/task06/Solution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/by_epam/introduction_to_java/аlgorithmization_2/arrays_of_arrays/task07/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by_epam/introduction_to_java/аlgorithmization_2/arrays_of_arrays/task07/Solution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/by_epam/introduction_to_java/аlgorithmization_2/arrays_of_arrays/task08/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by_epam/introduction_to_java/аlgorithmization_2/arrays_of_arrays/task08/Solution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/by_epam/introduction_to_java/аlgorithmization_2/arrays_of_arrays/task10/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by_epam/introduction_to_java/аlgorithmization_2/arrays_of_arrays/task10/Solution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/by_epam/introduction_to_java/аlgorithmization_2/arrays_of_arrays/task11/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by_epam/introduction_to_java/аlgorithmization_2/arrays_of_arrays/task11/Solution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/by_epam/introduction_to_java/аlgorithmization_2/arrays_of_arrays/task12/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by_epam/introduction_to_java/аlgorithmization_2/arrays_of_arrays/task12/Solution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/by_epam/introduction_to_java/аlgorithmization_2/arrays_of_arrays/task13/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by_epam/introduction_to_java/аlgorithmization_2/arrays_of_arrays/task13/Solution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/by_epam/introduction_to_java/аlgorithmization_2/arrays_of_arrays/task14/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by_epam/introduction_to_java/аlgorithmization_2/arrays_of_arrays/task14/Solution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/by_epam/introduction_to_java/аlgorithmization_2/arrays_of_arrays/task15/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by_epam/introduction_to_java/аlgorithmization_2/arrays_of_arrays/task16/Solution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/by_epam/introduction_to_java/аlgorithmization_2/one_dimensional_arrays/task07/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by_epam/introduction_to_java/аlgorithmization_2/one_dimensional_arrays/task07/Solution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/by_epam/introduction_to_java/аlgorithmization_2/one_dimensional_arrays/task09/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by_epam/introduction_to_java/аlgorithmization_2/one_dimensional_arrays/task09/Solution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/by_epam/introduction_to_java/аlgorithmization_2/one_dimensional_arrays/task10/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by_epam/introduction_to_java/аlgorithmization_2/one_dimensional_arrays/task10/Solution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/by_epam/introduction_to_java/аlgorithmization_2/arrays_of_arrays/task16/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by_epam/introduction_to_java/аlgorithmization_2/arrays_of_arrays/task16/Solution.java" afterDir="false" />
     </list>
     <list id="2d99bcd9-4f88-400e-839b-12d5f1957ffe" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -181,7 +146,7 @@
       <recent name="G:\Programming\Work\StudyJava\src\by_epam\introduction_to_java\tasks_6\task03" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Solution (3)">
+  <component name="RunManager" selected="Application.Solution (5)">
     <configuration name="Solution (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="by_epam.introduction_to_java.аlgorithmization_2.arrays_of_arrays.task12.Solution" />
       <module name="StudyJava" />
@@ -234,12 +199,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Solution" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="by_epam.introduction_to_java.аlgorithmization_2.arrays_of_arrays.task11.Solution" />
+    <configuration name="Solution (5)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="by_epam.introduction_to_java.аlgorithmization_2.arrays_of_arrays.task16.Solution" />
       <module name="StudyJava" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="by_epam.introduction_to_java.аlgorithmization_2.arrays_of_arrays.task11.*" />
+          <option name="PATTERN" value="by_epam.introduction_to_java.аlgorithmization_2.arrays_of_arrays.task16.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -274,19 +239,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Solution" />
       <item itemvalue="Application.Solution (1)" />
       <item itemvalue="Application.Solution (2)" />
       <item itemvalue="Application.Solution (4)" />
       <item itemvalue="Application.Solution (3)" />
+      <item itemvalue="Application.Solution (5)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Solution (5)" />
         <item itemvalue="Application.Solution (3)" />
         <item itemvalue="Application.Solution (4)" />
         <item itemvalue="Application.Solution (2)" />
         <item itemvalue="Application.Solution (1)" />
-        <item itemvalue="Application.Solution" />
       </list>
     </recent_temporary>
   </component>
@@ -419,38 +384,38 @@
       <screen x="0" y="0" width="1117" height="864" />
     </state>
     <state x="367" y="179" key="FileChooserDialogImpl/0.0.1117.864@0.0.1117.864" timestamp="1604136071824" />
-    <state width="1074" height="444" key="GridCell.Tab.0.bottom" timestamp="1604848694253">
+    <state width="1074" height="444" key="GridCell.Tab.0.bottom" timestamp="1604858694180">
       <screen x="0" y="0" width="1117" height="864" />
     </state>
-    <state width="1074" height="444" key="GridCell.Tab.0.bottom/0.0.1117.864@0.0.1117.864" timestamp="1604848694253" />
-    <state width="1074" height="444" key="GridCell.Tab.0.center" timestamp="1604848694253">
+    <state width="1074" height="444" key="GridCell.Tab.0.bottom/0.0.1117.864@0.0.1117.864" timestamp="1604858694180" />
+    <state width="1074" height="444" key="GridCell.Tab.0.center" timestamp="1604858694180">
       <screen x="0" y="0" width="1117" height="864" />
     </state>
-    <state width="1074" height="444" key="GridCell.Tab.0.center/0.0.1117.864@0.0.1117.864" timestamp="1604848694253" />
-    <state width="1074" height="444" key="GridCell.Tab.0.left" timestamp="1604848694253">
+    <state width="1074" height="444" key="GridCell.Tab.0.center/0.0.1117.864@0.0.1117.864" timestamp="1604858694180" />
+    <state width="1074" height="444" key="GridCell.Tab.0.left" timestamp="1604858694180">
       <screen x="0" y="0" width="1117" height="864" />
     </state>
-    <state width="1074" height="444" key="GridCell.Tab.0.left/0.0.1117.864@0.0.1117.864" timestamp="1604848694253" />
-    <state width="1074" height="444" key="GridCell.Tab.0.right" timestamp="1604848694253">
+    <state width="1074" height="444" key="GridCell.Tab.0.left/0.0.1117.864@0.0.1117.864" timestamp="1604858694180" />
+    <state width="1074" height="444" key="GridCell.Tab.0.right" timestamp="1604858694180">
       <screen x="0" y="0" width="1117" height="864" />
     </state>
-    <state width="1074" height="444" key="GridCell.Tab.0.right/0.0.1117.864@0.0.1117.864" timestamp="1604848694253" />
-    <state width="1074" height="329" key="GridCell.Tab.1.bottom" timestamp="1604832282409">
+    <state width="1074" height="444" key="GridCell.Tab.0.right/0.0.1117.864@0.0.1117.864" timestamp="1604858694180" />
+    <state width="1074" height="329" key="GridCell.Tab.1.bottom" timestamp="1604855211235">
       <screen x="0" y="0" width="1117" height="864" />
     </state>
-    <state width="1074" height="329" key="GridCell.Tab.1.bottom/0.0.1117.864@0.0.1117.864" timestamp="1604832282409" />
-    <state width="1074" height="329" key="GridCell.Tab.1.center" timestamp="1604832282409">
+    <state width="1074" height="329" key="GridCell.Tab.1.bottom/0.0.1117.864@0.0.1117.864" timestamp="1604855211235" />
+    <state width="1074" height="329" key="GridCell.Tab.1.center" timestamp="1604855211235">
       <screen x="0" y="0" width="1117" height="864" />
     </state>
-    <state width="1074" height="329" key="GridCell.Tab.1.center/0.0.1117.864@0.0.1117.864" timestamp="1604832282409" />
-    <state width="1074" height="329" key="GridCell.Tab.1.left" timestamp="1604832282409">
+    <state width="1074" height="329" key="GridCell.Tab.1.center/0.0.1117.864@0.0.1117.864" timestamp="1604855211235" />
+    <state width="1074" height="329" key="GridCell.Tab.1.left" timestamp="1604855211235">
       <screen x="0" y="0" width="1117" height="864" />
     </state>
-    <state width="1074" height="329" key="GridCell.Tab.1.left/0.0.1117.864@0.0.1117.864" timestamp="1604832282409" />
-    <state width="1074" height="329" key="GridCell.Tab.1.right" timestamp="1604832282409">
+    <state width="1074" height="329" key="GridCell.Tab.1.left/0.0.1117.864@0.0.1117.864" timestamp="1604855211235" />
+    <state width="1074" height="329" key="GridCell.Tab.1.right" timestamp="1604855211235">
       <screen x="0" y="0" width="1117" height="864" />
     </state>
-    <state width="1074" height="329" key="GridCell.Tab.1.right/0.0.1117.864@0.0.1117.864" timestamp="1604832282409" />
+    <state width="1074" height="329" key="GridCell.Tab.1.right/0.0.1117.864@0.0.1117.864" timestamp="1604855211235" />
     <state x="290" y="152" key="RollbackChangesDialog" timestamp="1604427228042">
       <screen x="0" y="0" width="1117" height="864" />
     </state>
