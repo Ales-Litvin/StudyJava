@@ -9,9 +9,6 @@ package by_epam.introduction_to_java.аlgorithmization_2.arrays_of_arrays.task16
  *     6 1 8
  *     7 5 3
  *     2 9 4
- *
- * ЗАДАЧА НЕ РЕШЕНА!!!
- * ПОСМОТРИ НА ДРУГОМ КОМПЕ!!!
  */
 
 import java.util.Arrays;
@@ -19,12 +16,9 @@ import java.util.Arrays;
 public class Solution {
     public static void main(String[] args) {
 
-        System.out.println("The magic constant = " + getMagicConst(7));
-        int[][] magicSquare = getOddMagicSquare(7);
+        int[][] magicSquare = getOddMagicSquare(5);
 
         printMatrix(magicSquare);
-
-
     }
 
     /**
@@ -34,7 +28,7 @@ public class Solution {
      */
     public static int[][] getMagicSquare(int n) {
         if (n <= 2) return null;
-        else if (n % 2 == 0) return getEvenMagicSquare(n);
+        else if (n % 2 == 0) return null;
         else return getOddMagicSquare(n);
     }
 
@@ -63,14 +57,6 @@ public class Solution {
 
         return trimMatrix(matrix, n);
     }
-
-    // now just plug
-    private static int[][] getEvenMagicSquare(int n){
-        if (n % 2 != 0) return null;
-
-        return null;
-    }
-
 
     /**
      * Creates and fills matrix with terraces.
@@ -153,6 +139,10 @@ public class Solution {
      * Prints the matrix.
      */
     public static void printMatrix(int[][] matrix){
+        if (matrix == null) {
+            System.out.println("null");
+            return;
+        }
         for (int[] line : matrix) {
             System.out.println(Arrays.toString(line));
         }

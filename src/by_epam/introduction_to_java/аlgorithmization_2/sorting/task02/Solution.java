@@ -1,11 +1,19 @@
 package by_epam.introduction_to_java.аlgorithmization_2.sorting.task02;
 
+/*
+ * Условие задачи:
+ * 2. Даны две последовательности m n b b b и a a a         2 1 2 1 .
+ *    Образовать из них новую последовательность чисел так, чтобы она тоже была неубывающей.
+ *    Примечание. Дополнительный массив не использовать.
+ */
+
 import java.util.Arrays;
 
 public class Solution {
     public static void main(String[] args) {
         int[] arrayOne = {1, 2, 3, 4, 5, 6};
         int[] arrayTwo = {3, 6, 7};
+
         System.out.println(Arrays.toString(combiningSequences(arrayTwo, arrayOne)));
     }
 
@@ -26,5 +34,4 @@ public class Solution {
         }
         return result;
     }
-
 }
