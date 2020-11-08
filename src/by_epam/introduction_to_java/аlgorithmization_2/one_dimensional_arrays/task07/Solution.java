@@ -8,16 +8,21 @@ package by_epam.introduction_to_java.аlgorithmization_2.one_dimensional_arrays.
 public class Solution {
     public static void main(String[] args) {
         int[] array = {1, -2, 5, -10, 12, 0, 51 , -99, 100};
+
+        System.out.println(maxByStrangeCondition( array));
     }
 
     /**
-     *
-     * max(а<sub>1</sub>+а<sub>2n</sub>, а<sub>2</sub>+а<sub>2n-1</sub>, ..., а<sub>n</sub>+а<sub>n+1</sub>
+     * Returns max(а<sub>1</sub>+а<sub>2n</sub>, а<sub>2</sub>+а<sub>2n-1</sub>, ..., а<sub>n</sub>+а<sub>n+1</sub>).
      * @param array the array of number (а<sub>1</sub>, а<sub>2</sub>, ..., а<sub>n</sub>).
-     * @return
      */
-    public static int maxByStrangeCondition(final int array){
-
-        return 0;
+    public static int maxByStrangeCondition(final int[] array){
+        int max = array[0] + array[1];
+        for (int i = 0; i < array.length - 1; i++){
+            if (max < array[i] + array[i + 1]) {
+                max =  array[i] + array[i + 1];
+            }
+        }
+        return max;
     }
 }

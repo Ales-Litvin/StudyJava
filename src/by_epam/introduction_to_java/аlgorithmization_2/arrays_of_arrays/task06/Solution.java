@@ -1,15 +1,39 @@
 package by_epam.introduction_to_java.аlgorithmization_2.arrays_of_arrays.task06;
 
+/*
+ * Условие задачи:
+ * 6. Сформировать квадратную матрицу порядка n по заданному образцу(n - четное):
+ *       |  1     1     1    ...   1    1    1  |
+ *       |  0     1     1    ...   1    1    0  |
+ *       |  0     0     1    ...   1    0    0  |
+ *       | ...   ...   ...   ...  ...  ...  ... |
+ *       |  0     1     1    ...   1    1    0  |
+ *       |  1     1     1    ...   1    1    1  |
+ */
+
 import java.util.Arrays;
 
 public class Solution {
     public static void main(String[] args) {
-        int[][] matrix = createMatrixOrderOf(6);
+        int[][] matrix = createMatrixByPattern(6);
 
         printMatrix(matrix);
     }
 
-    public static int[][] createMatrixOrderOf(int orderOfMatrix){
+    /**
+     * Creates the matrix by pattern:
+     <table width="30%">
+     <tr>     <td>1</td><td>1</td><td>1</td><td>...</td><td>1</td><td>1</td><td>1</td>     </tr>
+     <tr>     <td>0</td><td>1</td><td>1</td><td>...</td><td>1</td><td>1</td><td>0</td>     </tr>
+     <tr>     <td>0</td><td>0</td><td>1</td><td>...</td><td>1</td><td>0</td><td>0</td>     </tr>
+     <tr>     <td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td>     </tr>
+     <tr>     <td>0</td><td>1</td><td>1</td><td>...</td><td>1</td><td>1</td><td>0</td>     </tr>
+     <tr>     <td>1</td><td>1</td><td>1</td><td>...</td><td>1</td><td>1</td><td>1</td>     </tr>
+     </table>
+     * @param orderOfMatrix the matrix's order.
+     * @return the matrix by pattern.
+     */
+    public static int[][] createMatrixByPattern(int orderOfMatrix){
         int[][] result = new int[orderOfMatrix][orderOfMatrix];
 
         for (int i = 0; i < result.length; i++){
@@ -26,11 +50,13 @@ public class Solution {
         return result;
     }
 
+    /**
+     * Prints the matrix.
+     * @param matrix the matrix.
+     */
     public static void printMatrix(int[][] matrix){
-        for (int i = 0; i < matrix.length; i++){
-            int[] line = matrix[i];
+        for (int[] line : matrix) {
             System.out.println(Arrays.toString(line));
         }
-        System.out.println("=================");
     }
 }
