@@ -1,44 +1,58 @@
 package by_epam.introduction_to_java.аlgorithmization_2.arrays_of_arrays.task15;
 
-import java.util.Arrays;
-
-
 /*
- Магическим квадратом порядка n называется квадратная матрица размера nxn,
- составленная из числе 1, 2, 3, ... , n^2 так, что суммы по каждому столбцу, каждой
- из двух больших диагоналей равны между собой. Построить такой квадрат.
-
- ЗАДАЧА НЕ РЕШЕНА!!!
+ * Условие задачи:
+ * 15. Найдите наибольший элемент матрицы и заменить все нечетные элементы на него.
  */
 
-public class Solution {
-    public static final int[][] MATRIX = {{1, 8, 3, 9},
-            {4, 5, 6, 2},
-            {7, 2, 9, 8},
-            {6, 1, 8, 7}};
+import java.util.Arrays;
 
-    public static final int[][] MAGIC_SQUARE_ONE = {
-            {6, 1, 8},
-            {7, 5, 3},
-            {2, 9, 4}};
+public class Solution {
+    public static final int[][] MATRIX = {
+            {1, 8, 3, 4},
+            {4, 5, 6, 6},
+            {7, 2, 9, 4},
+            {4, 4, 0, 1}};
 
     public static void main(String[] args) {
+        replaceOdd(MATRIX, max(MATRIX));
 
         printMatrix(MATRIX);
     }
 
-    public static int[][] generateMagicSquare(int n) {
-        int[][] result = new int[n][n];
-
-
-        return result;
+    /**
+     * Replaces odd elements to {@code i};
+     * @param matrix the matrix.
+     * @param k the new integer.
+     */
+    public static void replaceOdd(int[][] matrix, int k){
+        for (int i = 0; i < matrix.length; i++){
+            for (int j = 0; j < matrix[i].length; j++){
+                if (matrix[i][j] % 2 != 0) matrix[i][j] = k;
+            }
+        }
     }
 
-    public static void printMatrix(int[][] matrix) {
-        for (int i = 0; i < matrix.length; i++) {
-            int[] line = matrix[i];
+    /**
+     * Returns max value in the matrix.
+     */
+    public static int max(int[][] matrix){
+        int max = matrix[0][0];
+        for (int[] ints : matrix) {
+            for (int anInt : ints) {
+                if (max < anInt) max = anInt;
+            }
+        }
+        return max;
+    }
+
+
+    /**
+     * Prints the matrix.
+     */
+    public static void printMatrix(int[][] matrix){
+        for (int[] line : matrix) {
             System.out.println(Arrays.toString(line));
         }
-        System.out.println("=================");
     }
 }

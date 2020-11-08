@@ -1,5 +1,13 @@
 package by_epam.introduction_to_java.аlgorithmization_2.arrays_of_arrays.task08;
 
+/*
+ * Условие задачи:
+ * 8.  В числовой матрице поменять местами два столбца  любых столбца,
+ *     т. е. все элементы одного столбца поставить на соответствующие им позиции другого,
+ *     а его элементы второго переместить в первый.
+ *     Номера столбцов вводит пользователь с клавиатуры.
+ */
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -12,21 +20,26 @@ public class Solution {
                                             {6, 1, 8, 7}};
 
     public static void main(String[] args) {
+        printMatrix(MATRIX);
 
         swapColumns(MATRIX);
 
         printMatrix(MATRIX);
     }
 
+    /**
+     * Swaps columns. The number of columns writes user.
+     * @param matrix the matrix
+     */
     public static void swapColumns(int[][] matrix){
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         int n = 0;
         int m = 0;
         try {
-            System.out.println("Number of first column (write and press \"enter\": ");
+            System.out.println("Number of first column (write and press \"enter\"): ");
             n = Integer.parseInt(reader.readLine());
-            System.out.println("Number of second column (write and press \"enter\": ");
-            m = Integer.parseInt(reader.readLine());
+            System.out.println("Number of second column (write and press \"enter\"): ");
+            m = Integer.parseInt(reader.readLine()) ;
             if (n >= matrix.length) {
                 throw new ArrayIndexOutOfBoundsException(n);
             } else if (m >= matrix.length){
@@ -48,11 +61,13 @@ public class Solution {
         }
     }
 
+    /**
+     * Prints the matrix.
+     * @param matrix the matrix.
+     */
     public static void printMatrix(int[][] matrix){
-        for (int i = 0; i < matrix.length; i++){
-            int[] line = matrix[i];
+        for (int[] line : matrix) {
             System.out.println(Arrays.toString(line));
         }
-        System.out.println("=================");
     }
 }
