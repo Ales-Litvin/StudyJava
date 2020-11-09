@@ -32,9 +32,28 @@
   <component name="ChangeListManager">
     <list default="true" id="a8da738f-7dfd-4c1f-bafe-d60eaebbb8ca" name="Changelist1" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/by_epam/introduction_to_java/аlgorithmization_2/arrays_of_arrays/task16/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by_epam/introduction_to_java/аlgorithmization_2/arrays_of_arrays/task16/Solution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/by_epam/introduction_to_java/аlgorithmization_2/sorting/task01/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by_epam/introduction_to_java/аlgorithmization_2/sorting/task01/Solution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/аlgorithmization_2/sorting/task01/Solution.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/аlgorithmization_2/sorting/task01/Solution.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/аlgorithmization_2/sorting/task02/Solution.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/аlgorithmization_2/sorting/task02/Solution.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/аlgorithmization_2/sorting/task03/Solution.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/аlgorithmization_2/sorting/task03/Solution.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/аlgorithmization_2/sorting/task04/Solution.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/аlgorithmization_2/sorting/task04/Solution.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/аlgorithmization_2/sorting/task05/Solution_rev2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/аlgorithmization_2/sorting/task05/readme.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/аlgorithmization_2/sorting/task06/ShellSorting.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/аlgorithmization_2/sorting/task06/Solution.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/аlgorithmization_2/sorting/task06/Solution.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/аlgorithmization_2/sorting/task06/readme.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/аlgorithmization_2/sorting/task07/Solution.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/аlgorithmization_2/sorting/task07/Solution.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/аlgorithmization_2/sorting/task08/Solution.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StudyJava/by_epam/introduction_to_java/аlgorithmization_2/sorting/task08/Solution.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/by_epam/introduction_to_java/аlgorithmization_2/sorting/task02/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by_epam/introduction_to_java/аlgorithmization_2/sorting/task02/Solution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/by_epam/introduction_to_java/аlgorithmization_2/sorting/task03/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by_epam/introduction_to_java/аlgorithmization_2/sorting/task03/Solution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/by_epam/introduction_to_java/аlgorithmization_2/sorting/task04/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by_epam/introduction_to_java/аlgorithmization_2/sorting/task04/Solution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/by_epam/introduction_to_java/аlgorithmization_2/sorting/task05/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by_epam/introduction_to_java/аlgorithmization_2/sorting/task05/Solution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/by_epam/introduction_to_java/аlgorithmization_2/sorting/task05/Solution_rev2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/by_epam/introduction_to_java/аlgorithmization_2/sorting/task05/readme.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/by_epam/introduction_to_java/аlgorithmization_2/sorting/task06/ShellSorting.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/by_epam/introduction_to_java/аlgorithmization_2/sorting/task06/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by_epam/introduction_to_java/аlgorithmization_2/sorting/task06/Solution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/by_epam/introduction_to_java/аlgorithmization_2/sorting/task06/readme.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/by_epam/introduction_to_java/аlgorithmization_2/sorting/task07/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by_epam/introduction_to_java/аlgorithmization_2/sorting/task07/Solution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/by_epam/introduction_to_java/аlgorithmization_2/sorting/task08/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by_epam/introduction_to_java/аlgorithmization_2/sorting/task08/Solution.java" afterDir="false" />
     </list>
     <list id="2d99bcd9-4f88-400e-839b-12d5f1957ffe" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -148,13 +167,13 @@
       <recent name="G:\Programming\Work\StudyJava\src\by_epam\introduction_to_java\tasks_6\task03" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Solution">
-    <configuration name="Solution (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="by_epam.introduction_to_java.аlgorithmization_2.arrays_of_arrays.task13.Solution" />
+  <component name="RunManager" selected="Application.Solution (1)">
+    <configuration name="Solution (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="by_epam.introduction_to_java.аlgorithmization_2.sorting.task08.Solution" />
       <module name="StudyJava" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="by_epam.introduction_to_java.аlgorithmization_2.arrays_of_arrays.task13.*" />
+          <option name="PATTERN" value="by_epam.introduction_to_java.аlgorithmization_2.sorting.task08.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -163,11 +182,11 @@
       </method>
     </configuration>
     <configuration name="Solution (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="by_epam.introduction_to_java.аlgorithmization_2.arrays_of_arrays.task15.Solution" />
+      <option name="MAIN_CLASS_NAME" value="by_epam.introduction_to_java.аlgorithmization_2.sorting.task05.Solution" />
       <module name="StudyJava" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="by_epam.introduction_to_java.аlgorithmization_2.arrays_of_arrays.task15.*" />
+          <option name="PATTERN" value="by_epam.introduction_to_java.аlgorithmization_2.sorting.task05.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -176,11 +195,11 @@
       </method>
     </configuration>
     <configuration name="Solution (4)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="by_epam.introduction_to_java.аlgorithmization_2.arrays_of_arrays.task14.Solution" />
+      <option name="MAIN_CLASS_NAME" value="by_epam.introduction_to_java.аlgorithmization_2.sorting.task04.Solution" />
       <module name="StudyJava" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="by_epam.introduction_to_java.аlgorithmization_2.arrays_of_arrays.task14.*" />
+          <option name="PATTERN" value="by_epam.introduction_to_java.аlgorithmization_2.sorting.task04.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -189,11 +208,11 @@
       </method>
     </configuration>
     <configuration name="Solution (5)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="by_epam.introduction_to_java.аlgorithmization_2.arrays_of_arrays.task16.Solution" />
+      <option name="MAIN_CLASS_NAME" value="by_epam.introduction_to_java.аlgorithmization_2.sorting.task06.Solution" />
       <module name="StudyJava" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="by_epam.introduction_to_java.аlgorithmization_2.arrays_of_arrays.task16.*" />
+          <option name="PATTERN" value="by_epam.introduction_to_java.аlgorithmization_2.sorting.task06.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -202,11 +221,11 @@
       </method>
     </configuration>
     <configuration name="Solution" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="by_epam.introduction_to_java.аlgorithmization_2.sorting.task01.Solution" />
+      <option name="MAIN_CLASS_NAME" value="by_epam.introduction_to_java.аlgorithmization_2.sorting.task07.Solution" />
       <module name="StudyJava" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="by_epam.introduction_to_java.аlgorithmization_2.sorting.task01.*" />
+          <option name="PATTERN" value="by_epam.introduction_to_java.аlgorithmization_2.sorting.task07.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -241,19 +260,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Solution (2)" />
       <item itemvalue="Application.Solution (4)" />
       <item itemvalue="Application.Solution (3)" />
       <item itemvalue="Application.Solution (5)" />
       <item itemvalue="Application.Solution" />
+      <item itemvalue="Application.Solution (1)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Solution (1)" />
         <item itemvalue="Application.Solution" />
         <item itemvalue="Application.Solution (5)" />
         <item itemvalue="Application.Solution (3)" />
         <item itemvalue="Application.Solution (4)" />
-        <item itemvalue="Application.Solution (2)" />
       </list>
     </recent_temporary>
   </component>
@@ -338,10 +357,10 @@
       <screen x="0" y="0" width="1117" height="864" />
     </state>
     <state x="327" y="234" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1117.864@0.0.1117.864" timestamp="1604482602070" />
-    <state x="627" y="215" key="#com.intellij.ide.util.MemberChooser" timestamp="1604676529013">
+    <state x="627" y="215" key="#com.intellij.ide.util.MemberChooser" timestamp="1604934993576">
       <screen x="0" y="0" width="1117" height="864" />
     </state>
-    <state x="627" y="215" key="#com.intellij.ide.util.MemberChooser/0.0.1117.864@0.0.1117.864" timestamp="1604676529013" />
+    <state x="627" y="215" key="#com.intellij.ide.util.MemberChooser/0.0.1117.864@0.0.1117.864" timestamp="1604934993576" />
     <state x="238" y="167" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1602705069681">
       <screen x="0" y="0" width="1117" height="864" />
     </state>
@@ -386,22 +405,22 @@
       <screen x="0" y="0" width="1117" height="864" />
     </state>
     <state x="367" y="179" key="FileChooserDialogImpl/0.0.1117.864@0.0.1117.864" timestamp="1604136071824" />
-    <state width="1074" height="329" key="GridCell.Tab.0.bottom" timestamp="1604860960261">
+    <state width="1074" height="444" key="GridCell.Tab.0.bottom" timestamp="1604934504351">
       <screen x="0" y="0" width="1117" height="864" />
     </state>
-    <state width="1074" height="329" key="GridCell.Tab.0.bottom/0.0.1117.864@0.0.1117.864" timestamp="1604860960261" />
-    <state width="1074" height="329" key="GridCell.Tab.0.center" timestamp="1604860960261">
+    <state width="1074" height="444" key="GridCell.Tab.0.bottom/0.0.1117.864@0.0.1117.864" timestamp="1604934504351" />
+    <state width="1074" height="444" key="GridCell.Tab.0.center" timestamp="1604934504351">
       <screen x="0" y="0" width="1117" height="864" />
     </state>
-    <state width="1074" height="329" key="GridCell.Tab.0.center/0.0.1117.864@0.0.1117.864" timestamp="1604860960261" />
-    <state width="1074" height="329" key="GridCell.Tab.0.left" timestamp="1604860960261">
+    <state width="1074" height="444" key="GridCell.Tab.0.center/0.0.1117.864@0.0.1117.864" timestamp="1604934504351" />
+    <state width="1074" height="444" key="GridCell.Tab.0.left" timestamp="1604934504351">
       <screen x="0" y="0" width="1117" height="864" />
     </state>
-    <state width="1074" height="329" key="GridCell.Tab.0.left/0.0.1117.864@0.0.1117.864" timestamp="1604860960261" />
-    <state width="1074" height="329" key="GridCell.Tab.0.right" timestamp="1604860960261">
+    <state width="1074" height="444" key="GridCell.Tab.0.left/0.0.1117.864@0.0.1117.864" timestamp="1604934504351" />
+    <state width="1074" height="444" key="GridCell.Tab.0.right" timestamp="1604934504351">
       <screen x="0" y="0" width="1117" height="864" />
     </state>
-    <state width="1074" height="329" key="GridCell.Tab.0.right/0.0.1117.864@0.0.1117.864" timestamp="1604860960261" />
+    <state width="1074" height="444" key="GridCell.Tab.0.right/0.0.1117.864@0.0.1117.864" timestamp="1604934504351" />
     <state width="1074" height="329" key="GridCell.Tab.1.bottom" timestamp="1604860960262">
       <screen x="0" y="0" width="1117" height="864" />
     </state>
