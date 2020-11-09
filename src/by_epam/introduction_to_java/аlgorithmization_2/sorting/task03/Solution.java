@@ -1,11 +1,22 @@
 package by_epam.introduction_to_java.аlgorithmization_2.sorting.task03;
 
+/*
+ * Условие задачи:
+ * 3. Сортировка выбором. Дана последовательность чисел a1 <= a2 <= ...<= an.
+ *    Требуется переставить элементы так, чтобы они были расположены по убыванию.
+ *    Для этого в массиве, начиная с первого, выбирается наибольший элемент и ставится
+ *    на первое место, а первый - на место наибольшего.
+ *    Затем, начиная со второго, эта процедура повторяется.
+ *    Написать алгоритм сортировки выбором.
+ */
+
 import java.util.Arrays;
 
 public class Solution {
     public static void main(String[] args) {
         int[] arrayOne = {1, 2, 3, 4, 5, 6};
         int[] arrayTwo = {3, 6, 7, 10, 20, 1, 4, 3};
+
         mySelectionSort(arrayOne);
         mySelectionSort(arrayTwo);
 
@@ -13,6 +24,10 @@ public class Solution {
         System.out.println(Arrays.toString(arrayTwo));
     }
 
+    /**
+     * Sorts the array uses the selection method.
+     * @param array the array to be sorting (a<sub>1</sub> &le; a<sub>2</sub> &le; ... &le; a<sub>n</sub>).
+     */
     public static void mySelectionSort(int[] array){
        for (int i = 0; i < array.length; i++){
            int indexMax = i;
@@ -26,21 +41,5 @@ public class Solution {
            array[indexMax] = array[i];
            array[i] = valueMax;
        }
-    }
-
-    public static void sort(int[] array) {
-        for (int i = 0; i < array.length; i++) {    // i - номер текущего шага
-            int pos = i;
-            int min = array[i];
-            // цикл выбора наименьшего элемента
-            for (int j = i + 1; j < array.length; j++) {
-                if (array[j] < min) {
-                    pos = j;    // pos - индекс наименьшего элемента
-                    min = array[j];
-                }
-            }
-            array[pos] = array[i];
-            array[i] = min;    // меняем местами наименьший с array[i]
-        }
     }
 }

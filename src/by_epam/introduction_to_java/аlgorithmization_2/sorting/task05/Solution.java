@@ -18,8 +18,8 @@ public class Solution {
     }
 
     /**
-     * Sorts array use method "sorting inserting" with binary search
-     * @param array a array for sort
+     * Sorts array use method "sorting inserting" with binary search.
+     * @param array the array to be sorting.
      */
     public static void insertionSort(int[] array){
         for (int i = 1; i < array.length; i++){

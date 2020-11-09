@@ -9,7 +9,7 @@ package by_epam.introduction_to_java.аlgorithmization_2.sorting.task08;
 import java.util.Arrays;
 import java.util.Objects;
 
-public class Solution {
+public class Solution_rev2 {
     public static void main(String[] args) {
         int[] arrayOne = {1, 4, 8, 10, 12, 14, 20, 26, 30, 36};
         int[] arrayTwo = {1, 4, 3, 3, 6, 7, 10, 20};
