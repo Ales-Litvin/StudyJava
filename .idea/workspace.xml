@@ -150,7 +150,7 @@
       <recent name="javarush.task.task30.task3004" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main (2)">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Helper" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="by_epam.introduction_to_java.basics_of_OOP_5.task04.resources.Helper" />
       <module name="StudyJava" />
@@ -190,38 +190,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Main (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="by_epam.introduction_to_java.tasks_6.task01.main.Main" />
+      <module name="StudyJava" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="by_epam.introduction_to_java.tasks_6.task01.main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="by_epam.introduction_to_java.tasks_6.task02.main.Main" />
       <module name="StudyJava" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="by_epam.introduction_to_java.tasks_6.task02.main.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Solution (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="by_epam.introduction_to_java.strings_3.working_with_regular_expressions.task02.Solution" />
-      <module name="StudyJava" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="by_epam.introduction_to_java.strings_3.working_with_regular_expressions.task02.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Solution" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="by_epam.introduction_to_java.аlgorithmization_2.docomposition_using_methods.task11.Solution" />
-      <module name="StudyJava" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="by_epam.introduction_to_java.аlgorithmization_2.docomposition_using_methods.task11.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -269,20 +256,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Solution" />
-      <item itemvalue="Application.Solution (2)" />
-      <item itemvalue="Application.Main" />
       <item itemvalue="Application.Helper" />
       <item itemvalue="Application.Main (1)" />
       <item itemvalue="Application.Main (2)" />
+      <item itemvalue="Application.Main (3)" />
+      <item itemvalue="Application.Main" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main (3)" />
         <item itemvalue="Application.Main (2)" />
         <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.Helper" />
-        <item itemvalue="Application.Solution (2)" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
