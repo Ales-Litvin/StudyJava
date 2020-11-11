@@ -46,7 +46,7 @@ package by_epam.introduction_to_java.basics_of_OOP_5.task05.main;
  * подарок). Составляющими целого подарка являются сладости и упаковка.
  */
 
-import by_epam.introduction_to_java.tasks_6.task01.view.View;
+import by_epam.introduction_to_java.basics_of_OOP_5.task05.view.View;
 import by_epam.introduction_to_java.basics_of_OOP_5.task05.controller.Controller;
 import by_epam.introduction_to_java.basics_of_OOP_5.task05.creator.CompositionCreator;
 import by_epam.introduction_to_java.basics_of_OOP_5.task05.creator.FlowerCreator;
@@ -62,6 +62,7 @@ public class Main {
 
         Controller controller = new Controller(compositionCreator);
 
-
+        View view = new View(controller);
+        view.action();
     }
 }
