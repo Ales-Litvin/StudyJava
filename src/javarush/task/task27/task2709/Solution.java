@@ -16,7 +16,7 @@ package javarush.task.task27.task2709;
  * Got: K
  * ...
  * где M, N, K - числа
- * Метод main не участвует в тестировании
+ * Метод learn.main не участвует в тестировании
  *
  * P.S. Всегда старайся использовать concurrent коллекции вместо ручной реализации
  * wait/notify/notifyAll.

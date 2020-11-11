@@ -53,7 +53,7 @@ public class Solution {
      *         используйте AtomicInteger.
      *             2. Каждая фабрика должна иметь ту группу тредов (ThreadGroup),
      *                в которой она была создана.
-     *             3. Методы main и emulateThreadFactory не участвуют в тестировании.
+     *             3. Методы learn.main и emulateThreadFactory не участвуют в тестировании.
     Пример вывода:
     secondGroup-pool-2-thread-1
     firstGroup-pool-1-thread-1

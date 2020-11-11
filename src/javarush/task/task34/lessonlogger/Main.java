@@ -19,7 +19,7 @@ public class Main {
     }
     public static void main(String[] args) {
         try {
-            LOGGER.log(Level.INFO,"Начало main, создаем лист с типизацией Integers");
+            LOGGER.log(Level.INFO,"Начало learn.main, создаем лист с типизацией Integers");
             List<Integer> ints = new ArrayList<Integer>();
             LOGGER.log(Level.INFO,"присваиваем лист Integers листу без типипзации");
             List empty = ints;

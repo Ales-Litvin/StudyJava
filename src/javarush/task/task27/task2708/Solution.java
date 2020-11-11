@@ -13,7 +13,7 @@ package javarush.task.task27.task2708;
  * т.е. такого synchronizedMethodAClass().synchronizedMethodBClass().synchronizedMethodAClass()
 
 Этот способ избавления от дэдлока называется "открытые вызовы", о нем читайте в дополнительном материале к лекции.
-Метод main не участвует в тестировании.
+Метод learn.main не участвует в тестировании.
  */
 
 import java.util.Set;

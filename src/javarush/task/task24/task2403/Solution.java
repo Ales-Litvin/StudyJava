@@ -3,7 +3,7 @@ package javarush.task.task24.task2403;
 /*
  * Исправь ошибки: перемести методы clone в те классы, в которых они должны быть реализованы.
  * Лишние методы удали.
- * Не удаляй метод main.
+ * Не удаляй метод learn.main.
  */
 
 import java.io.Serializable;

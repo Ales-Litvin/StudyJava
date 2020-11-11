@@ -22,7 +22,7 @@ public class Solution {
     }
 
     /**
-     * Finds and prints positive elements the matrix's main diagonal.
+     * Finds and prints positive elements the matrix's learn.main diagonal.
      * @param matrix the matrix.
      */
     public static void findOfPositiveElements(int[][] matrix){

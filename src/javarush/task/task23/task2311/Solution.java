@@ -6,7 +6,7 @@ package javarush.task.task23.task2311;
 /*
 // Сделать так, чтобы в методе someActions вызывались только методы класса Solution.
 //
-// Ожидаемый вывод в методе main:
+// Ожидаемый вывод в методе learn.main:
 // Amigo: Mmmmm, beef
 // Amigo: knock knock
 // Amigo: Zzzzzzz...1 s

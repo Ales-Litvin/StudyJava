@@ -30,7 +30,7 @@ public class Solution {
     private static Method getMainMethod() {
         Method[] methods = Solution.class.getDeclaredMethods();
         for (Method method : methods) {
-            if (method.getName().equalsIgnoreCase("main")) return method;
+            if (method.getName().equalsIgnoreCase("learn/main")) return method;
         }
 
         return null;

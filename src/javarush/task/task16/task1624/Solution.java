@@ -6,7 +6,7 @@ package javarush.task.task16.task1624;
 
 public class Solution {
     public static MyThread t = new MyThread();
-    static String message = "inside main ";
+    static String message = "inside learn.main ";
 
     public static void main(String a[]) throws Exception {
         t.start();

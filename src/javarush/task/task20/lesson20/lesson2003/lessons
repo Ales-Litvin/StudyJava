@@ -1,4 +1,4 @@
-public static void main(String[] args) throws Exception
+public static void learn.main(String[] args) throws Exception
 {
  Cat cat = new Cat();
 
