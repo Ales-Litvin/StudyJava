@@ -49,7 +49,8 @@ public class Pier implements Runnable{
                 int count = port.get(10);
                 ship.add(count);
                 System.out.printf("%d loaded to %s from %s.\n",
-                        count, ship.toString(), Thread.currentThread().getName());
+                        count, ship.toString(),
+                        Thread.currentThread().getName());
         }
     }
 
@@ -60,7 +61,8 @@ public class Pier implements Runnable{
                 int count = ship.get(10);
                 port.add(count);
                 System.out.printf("%d unloaded from %s to %s.\n",
-                        count, ship.toString(), Thread.currentThread().getName());
+                        count, ship.toString(),
+                        Thread.currentThread().getName());
         }
     }
 }

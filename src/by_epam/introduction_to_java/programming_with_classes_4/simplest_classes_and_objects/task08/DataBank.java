@@ -1,9 +1,5 @@
 package by_epam.introduction_to_java.programming_with_classes_4.simplest_classes_and_objects.task08;
 
-/*
- * Условие задачи см. class
- * by_epam.introduction_to_java.programming_with_classes_4.simplest_classes_and_objects.task08.Customer
- */
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;

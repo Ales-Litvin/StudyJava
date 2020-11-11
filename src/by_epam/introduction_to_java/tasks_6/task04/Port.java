@@ -41,10 +41,14 @@ public class Port{
                 notifyAll();
                 this.count += count;
 
-                System.out.printf("In the port '%s' containers. The port take '%s' containers. Thread: %s.\n",
-                        this.count, count, Thread.currentThread().getName());
+                System.out.printf(
+                        "In the port '%s' containers. " +
+                        "The port take '%s' containers. Thread: %s.\n",
+                        this.count,
+                        count, Thread.currentThread().getName());
             } else {
-                System.out.printf("No place, in the port '%s' containers.  Thread: %s.\n",
+                System.out.printf("No place, in the port '%s' containers.  " +
+                                "Thread: %s.\n",
                         this.count, Thread.currentThread().getName());
                 wait();
             }
@@ -65,12 +69,18 @@ public class Port{
                     count = this.count;
                     this.count = 0;
                 }
-                System.out.printf("In the port '%s' containers. The port give '%s' containers. Thread: %s.\n",
-                        this.count, count, Thread.currentThread().getName());
+                System.out.printf(
+                        "In the port '%s' containers. " +
+                        "The port give '%s' containers. Thread: %s.\n",
+                        this.count, count,
+                        Thread.currentThread().getName());
                 return count;
                 }
-                System.out.printf("No containers, in the port '%s' containers. Thread: %s.\n",
-                      this.count, Thread.currentThread().getName());
+                System.out.printf(
+                        "No containers, in the port '%s' containers. " +
+                        "Thread: %s.\n",
+                      this.count,
+                      Thread.currentThread().getName());
 
                 wait();
 

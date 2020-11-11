@@ -2,7 +2,8 @@ package by_epam.introduction_to_java.аlgorithmization_2.docomposition_using_met
 
 /*
  * Условие задачи:
- * 11. Написать метод(методы), определяющий, в каком из данных двух чисел больше цифр.
+ * 11. Написать метод(методы), определяющий, в каком из данных двух чисел
+ *     больше цифр.
  */
 
 public class Solution {

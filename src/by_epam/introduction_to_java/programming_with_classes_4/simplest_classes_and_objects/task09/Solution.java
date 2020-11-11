@@ -1,14 +1,23 @@
 package by_epam.introduction_to_java.programming_with_classes_4.simplest_classes_and_objects.task09;
 
+/*
+ * Условие задачи:
+ * 9. Создать класс  Book, спецификация которого приведена ниже. Определить конструкторы,  set-  и  get-  методы и
+ * метод   toString().  Создать  второй  класс,  агрегирующий  массив  типа  Book,  с  подходящими  конструкторами  и
+ * методами. Задать критерии выбора данных и вывести эти данные на консоль.
+ * Book: id, название, автор(ы), издательство, год издания, количество страниц, цена, тип переплета.
+ *
+ * Найти и вывести:
+ * a) список книг заданного автора;
+ * b) список книг, выпущенных заданным издательством;
+ * c) список книг, выпущенных после заданного года.
+ */
+
 import by_epam.introduction_to_java.programming_with_classes_4.simplest_classes_and_objects.task08.Helper;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
-/*
- * Условие задачи см. class
- * by_epam.introduction_to_java.programming_with_classes_4.simplest_classes_and_objects.task09.Book;
- */
 public class Solution {
     public static void main(String[] args) {
 

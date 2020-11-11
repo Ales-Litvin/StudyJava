@@ -39,7 +39,8 @@ public class ShipGenerator implements Runnable{
 
     private ShipPurpose getRandomPurpose(){
         Random random = new Random();
-        return ShipPurpose.values()[random.nextInt(ShipPurpose.values().length)];
+        return ShipPurpose.values()[
+                random.nextInt(ShipPurpose.values().length)];
     }
 
     private Size getRandomSize() {

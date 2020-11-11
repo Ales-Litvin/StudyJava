@@ -38,7 +38,7 @@ import java.util.Objects;
 
 /**
  * Class payment with list of <b>products</b>.
- * @autor Rachko Aliaksandr
+ * @author Aliaksandr Rachko
  * @version 1.0
  */
 public class Payment {

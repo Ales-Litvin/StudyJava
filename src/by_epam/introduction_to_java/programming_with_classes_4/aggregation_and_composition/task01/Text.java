@@ -1,14 +1,15 @@
 package by_epam.introduction_to_java.programming_with_classes_4.aggregation_and_composition.task01;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 /*
  * Условие задачи:
  * 1. Создать объект класса Текст, используя классы Предложение, Слово.
  * Методы: дополнить текст, вывести на консоль текст, заголовок текста.
  */
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class Text {
     private Sentence title;
     private List<Sentence> sentences;

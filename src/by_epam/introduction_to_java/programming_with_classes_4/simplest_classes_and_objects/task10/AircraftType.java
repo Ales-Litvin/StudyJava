@@ -1,9 +1,5 @@
 package by_epam.introduction_to_java.programming_with_classes_4.simplest_classes_and_objects.task10;
 
-/*
- * Условие задачи см. class
- * by_epam.introduction_to_java.programming_with_classes_4.simplest_classes_and_objects.task10.Airline;
- */
 public enum AircraftType {
     A300("Airbus A300"),
     A310("Airbus A310"),

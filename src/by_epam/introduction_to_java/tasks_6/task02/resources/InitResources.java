@@ -28,7 +28,7 @@ public class InitResources {
 
     public static void main(String[] args) {
         DataLoader<Note> userDataLoader = new DataLoader<>(
-                "./src/by_epam/introduction_to_java/tasks_6/task02/resources/notes.txt"
+                "notes.txt"
         );
 
         userDataLoader.store(notes);

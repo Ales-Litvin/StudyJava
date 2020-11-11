@@ -27,7 +27,8 @@ public class Tunnel{
 
                 System.out.printf(
                         "In the tunnel - %d ships. Added: %s. Thread: %s.\n",
-                        store.size(), element.toString(), Thread.currentThread().getName());
+                        store.size(), element.toString(),
+                        Thread.currentThread().getName());
                 shipsCounter++;
             } else {
                 System.out.printf(
@@ -56,14 +57,18 @@ public class Tunnel{
                         store.remove(ship);
 
                         System.out.printf(
-                                "In the tunnel - %d ships. The ship %s went to pier. Thread: %s.\n",
-                                store.size(), ship.toString(), Thread.currentThread().getName());
+                                "In the tunnel - %d ships. " +
+                                "The ship %s went to pier. Thread: %s.\n",
+                                store.size(), ship.toString(),
+                                Thread.currentThread().getName());
                         return ship;
                     }
                 }
             }
 
-            System.out.printf("No ships. In the tunnel - %d ships. Thread: %s.\n",
+            System.out.printf(
+                    "No ships. In the tunnel - %d ships. " +
+                    "Thread: %s.\n",
                     store.size(), Thread.currentThread().getName());
             wait();
 
@@ -85,13 +90,16 @@ public class Tunnel{
                 store.remove(ship);
 
                 System.out.printf(
-                        "In the tunnel - %d ships. The ship %s went to pier. Thread: %s.\n",
-                        store.size(), ship.toString(), Thread.currentThread().getName());
+                        "In the tunnel - %d ships. The ship %s went to pier. " +
+                        "Thread: %s.\n",
+                        store.size(), ship.toString(),
+                        Thread.currentThread().getName());
 
                 return ship;
             }
 
-            System.out.printf("No ships. In the tunnel - %d ships. Thread: %s.\n",
+            System.out.printf(
+                    "No ships. In the tunnel - %d ships. Thread: %s.\n",
                     store.size(), Thread.currentThread().getName());
             wait();
 

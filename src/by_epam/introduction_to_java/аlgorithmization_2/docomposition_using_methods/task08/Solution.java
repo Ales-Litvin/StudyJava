@@ -21,7 +21,8 @@ public class Solution {
      * Sums three consecutive elements, from the {@code fromIndex}.
      * @param array the array
      * @param fromIndex the index of the first element, inclusive
-     * @return the sum of three consecutive elements, from the {@code fromIndex}.
+     * @return the sum of three consecutive elements, from the
+     *         {@code fromIndex}.
      */
     public static int sumThree(int[] array, int fromIndex){
         if (fromIndex + 3 > array.length){
