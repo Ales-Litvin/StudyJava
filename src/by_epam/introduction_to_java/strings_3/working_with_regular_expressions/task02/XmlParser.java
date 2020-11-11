@@ -1,6 +1,5 @@
 package by_epam.introduction_to_java.strings_3.working_with_regular_expressions.task02;
 
-
 import by_epam.introduction_to_java.strings_3.working_with_regular_expressions.task02.node.Attribute;
 import by_epam.introduction_to_java.strings_3.working_with_regular_expressions.task02.node.CloseNode;
 import by_epam.introduction_to_java.strings_3.working_with_regular_expressions.task02.node.Node;
@@ -15,13 +14,17 @@ public class XmlParser {
 
     /**
      * Matches nodes whose are opening or don't have body.
-     * (соответсвует открывающимся тегам с одним атрибутом и содержимым или без содрежимого)
+     * (соответсвует открывающимся тегам с одним атрибутом и содержимым или без
+     * содрежимого)
      * Nodes can have attribute. This pattern know one attribute
      */
     public static Pattern OPENING_NODE = Pattern.compile(
-            "<((\\w+)(\\s*(?<category>\\w+)\\s*=\\s*[\"'](?<name>\\d+)[\"'])*)/?>" + // открывающийся тег с одним атрибутом
-                    "(([а-яА-Яa-zA-Z0-9_\\s]+)" + // содержимое тега (текст)
-                    "</\\2>)*"  // закрывающийся тег
+            // открывающийся тег с одним атрибутом
+            "<((\\w+)(\\s*(?<category>\\w+)\\s*=\\s*[\"'](?<name>\\d+)[\"'])*)/?>" +
+                    // содержимое тега (текст)
+                    "(([а-яА-Яa-zA-Z0-9_\\s]+)" +
+                    // закрывающийся тег
+                    "</\\2>)*"
 
     );
 
@@ -129,22 +132,28 @@ public class XmlParser {
 
     /**
      * Copies closingNodes in the openingNodes
-     * (копирует закрывающиеся теги в список окрвающихся тегов в порядке их встречи)
+     * (копирует закрывающиеся теги в список окрвающихся тегов в порядке
+     * их встречи)
      * @param openingNodes list of opening tag
      * @param closingNodes list of closed tag
      */
-    public static void createList(List<Node> openingNodes, List<Node> closingNodes){
+    public static void createList(List<Node> openingNodes,
+                                  List<Node> closingNodes){
         int countInsert = 0;
         for (int i = closingNodes.size() - 1; i >= 0; i--){
             Node closeNode = closingNodes.get(i);
             for (int j = i + countInsert; j >= 0; j--){
                 Node currentNode = openingNodes.get(j);
                 if (closeNode.tagName.equals(currentNode.tagName) &&
-                        Objects.equals(closeNode.attribute, currentNode.attribute)) {
+                        Objects.equals(
+                                closeNode.attribute,
+                                currentNode.attribute)) {
                     openingNodes.add(j + 1, closeNode);
                     break;
                 } else if (closeNode.tagName.equals(currentNode.tagName) &&
-                        !Objects.equals(closeNode.attribute, currentNode.attribute)){
+                        !Objects.equals(
+                                closeNode.attribute,
+                                currentNode.attribute)){
                     openingNodes.add(j, closeNode);
                     break;
                 } else if (!currentNode.tagName.equals(closeNode.tagName)){
@@ -177,6 +186,4 @@ public class XmlParser {
         }
         return root;
     }
-
-
 }

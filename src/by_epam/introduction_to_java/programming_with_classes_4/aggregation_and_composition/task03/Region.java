@@ -32,7 +32,9 @@ public class Region {
 
     public City getRegionalCenter() { return regionalCenter; }
 
-    public void setRegionalCenter(City regionalCenter) { this.regionalCenter = regionalCenter; }
+    public void setRegionalCenter(City regionalCenter) {
+        this.regionalCenter = regionalCenter;
+    }
 
     public List<District> getDistricts() { return districts; }
 

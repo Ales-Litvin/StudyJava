@@ -15,5 +15,7 @@ public class District {
 
     public City getDistrictCenter() { return districtCenter; }
 
-    public void setDistrictCenter(City districtCenter) { this.districtCenter = districtCenter; }
+    public void setDistrictCenter(City districtCenter) {
+        this.districtCenter = districtCenter;
+    }
 }

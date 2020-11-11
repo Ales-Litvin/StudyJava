@@ -2,49 +2,92 @@ package by_epam.introduction_to_java.аlgorithmization_2.docomposition_using_met
 
 /*
  * Условие задачи:
- * 12. Даны  натуральные числа К  и  N.  Написать метод(методы)  формирования массива  А,
- *     элементами  которого являются числа, сумма цифр которых равна К и которые не большее N.
- * Не решена!!
+ * 12. Даны  натуральные числа К и N. Написать метод(методы) формирования
+ *     массива А, элементами которого являются числа, сумма цифр которых равна
+ *     К и которые не большее N.
  */
 
 import java.util.Arrays;
 
 public class Solution {
-    public static void main(String[] args) {
-        int[] arrayOne = new int[2];
+    public static void main(String[] args) throws Exception {
+        int[] arrayOne = new int[8];
 
-        fillingTheArray(arrayOne, 10, 7);
+        fillingTheArrayTwo(arrayOne, 60, 25);
 
         System.out.println(Arrays.toString(arrayOne));
+
+        System.out.println("Sum of number: " + sum(arrayOne));
     }
 
-    public static void fillingTheArrayTwo(int[] array, int k, int n){
-        for (int i = 0, j = 1; i < array.length && j <= n; j++){
+    /**
+     * Fills array with numbers less {@code n}, and sum {@code k}.
+     * @param array the array to be filling
+     * @param k the sum in the array
+     * @param n the max value in the array
+     * @throws Exception if array can't be fill, array too small or
+     *                   {@code k} too big;
+     *                   if {@code k} or {@code n} less '0'.
+     */
+    public static void fillingTheArrayTwo(int[] array, int k, int n)
+            throws Exception {
 
+        if (k < 0 ) {
+            throw new Exception("k=" + k + " < 0");
+        } else if (n < 0) {
+            throw new Exception("n=" + n + " < 0");
+        } else if (array.length == 1 && k > n) {
+            throw new Exception("Array can't be fill, array too small.");
+        } else if (array.length == 1 && k < n) {
+            array[0] = k;
+            return;
+        }
 
+        for (int i = 0; i < array.length && sum(array) < k; i++){
+            int sum = sum(array);
+            int remainder = k - sum;
 
-            int sum = sum(array, 0, array.length);
-
-            if (sum == k){
-                break;
-            } else if (sum + j <= k) {
-                array[i] = j;
-                i++;
+            if (remainder < n){
+                array[i] = remainder;
+            } else {
+                array[i] = n - 1;
             }
-            if (j == n) j = 0;
+
+            if (i == array.length - 1 && sum(array) != k) {
+                throw new Exception("Array can't be fill, array too small.");
+            }
+        }
+
+        replaceZeroElements(array);
+    }
+
+    /**
+     * Replaces equal '0' elements, separating it to random numbers.
+     * (Заменяет элементы равные '0', разделяя ненулевые элементы на два
+     * случайных числа)
+     * @param array the array
+     */
+    public static void replaceZeroElements(int[] array){
+        for (int i = 0; i < array.length; i++){
+            for (int j = i + 1; j < array.length; j++){
+                if (array[j] == 0){
+                    array[j] = (int) (Math.random() * array[i]);
+                    array[i] = array[i] - array[j];
+                }
+            }
         }
     }
 
     /**
-     * Fills the {@code array} with numbers, sum of whose are not more than {@code k},
-     *         and value of numbers are not more {@code n}.
+     * Fills the {@code array} with numbers, sum of whose are not more than
+     * {@code k}, and value of numbers are not more {@code n}.
      * @param array the array to be filling
      * @param k the sum of array's numbers
-     * @param n the max value in the array
+     * @param n the max value in the array.
      */
     public static void fillingTheArray(int[] array, int k, int n){
         for (int i = 0, j = 1; i < array.length && j <= n; j++){
-            int sum = sum(array, 0, array.length);
+            int sum = sum(array);
 
             if (sum == k){
                 break;
@@ -69,5 +112,14 @@ public class Solution {
             result += array[i];
         }
         return result;
+    }
+
+    /**
+     * Sums all elements.
+     * @param array the array
+     * @return the sum of all elements.
+     */
+    public static int sum(int[] array){
+        return sum(array, 0, array.length);
     }
 }

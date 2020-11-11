@@ -1,10 +1,5 @@
 package by_epam.introduction_to_java.programming_with_classes_4.simplest_classes_and_objects.task09;
 
-/*
- * Условие задачи см. class
- * by_epam.introduction_to_java.programming_with_classes_4.simplest_classes_and_objects.task09.Book;
- */
-
 /**
  * Types of Binding (Типы переплета)
  */

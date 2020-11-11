@@ -55,7 +55,8 @@ import by_epam.introduction_to_java.basics_of_OOP_5.task04.loader.DataLoader;
  */
 public class Main {
     public static void main(String[] args) {
-        DataLoader loader = new DataLoader("G:\\Programming\\Work\\StudyJava\\src\\by_epam\\introduction_to_java\\basics_of_OOP_5\\task04\\resources\\treasures.txt");
+        DataLoader loader = new DataLoader(
+                "./src/by_epam/introduction_to_java/basics_of_OOP_5/task04/resources/treasures.txt");
 
         Cave cave = new Cave(loader.getTreasures());
 

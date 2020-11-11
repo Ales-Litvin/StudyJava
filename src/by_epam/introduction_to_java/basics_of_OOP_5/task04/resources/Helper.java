@@ -52,7 +52,8 @@ public class Helper {
         list.add(new Treasure("The Florentine Diamond", 60000));
         list.add(new Treasure("Q Source", 5000));
 
-        DataLoader loader = new DataLoader("G:\\Programming\\Work\\StudyJava\\src\\by_epam\\introduction_to_java\\basics_of_OOP_5\\task04\\resources\\treasures.txt");
+        DataLoader loader = new DataLoader(
+                "./src/by_epam/introduction_to_java/basics_of_OOP_5/task04/resources/treasures.txt");
         loader.store(list);
     }
 }

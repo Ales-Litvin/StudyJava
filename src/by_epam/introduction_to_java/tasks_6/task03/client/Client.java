@@ -74,9 +74,12 @@ public class Client {
         }
 
         if (clientConnected) {
-            ConsoleHelper.writeMessage("Соединение установлено. Для выхода наберите команду 'exit'.");
+            ConsoleHelper.writeMessage(
+                    "Соединение установлено. " +
+                    "Для выхода наберите команду 'exit'.");
         } else {
-            ConsoleHelper.writeMessage("Произошла ошибка во время работы клиента.");
+            ConsoleHelper.writeMessage(
+                    "Произошла ошибка во время работы клиента.");
         }
 
         try {
@@ -102,17 +105,25 @@ public class Client {
                 case "get":
                     ConsoleHelper.writeMessage("Write the dossier's ID number");
                     long id = (long) ConsoleHelper.readInt();
-                    connection.send(new Message(currentUser, MessageType.GET_DOSSIER, id));
+                    connection.send(
+                            new Message(currentUser,
+                                    MessageType.GET_DOSSIER, id));
                     break;
                 case "change":
-                    ConsoleHelper.writeMessage("Write new data for dossier. ID doesn't change.");
-                    connection.send(new Message(currentUser, MessageType.CHANGE_DOSSIER, getDosser()));
+                    ConsoleHelper.writeMessage(
+                            "Write new data for dossier. ID doesn't change.");
+                    connection.send(
+                            new Message(currentUser,
+                                    MessageType.CHANGE_DOSSIER, getDosser()));
                     break;
                 case "add":
-                    connection.send(new Message(currentUser, MessageType.ADD_DOSSIER, getDosser()));
+                    connection.send(
+                            new Message(currentUser, MessageType.ADD_DOSSIER,
+                                    getDosser()));
                     break;
                 default:
-                    ConsoleHelper.writeMessage('\'' + text + "' it's not command!");
+                    ConsoleHelper.writeMessage(
+                            '\'' + text + "' it's not command!");
                     break;
             }
         }
@@ -184,7 +195,8 @@ public class Client {
         }
 
         /**
-         * Sends userName and password to server for authorization on server's request.
+         * Sends userName and password to server for authorization on server's
+         * request.
          * @throws IOException
          * @throws ClassNotFoundException
          */
@@ -193,13 +205,16 @@ public class Client {
                 Message message = connection.receive();
 
                 if (message.getType() == MessageType.USER_REQUEST) {
-                    connection.send(new Message(currentUser, MessageType.USER_DATA, null));
+                    connection.send(
+                            new Message(currentUser,
+                                    MessageType.USER_DATA, null));
                 } else if (message.getType() == MessageType.USER_ACCEPTED) {
                     notifyConnectionStatusChanged(true);
                     ConsoleHelper.writeMessage((String) message.getData());
                     return;
                 } else {
-                    throw new IOException("Unexpected MessageType: " + message.getType());
+                    throw new IOException(
+                            "Unexpected MessageType: " + message.getType());
                 }
             }
         }
@@ -207,7 +222,8 @@ public class Client {
         /**
          * The main loop for to process incoming messages from the server.
          */
-        protected void clientMainLoop() throws IOException, ClassNotFoundException {
+        protected void clientMainLoop() throws IOException,
+                ClassNotFoundException {
             while (true){
                 Message message = connection.receive();
 
@@ -222,7 +238,8 @@ public class Client {
                         ConsoleHelper.writeMessage((String) message.getData());
                         break;
                     default:
-                        throw new IOException("Unexpected MessageType: " + message.getType());
+                        throw new IOException("Unexpected MessageType: "
+                                + message.getType());
                 }
             }
         }

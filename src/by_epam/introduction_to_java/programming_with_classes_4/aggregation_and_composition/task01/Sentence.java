@@ -1,10 +1,5 @@
 package by_epam.introduction_to_java.programming_with_classes_4.aggregation_and_composition.task01;
 
-/*
- * Условие задачи см. class
- * by_epam.introduction_to_java.programming_with_classes_4.aggregation_and_composition.task01.Text;
- */
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;

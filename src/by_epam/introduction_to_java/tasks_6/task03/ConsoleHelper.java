@@ -5,7 +5,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class ConsoleHelper {
-    private static final BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+    private static final BufferedReader bufferedReader =
+            new BufferedReader(new InputStreamReader(System.in));
 
     public static void writeMessage(String message) {
         System.out.println(message);
@@ -15,7 +16,9 @@ public class ConsoleHelper {
         try {
             return bufferedReader.readLine();
         } catch (IOException e){
-            System.out.println("Произошла ошибка при попытке ввода текста. Попробуйте еще раз.");
+            System.out.println(
+                    "Произошла ошибка при попытке ввода текста. " +
+                    "Попробуйте еще раз.");
             return readString();
         }
     }
@@ -24,7 +27,9 @@ public class ConsoleHelper {
         try {
             return Integer.parseInt(readString());
         } catch (NumberFormatException e){
-            System.out.println("Произошла ошибка при попытке ввода числа. Попробуйте еще раз.");
+            System.out.println(
+                    "Произошла ошибка при попытке ввода числа. " +
+                    "Попробуйте еще раз.");
             return readInt();
         }
     }

@@ -70,7 +70,8 @@ public class Dossiers {
     }
 
     /**
-     * Adds new the Dossier in the list of dossiers.xml if it doesn't contain its.
+     * Adds new the Dossier in the list of dossiers.xml if it doesn't
+     * contain its.
      * @param dossier the dossier for adding.
      * @return <tt>true</tt> if this collection changed as a result of the
      *        call

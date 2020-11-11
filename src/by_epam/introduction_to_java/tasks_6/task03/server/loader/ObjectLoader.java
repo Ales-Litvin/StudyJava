@@ -23,7 +23,8 @@ public class ObjectLoader<T> {
      * @param types
      */
     public ObjectLoader(String name, Class<T>... types) {
-        this.pathToFile = name + '/' + types[0].getSimpleName().toLowerCase() + ".xml";
+        this.pathToFile =
+                name + '/' + types[0].getSimpleName().toLowerCase() + ".xml";
         this.types = types;
     }
 
@@ -57,7 +58,9 @@ public class ObjectLoader<T> {
 
             JAXBContext context = JAXBContext.newInstance(this.types);
             Marshaller marshaller = context.createMarshaller();
-            marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+            marshaller.setProperty(
+                    Marshaller.JAXB_FORMATTED_OUTPUT,
+                    Boolean.TRUE);
             marshaller.marshal(t, writer);
 
             ConsoleHelper.writeMessage("File has been written.");

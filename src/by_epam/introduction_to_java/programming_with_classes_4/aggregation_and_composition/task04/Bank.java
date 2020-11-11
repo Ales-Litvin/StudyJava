@@ -1,16 +1,18 @@
 package by_epam.introduction_to_java.programming_with_classes_4.aggregation_and_composition.task04;
 
-import java.math.BigDecimal;
-import java.util.*;
-
 /*
  * Условие задачи:
  * 4. Счета. Клиент может иметь несколько счетов в банке.
  *      Учитывать возможность блокировки/разблокировки счета.
  *      Реализовать поиск и сортировку счетов.
  *      Вычисление общей суммы по счетам.
- *      Вычисление суммы по всем счетам, имеющим положительный и отрицательный балансы отдельно.
+ *      Вычисление суммы по всем счетам, имеющим положительный и отрицательный
+ *      балансы отдельно.
  */
+
+import java.math.BigDecimal;
+import java.util.*;
+
 public class Bank {
     /**
      * List for accounts.
