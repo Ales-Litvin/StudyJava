@@ -2,12 +2,12 @@ package javarush.task.task24.task2405;
 
 /*
  * 1. Восстанови логику метода someAction для поля solutionAction.
- * 2. Пример вывода смотри в комментарии к методу main.
+ * 2. Пример вывода смотри в комментарии к методу learn.main.
  * 3. Подсказка: метод someAction анонимного класса поля
  * SolutionAction должен вызвать метод сабкласса FirstClass,
  * если param > 0, иначе вызвать метод сабкласса SecondClass.
  *
- * Не изменяй метод main!
+ * Не изменяй метод learn.main!
  */
 
 

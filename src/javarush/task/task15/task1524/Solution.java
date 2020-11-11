@@ -32,7 +32,7 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        System.out.println("public static void main");
+        System.out.println("public static void learn.main");
         Solution s = new Solution();
     }
 
@@ -72,8 +72,8 @@ public class Solution {
         System.out.println("static void init()");
     }
 
-    public static void main(String[] args) {
-        System.out.println("public static void main");
+    public static void learn.main(String[] args) {
+        System.out.println("public static void learn.main");
         Solution s = new Solution();
     }
 

@@ -1,4 +1,4 @@
-package by_epam.learn.main;
+package learn.main;
 
 public enum Enums {
     one,

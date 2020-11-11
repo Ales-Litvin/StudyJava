@@ -8,7 +8,7 @@ package javarush.task.task30.task3001;
  * Брось NumberFormatException, если переданное число некорректно, например,
  * число "120" с системой счисления 2.
  * Валидация для - number.getDigit() - целое не отрицательное.
- * Метод main не участвует в тестировании.
+ * Метод learn.main не участвует в тестировании.
  */
 
 import java.math.BigInteger;

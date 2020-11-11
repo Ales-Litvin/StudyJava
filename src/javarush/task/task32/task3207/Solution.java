@@ -33,7 +33,7 @@ public class Solution {
     });
 
     public static void main(String[] args) {
-        // Pretend we're starting an RMI server as the main thread
+        // Pretend we're starting an RMI server as the learn.main thread
         Remote stub = null;
         try {
             registry = LocateRegistry.createRegistry(2099);

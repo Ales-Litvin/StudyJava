@@ -220,7 +220,7 @@ public class Client {
         }
 
         /**
-         * The main loop for to process incoming messages from the server.
+         * The learn.main loop for to process incoming messages from the server.
          */
         protected void clientMainLoop() throws IOException,
                 ClassNotFoundException {

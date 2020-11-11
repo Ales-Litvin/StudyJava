@@ -38,7 +38,7 @@ public class Solution {
 
 /*
 public class Solution {
-    public static void main(String[] args) throws IOException {
+    public static void learn.main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         ArrayList<String> strings = new ArrayList<String>();

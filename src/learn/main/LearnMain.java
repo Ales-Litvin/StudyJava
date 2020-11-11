@@ -1,10 +1,5 @@
-package by_epam.learn.main;
+package learn.main;
 
-import javarush.task.task15.task1526.Solution;
-import org.omg.CORBA.ObjectHelper;
-
-import java.math.BigDecimal;
-import java.nio.charset.Charset;
 import java.util.Arrays;
 import java.util.Objects;
 import java.util.regex.Matcher;
