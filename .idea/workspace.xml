@@ -34,7 +34,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a8da738f-7dfd-4c1f-bafe-d60eaebbb8ca" name="Changelist1" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <list id="2d99bcd9-4f88-400e-839b-12d5f1957ffe" name="Default Changelist" comment="" />
@@ -99,7 +99,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/by_epam/introduction_to_java/basics_1" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../introJava" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.31686747" />
@@ -397,10 +397,10 @@
       <screen x="0" y="0" width="1117" height="864" />
     </state>
     <state x="92" y="92" width="933" height="680" key="DiffContextDialog/0.0.1117.864@0.0.1117.864" timestamp="1604429160644" />
-    <state x="367" y="179" key="FileChooserDialogImpl" timestamp="1604136071824">
+    <state x="367" y="179" key="FileChooserDialogImpl" timestamp="1605192800552">
       <screen x="0" y="0" width="1117" height="864" />
     </state>
-    <state x="367" y="179" key="FileChooserDialogImpl/0.0.1117.864@0.0.1117.864" timestamp="1604136071824" />
+    <state x="367" y="179" key="FileChooserDialogImpl/0.0.1117.864@0.0.1117.864" timestamp="1605192800552" />
     <state width="1074" height="329" key="GridCell.Tab.0.bottom" timestamp="1605118539038">
       <screen x="0" y="0" width="1117" height="864" />
     </state>
