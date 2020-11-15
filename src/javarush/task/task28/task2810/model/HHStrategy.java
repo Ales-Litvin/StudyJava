@@ -9,7 +9,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class HHStrategy implements Strategy {
-    private static final String USER_AGENT = "Mozilla/5.0 (jsoup)";
+    private static final String USER_AGENT = "Chrome/86.0.4240.198";
     private static final int timeout = 5 * 1000;
 
     private static final String URL_FORMAT
@@ -22,7 +22,7 @@ public class HHStrategy implements Strategy {
     @Override public List<Vacancy> getVacancies(String searchString) {
         Document doc = null;
         try {
-            doc = Jsoup.connect("http://hh.ua/search/vacancy?text=java+%s&page=%d").get();
+            doc = Jsoup.connect("http://hh.ua/search/vacancy?text=java+%s&page=%d").userAgent(USER_AGENT).referrer("strict-origin-when-cross-origin").get();
         } catch (IOException e) {
             e.printStackTrace();
         }
