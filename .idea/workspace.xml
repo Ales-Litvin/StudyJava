@@ -34,75 +34,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a8da738f-7dfd-4c1f-bafe-d60eaebbb8ca" name="Changelist1" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/byte-buddy-1.10.14-javadoc.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/byte-buddy-1.10.14.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/byte-buddy-agent-1.10.14-javadoc.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/byte-buddy-agent-1.10.14.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/javassist-3.27.0-GA-javadoc.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/javassist-3.27.0-GA.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/mockito-all-1.10.19-javadoc.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/mockito-all-1.10.19.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/objenesis-3.0.1-javadoc.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/objenesis-3.0.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/powermock-core-2.0.9-javadoc.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/powermock-core-2.0.9.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/powermock-module-junit4-2.0.9-javadoc.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/powermock-module-junit4-2.0.9.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/powermock-module-junit4-common-2.0.9-javadoc.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/powermock-module-junit4-common-2.0.9.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/powermock-reflect-2.0.9-javadoc.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/powermock-reflect-2.0.9.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/javarush/task/task38/task3801/NameChecker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/javarush/task/task38/task3801/NameIsEmptyException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/javarush/task/task38/task3801/NameIsNullException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/javarush/task/task38/task3801/Solution.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/javarush/task/task38/task3804/ApplicationExceptionMessage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/javarush/task/task38/task3804/DatabaseExceptionMessage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/javarush/task/task38/task3804/ExceptionFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/javarush/task/task38/task3804/Solution.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/javarush/task/task38/task3804/UserExceptionMessage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/javarush/task/task38/task3805/Connection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/javarush/task/task38/task3805/ConnectionException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/javarush/task/task38/task3805/ConnectionMock.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/javarush/task/task38/task3805/Solution.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/javarush/task/task38/task3805/SolutionException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/javarush/task/task38/task3805/WrongDataException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/javarush/task/task38/task3806/Solution.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/javarush/task/task38/task3807/Solution.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/javarush/task/task38/task3808/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/javarush/task/task38/task3808/Solution.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/javarush/task/task38/task3809/IncorrectAccount.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/javarush/task/task38/task3809/JavaRushBankAccount.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/javarush/task/task38/task3809/LongPositive.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/javarush/task/task38/task3809/ReflectionAnnotationUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/javarush/task/task38/task3809/Solution.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/javarush/task/task38/task3810/Author.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/javarush/task/task38/task3810/Changelog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/javarush/task/task38/task3810/Date.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/javarush/task/task38/task3810/Position.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/javarush/task/task38/task3810/Revision.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/javarush/task/task38/task3810/Solution.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/javarush/task/task38/task3811/Solution.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/javarush/task/task38/task3811/Ticket.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/javarush/task/task38/task3812/Fox.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/javarush/task/task38/task3812/PrepareMyTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/javarush/task/task38/task3812/Solution.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/javarush/task/task38/task3812/SomeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StudyJava.iml" beforeDir="false" afterPath="$PROJECT_DIR$/StudyJava.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StudyJava/by_epam/learn/main/Clone.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StudyJava/by_epam/learn/main/Enums.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StudyJava/by_epam/learn/main/Except.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StudyJava/by_epam/learn/main/LearnMain$Example.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StudyJava/by_epam/learn/main/LearnMain.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StudyJava/by_epam/learn/main/Name.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StudyJava/javarush/task/task15/task1524/Solution.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StudyJava/javarush/task/task15/task1524/Solution.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StudyJava/javarush/task/task16/task1624/Solution.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StudyJava/javarush/task/task16/task1624/Solution.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StudyJava/javarush/task/task20/lesson20/lesson2003/lessons" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StudyJava/javarush/task/task20/lesson20/lesson2003/lessons" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StudyJava/javarush/task/task20/task2026/readme.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StudyJava/javarush/task/task20/task2026/readme.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StudyJava/javarush/task/task20/task2027/readme.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StudyJava/javarush/task/task20/task2027/readme.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StudyJava/javarush/task/task21/task2102/Solution.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StudyJava/javarush/task/task21/task2102/Solution.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StudyJava/javarush/task/task34/lessonlogger/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StudyJava/javarush/task/task34/lessonlogger/Main.class" afterDir="false" />
     </list>
     <list id="2d99bcd9-4f88-400e-839b-12d5f1957ffe" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
