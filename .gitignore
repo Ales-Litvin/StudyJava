@@ -2,7 +2,9 @@
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
 # IntelliJ’s project specific settings files
-/.idea
+/.idea/
+
+.idea/workspace.xml
 
  # The output of your project
 /out
