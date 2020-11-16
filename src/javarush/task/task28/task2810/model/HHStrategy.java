@@ -32,7 +32,7 @@ public class HHStrategy implements Strategy {
                     vacancy.setCity(element.getElementsByAttributeValue("data-qa", "vacancy-serp__vacancy-address").text());
                     vacancy.setCompanyName(element.getElementsByAttributeValue("data-qa", "vacancy-serp__vacancy-employer").text());
                     vacancy.setSalary(element.getElementsByAttributeValue("data-qa", "vacancy-serp__vacancy-compensation").text());
-                    vacancy.setSiteName(URL_FORMAT);
+                    vacancy.setSiteName("http://hh.ua/");
                     vacancy.setUrl(element.getElementsByAttributeValueContaining("data-qa", "vacancy-serp__vacancy-title").attr("href"));
                     vacancies.add(vacancy);
                 }
