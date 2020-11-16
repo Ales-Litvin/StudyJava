@@ -12,55 +12,43 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HHStrategy implements Strategy {
-    private static final String USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36";
-    private static final String REFERRER = "strict-origin-when-cross-origin";
-    private static final int timeout = 5 * 1000;
-
-    private static final String URL_FORMAT
-            = "http://hh.ua/search/vacancy?text=java+%s&page=%d";
-
-    // http://hh.ru/search/vacancy?text=java+%s&page=%d -- это работает
-    // http://hh.ua/search/vacancy?text=java+%s&page=%d
-
+    private static final String URL_FORMAT = "http://hh.ua/search/vacancy?text=java+%s&page=%d";
 
     @Override
     public List<Vacancy> getVacancies(String searchString) {
         List<Vacancy> vacancies = new ArrayList<>();
-        Document doc = null;
-
+        Vacancy vacancy;
+        int i = 0;
+        Document doc;
         try {
-            for (int page = 0; (doc = getDocument(searchString, page)) != null; page++) {
-                //Elements elements = doc.select("[data-qa=vacancy-serp__vacancy]");
-                //Elements elements = doc.select("[data-qa=\"vacancy-serp__vacancy\"]");
-                Elements elements = doc.getElementsByAttributeValue("data-qa", "vacancy-serp__vacancy");
+            while (true) {
 
-                if (elements.isEmpty()){ break; }
-
-                for (Element element : elements) {
-                    if (element == null) break;
-
-                    Vacancy vacancy = new Vacancy();
-
-                    vacancy.setTitle(element.getElementsByAttributeValue("data-qa", "vacancy-serp__vacancy-title").text());
-                    vacancy.setSalary(element.getElementsByAttributeValue("data-qa", "vacancy-serp__vacancy-compensation").text());
-                    vacancy.setCity(element.getElementsByAttributeValue("data-qa", "vacancy-serp__vacancy-address").text());
-                    vacancy.setCompanyName(element.getElementsByAttributeValue("data-qa", "vacancy-serp__vacancy-employer").text());
-                    vacancy.setSiteName(new URL(element.baseUri()).getHost());
-                    vacancy.setUrl(element.baseUri());
-
+                doc = getDocument(searchString, i++);
+                if (doc == null) {
+                    break;
+                }
+                Elements elements = doc.select("[data-qa=vacancy-serp__vacancy]");
+                if (elements.size() == 0) {
+                    break;
+                }
+                for (Element elem : elements) {
+                    vacancy = new Vacancy();
+                    vacancy.setTitle(elem.getElementsByAttributeValue("data-qa", "vacancy-serp__vacancy-title").text());
+                    vacancy.setCity(elem.getElementsByAttributeValue("data-qa", "vacancy-serp__vacancy-address").text());
+                    vacancy.setCompanyName(elem.getElementsByAttributeValue("data-qa", "vacancy-serp__vacancy-employer").text());
+                    vacancy.setSalary(elem.getElementsByAttributeValue("data-qa", "vacancy-serp__vacancy-compensation").text());
+                    vacancy.setUrl(elem.baseUri());
+                    vacancy.setSiteName(new URL(elem.baseUri()).getHost());
                     vacancies.add(vacancy);
                 }
-
             }
-        } catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
-
         return vacancies;
     }
 
     protected Document getDocument(String searchString, int page) throws IOException {
-        return Jsoup.connect(String.format(URL_FORMAT, searchString, page)).
-                userAgent(USER_AGENT).referrer(REFERRER).get();
+        return Jsoup.connect(String.format(URL_FORMAT, searchString, page)).userAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.106 Safari/537.36").referrer("no-referrer-when-downgrade").get();
     }
 }
