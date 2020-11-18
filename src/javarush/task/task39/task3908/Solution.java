@@ -20,17 +20,21 @@ import java.util.*;
 public class Solution {
     public static void main(String[] args) {
         System.out.println(isPalindromePermutation("tenet"));
+        System.out.println(isPalindromePermutation("tenet"));
         System.out.println(isPalindromePermutation("12123")); // true
         System.out.println(isPalindromePermutation("22311"));
         System.out.println(isPalindromePermutation("vnssfjvdvnsdfjv"));
-        System.out.println(isPalindromePermutation("топот"));
+        System.out.println(isPalindromePermutation("fvdvf"));
+        System.out.println(isPalindromePermutation("fFF"));
+        System.out.println(isPalindromePermutation("ff"));
+        System.out.println(isPalindromePermutation("ff"));
 
         // 12321 | 1
         System.out.println(isPalindromePermutation("PiWpWoi")); // true
         System.out.println(isPalindromePermutation("PpWiWoi"));
     }
 
-    public static boolean isPalindromePermutation(String s) {
+    public static boolean isPalindromePermutationThree(String s) {
         if (s == null || s.isEmpty()) return false;
 
         boolean hasMiddle = false;
@@ -53,6 +57,38 @@ public class Solution {
                 hasMiddle = true;
             } else if (count % 2 != 0 && hasMiddle) {
                 System.out.println(c);
+                return false;
+            }
+        }
+        return true;
+    }
+
+    // It's working variant
+    public static boolean isPalindromePermutation(String s){
+        if (s == null || s.isEmpty()) return true;
+
+        // Lower case the String and remove white spaces
+        s = s.toLowerCase();
+        s = s.replaceAll(" ", "");
+
+        // Assume 8-bit ascii encoding
+        boolean[] isOdd = new boolean[256];
+
+        // For each character c in the input String, save whether it is
+        // represented an odd number of times
+        for (int i = 0; i < s.length(); i++) {
+            isOdd[s.charAt(i)] = !isOdd[s.charAt(i)];
+        }
+
+        // Count the number of odd characters
+        int numberOdds = 0;
+
+        for (int i = 0; i < isOdd.length; i++) {
+            if (isOdd[i]) {
+                numberOdds++;
+            }
+            // At most one character can have an odd count
+            if (numberOdds > 1) {
                 return false;
             }
         }
