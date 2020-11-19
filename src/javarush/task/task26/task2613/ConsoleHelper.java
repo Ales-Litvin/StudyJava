@@ -1,5 +1,7 @@
 package javarush.task.task26.task2613;
 
+import javarush.task.task26.task2613.exception.InterruptOperationException;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -12,11 +14,14 @@ public class ConsoleHelper {
 
     private static final BufferedReader bis = new BufferedReader(new InputStreamReader(System.in));
 
-    public static String readString(){
+    public static String readString() throws InterruptOperationException {
         String string = null;
 
         try {
             string = bis.readLine();
+            if (string.equalsIgnoreCase("exit")){
+                throw new InterruptOperationException();
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -24,7 +29,7 @@ public class ConsoleHelper {
         return string;
     }
 
-    public static String askCurrencyCode(){
+    public static String askCurrencyCode() throws InterruptOperationException {
         writeMessage("Write currency's code, please");
         String code = readString();
 
@@ -36,7 +41,7 @@ public class ConsoleHelper {
         }
     }
 
-    public static String[] getValidTwoDigits(String currencyCode){
+    public static String[] getValidTwoDigits(String currencyCode) throws InterruptOperationException {
         writeMessage("Write currency's denomination and count separated by a space, please");
 
         String data = readString().trim();
@@ -49,7 +54,7 @@ public class ConsoleHelper {
         }
     }
 
-    public static Operation askOperation(){
+    public static Operation askOperation() throws InterruptOperationException {
         writeMessage("Write number of operation, please");
         try {
             return Operation.getAllowableOperationByOrdinal(Integer.parseInt(readString()));
