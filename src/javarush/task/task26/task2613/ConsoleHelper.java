@@ -23,4 +23,29 @@ public class ConsoleHelper {
 
         return string;
     }
+
+    public static String askCurrencyCode(){
+        writeMessage("Write currency's code, please");
+        String code = readString();
+
+        if (code.length() == 3){
+            return code.toUpperCase();
+        } else {
+            writeMessage("Incorrect data, try again");
+            return askCurrencyCode();
+        }
+    }
+
+    public static String[] getValidTwoDigits(String currencyCode){
+        writeMessage("Write currency's denomination and count separated by a space, please");
+
+        String data = readString().trim();
+
+        if (data.matches("\\d+\\s\\d+")){
+            return data.split(" ");
+        }  else {
+            writeMessage("Incorrect data, try again");
+            return getValidTwoDigits(currencyCode);
+        }
+    }
 }
