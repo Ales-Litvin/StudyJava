@@ -1,25 +1,19 @@
 package javarush.task.task26.task2613;
 
+import javarush.task.task26.task2613.command.CommandExecutor;
+
 import java.util.Locale;
 
 public class CashMachine {
     public static void main(String[] args) {
         Locale.setDefault(Locale.ENGLISH);
+        Operation operation = null;
 
-        String code = ConsoleHelper.askCurrencyCode();
+        do {
 
-        String[] digits = ConsoleHelper.getValidTwoDigits(code);
+            operation = ConsoleHelper.askOperation();
+            CommandExecutor.execute(operation);
 
-
-        CurrencyManipulator manipulator =
-                CurrencyManipulatorFactory.getManipulatorByCurrencyCode(code);
-
-        //DEPOSIT
-        manipulator.addAmount(
-                Integer.parseInt(digits[0]),
-                Integer.parseInt(digits[1]));
-
-        //INFO
-        ConsoleHelper.writeMessage(String.valueOf(manipulator.getTotalAmount()));
+        } while (operation != Operation.EXIT);
     }
 }
