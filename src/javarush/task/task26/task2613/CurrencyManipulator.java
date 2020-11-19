@@ -15,6 +15,10 @@ public class CurrencyManipulator {
         this.currencyCode = currencyCode;
     }
 
+    public  boolean hasMoney(){
+        return !denominations.isEmpty();
+    }
+
     //DEPOSIT
     public void addAmount(int denomination, int count) {
         if (denominations.containsKey(denomination)) {
