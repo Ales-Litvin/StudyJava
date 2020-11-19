@@ -1,6 +1,7 @@
 package javarush.task.task26.task2613.command;
 
 import javarush.task.task26.task2613.Operation;
+import javarush.task.task26.task2613.exception.InterruptOperationException;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -10,6 +11,7 @@ public class CommandExecutor {
     private CommandExecutor() { }
 
     private static final Map<Operation, Command> allKnownCommandsMap;
+
     static {
         allKnownCommandsMap = new HashMap<>();
         allKnownCommandsMap.put(Operation.INFO, new InfoCommand());
@@ -18,7 +20,7 @@ public class CommandExecutor {
         allKnownCommandsMap.put(Operation.EXIT, new ExitCommand());
     }
 
-    public static final void execute(Operation operation){
+    public static final void execute(Operation operation) throws InterruptOperationException {
         allKnownCommandsMap.get(operation).execute();
     }
 }
