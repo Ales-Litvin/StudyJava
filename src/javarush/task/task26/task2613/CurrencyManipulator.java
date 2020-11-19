@@ -6,7 +6,7 @@ import java.util.Map;
 public class CurrencyManipulator {
     private final String currencyCode;
 
-    private Map<Integer, Integer> denominations;
+    private final Map<Integer, Integer> denominations;
 
     public String getCurrencyCode() { return currencyCode; }
 
@@ -15,11 +15,22 @@ public class CurrencyManipulator {
         this.currencyCode = currencyCode;
     }
 
-    public void addAmount(int denomination, int count){
-        if (denominations.containsKey(denomination)){
+    //DEPOSIT
+    public void addAmount(int denomination, int count) {
+        if (denominations.containsKey(denomination)) {
             denominations.put(denomination, denominations.get(denomination) + count);
         } else {
             denominations.put(denomination, count);
         }
     }
+
+    public int getTotalAmount() {
+        int sum = 0;
+        for (Map.Entry<Integer, Integer> pair : denominations.entrySet()) {
+            sum += pair.getKey() * pair.getValue();
+        }
+        return sum;
+    }
+
+
 }
