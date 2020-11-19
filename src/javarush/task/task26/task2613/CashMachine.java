@@ -17,5 +17,7 @@ public class CashMachine {
         manipulator.addAmount(
                 Integer.parseInt(digits[0]),
                 Integer.parseInt(digits[1]));
+
+        ConsoleHelper.writeMessage(String.valueOf(manipulator.getTotalAmount()));
     }
 }
