@@ -14,10 +14,12 @@ public class CashMachine {
         CurrencyManipulator manipulator =
                 CurrencyManipulatorFactory.getManipulatorByCurrencyCode(code);
 
+        //DEPOSIT
         manipulator.addAmount(
                 Integer.parseInt(digits[0]),
                 Integer.parseInt(digits[1]));
 
+        //INFO
         ConsoleHelper.writeMessage(String.valueOf(manipulator.getTotalAmount()));
     }
 }

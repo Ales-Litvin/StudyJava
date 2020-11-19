@@ -48,4 +48,14 @@ public class ConsoleHelper {
             return getValidTwoDigits(currencyCode);
         }
     }
+
+    public static Operation askOperation(){
+        writeMessage("Write number of operation, please");
+        try {
+            return Operation.getAllowableOperationByOrdinal(Integer.parseInt(readString()));
+        } catch (IllegalArgumentException e){
+            writeMessage("Incorrect data, try again");
+            return askOperation();
+        }
+    }
 }

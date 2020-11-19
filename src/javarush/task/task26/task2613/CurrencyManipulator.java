@@ -24,6 +24,7 @@ public class CurrencyManipulator {
         }
     }
 
+    //INFO
     public int getTotalAmount() {
         int sum = 0;
         for (Map.Entry<Integer, Integer> pair : denominations.entrySet()) {
