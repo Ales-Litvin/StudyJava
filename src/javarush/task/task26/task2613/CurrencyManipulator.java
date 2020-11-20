@@ -1,7 +1,9 @@
 package javarush.task.task26.task2613;
 
-import java.util.HashMap;
-import java.util.Map;
+import javarush.task.task26.task2613.exception.NotEnoughMoneyException;
+
+import java.util.*;
+
 
 public class CurrencyManipulator {
     private final String currencyCode;
@@ -17,6 +19,58 @@ public class CurrencyManipulator {
 
     public  boolean hasMoney(){
         return !denominations.isEmpty();
+    }
+
+    public boolean isAmountAvailable(int expectedAmount){
+        return getTotalAmount() >= expectedAmount;
+    }
+
+    public Map<Integer, Integer> withdrawAmount(int expectedAmount)
+            throws NotEnoughMoneyException {
+        Map<Integer, Integer> removedBills = new HashMap<>();
+
+        Set<Integer> bills = new TreeSet<>(new Comparator<Integer>() {
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                return Integer.compare(o2, o1);
+            }
+        });
+
+        bills.addAll(denominations.keySet());
+
+        int num;
+        for (int bill : bills) {
+            if (bill <= expectedAmount) {
+
+                num = expectedAmount / bill;
+
+                if (denominations.get(bill) < num) {
+                    num = denominations.get(bill);
+                }
+
+                removedBills.put(bill, num);
+                expectedAmount -= num * bill;
+            }
+        }
+
+        if (expectedAmount > 0) throw new NotEnoughMoneyException();
+
+        removeBills(removedBills);
+
+        return removedBills;
+    }
+
+    private void removeBills(Map<Integer, Integer> removedBills) {
+        for (Map.Entry<Integer, Integer> pair : removedBills.entrySet()){
+            int denomination = pair.getKey();
+            int count = pair.getValue();
+
+            if (denominations.get(denomination) == count){
+                denominations.remove(denomination);
+            } else {
+                denominations.put(denomination, denominations.get(denomination) - count);
+            }
+        }
     }
 
     //DEPOSIT
@@ -36,6 +90,4 @@ public class CurrencyManipulator {
         }
         return sum;
     }
-
-
 }
