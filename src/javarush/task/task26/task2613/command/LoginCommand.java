@@ -1,21 +1,23 @@
 package javarush.task.task26.task2613.command;
 
+import javarush.task.task26.task2613.CashMachine;
 import javarush.task.task26.task2613.ConsoleHelper;
 import javarush.task.task26.task2613.exception.InterruptOperationException;
 
+import java.util.Locale;
+import java.util.ResourceBundle;
+
 class LoginCommand implements Command{
 
-    private final long numberCard = 123456789012L;
-
-    private final int pinCode = 1234;
+    private final ResourceBundle validCreditCards = ResourceBundle.getBundle(CashMachine.class.getPackage().getName() + ".resources.verifiedCards");
 
     @Override
     public void execute() throws InterruptOperationException {
+        Locale.setDefault(Locale.ENGLISH);
 
         while (true){
-            ConsoleHelper.writeMessage("Write credit card's number");
+            ConsoleHelper.writeMessage("Write credit card's number and pin code");
             String number = ConsoleHelper.readString();
-            ConsoleHelper.writeMessage("Write pin-code");
             String pin = ConsoleHelper.readString();
 
             if (!number.matches("\\d{12}") || !pin.matches("\\d{4}")) {
@@ -23,14 +25,14 @@ class LoginCommand implements Command{
                 continue;
             }
 
-            if (Long.parseLong(number) != numberCard ||
-                    Integer.parseInt(pin) != pinCode){
-                ConsoleHelper.writeMessage("Wrong data, try again");
-                continue;
+            if (validCreditCards.containsKey(number) &&
+                    validCreditCards.getString(number).equals(pin)){
+                ConsoleHelper.writeMessage("Logging in");
+
+                break;
             }
 
-            ConsoleHelper.writeMessage("Logging in");
-            break;
+            ConsoleHelper.writeMessage("Wrong data, try again");
         }
     }
 }
