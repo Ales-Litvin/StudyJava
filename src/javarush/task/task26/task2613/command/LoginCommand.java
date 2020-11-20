@@ -11,28 +11,38 @@ class LoginCommand implements Command{
 
     private final ResourceBundle validCreditCards = ResourceBundle.getBundle(CashMachine.class.getPackage().getName() + ".resources.verifiedCards");
 
+    private final ResourceBundle res = ResourceBundle.getBundle(CashMachine.class.getPackage().getName() + ".resources.login");
+
     @Override
     public void execute() throws InterruptOperationException {
         Locale.setDefault(Locale.ENGLISH);
+        ConsoleHelper.writeMessage(res.getString("before"));
 
         while (true){
-            ConsoleHelper.writeMessage("Write credit card's number and pin code");
+            ConsoleHelper.writeMessage(res.getString("specify.data"));
             String number = ConsoleHelper.readString();
             String pin = ConsoleHelper.readString();
 
             if (!number.matches("\\d{12}") || !pin.matches("\\d{4}")) {
-                ConsoleHelper.writeMessage("Wrong credit card's number or pin");
+                ConsoleHelper.writeMessage(res.getString("try.again.with.details"));
                 continue;
             }
 
             if (validCreditCards.containsKey(number) &&
                     validCreditCards.getString(number).equals(pin)){
-                ConsoleHelper.writeMessage("Logging in");
+                ConsoleHelper.writeMessage(String.format(
+                        res.getString("success.format"),
+                        number
+                ));
 
                 break;
             }
 
-            ConsoleHelper.writeMessage("Wrong data, try again");
+            ConsoleHelper.writeMessage(String.format(
+                    res.getString("not.verified.format"),
+                    number));
+
+            ConsoleHelper.writeMessage(res.getString("try.again.or.exit"));
         }
     }
 }
