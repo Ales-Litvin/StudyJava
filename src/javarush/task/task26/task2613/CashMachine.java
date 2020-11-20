@@ -8,18 +8,17 @@ import java.util.Locale;
 public class CashMachine {
     public static void main(String[] args) {
         Locale.setDefault(Locale.ENGLISH);
-        Operation operation = null;
 
         try {
             CommandExecutor.execute(Operation.LOGIN);
+            Operation operation;
             do {
-
                 operation = ConsoleHelper.askOperation();
                 CommandExecutor.execute(operation);
-
             } while (operation != Operation.EXIT);
+
         } catch (InterruptOperationException e) {
-            ConsoleHelper.writeMessage("Bye!");
+            ConsoleHelper.writeMessage("GoodBye!");
         }
     }
 }
