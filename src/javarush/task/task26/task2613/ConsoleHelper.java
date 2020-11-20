@@ -5,8 +5,11 @@ import javarush.task.task26.task2613.exception.InterruptOperationException;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ResourceBundle;
 
 public class ConsoleHelper {
+
+    private final static ResourceBundle res = ResourceBundle.getBundle(CashMachine.class.getPackage().getName() + ".resources.common");
 
     public static void writeMessage(String message){
         System.out.println(message);
@@ -28,43 +31,55 @@ public class ConsoleHelper {
         return userRequest;
     }
 
+    public static int readInt() throws InterruptOperationException {
+        while (true) {
+            try {
+                return Integer.parseInt(readString());
+            } catch (NumberFormatException e) {
+                writeMessage(res.getString("invalid.data"));
+            }
+        }
+    }
+
     public static String askCurrencyCode() throws InterruptOperationException {
-        writeMessage("Write currency's code, please");
+        writeMessage(res.getString("choose.currency.code"));
         String code = readString();
 
-        if (code.length() == 3){
+        if (code.matches("\\w{3}")){
             return code.toUpperCase();
         } else {
-            writeMessage("Incorrect data, try again");
+            writeMessage(res.getString("invalid.data"));
             return askCurrencyCode();
         }
     }
 
     public static String[] getValidTwoDigits(String currencyCode) throws InterruptOperationException {
-        writeMessage("Write currency's denomination and count separated by a space, please");
+        writeMessage(String.format(
+                res.getString("choose.denomination.and.count.format"),
+                currencyCode));
 
         String data = readString().trim();
 
         if (data.matches("\\d+\\s\\d+")){
             return data.split(" ");
         }  else {
-            writeMessage("Incorrect data, try again");
+            writeMessage(res.getString("invalid.data"));
             return getValidTwoDigits(currencyCode);
         }
     }
 
     public static Operation askOperation() throws InterruptOperationException {
-        writeMessage(
-                "Write number of operation, please\n" +
-                "\t1 - INFO\n" +
-                "\t2 - DEPOSIT\n" +
-                "\t3 - WITHDRAW\n" +
-                "\t4 or 'EXIT' - EXIT");
-        try {
-            return Operation.getAllowableOperationByOrdinal(Integer.parseInt(readString()));
-        } catch (IllegalArgumentException e){
-            writeMessage("Incorrect data, try again");
-            return askOperation();
+        while (true) {
+            writeMessage(res.getString("choose.operation"));
+            writeMessage("1 - " + res.getString("operation.INFO"));
+            writeMessage("2 - " + res.getString("operation.DEPOSIT"));
+            writeMessage("3 - " + res.getString("operation.WITHDRAW"));
+            writeMessage("4 - " + res.getString("operation.EXIT"));
+            try {
+                return Operation.getAllowableOperationByOrdinal(readInt());
+            } catch (IllegalArgumentException e) {
+                writeMessage(res.getString("invalid.data"));
+            }
         }
     }
 }
