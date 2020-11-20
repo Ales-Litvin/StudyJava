@@ -15,18 +15,17 @@ public class ConsoleHelper {
     private static final BufferedReader bis = new BufferedReader(new InputStreamReader(System.in));
 
     public static String readString() throws InterruptOperationException {
-        String string = null;
+        String userRequest = null;
 
         try {
-            string = bis.readLine();
-            if (string.equalsIgnoreCase("exit")){
+            userRequest = bis.readLine();
+            if ("EXIT".equalsIgnoreCase(userRequest)){
                 throw new InterruptOperationException();
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        return string;
+        return userRequest;
     }
 
     public static String askCurrencyCode() throws InterruptOperationException {
@@ -55,7 +54,12 @@ public class ConsoleHelper {
     }
 
     public static Operation askOperation() throws InterruptOperationException {
-        writeMessage("Write number of operation, please");
+        writeMessage(
+                "Write number of operation, please\n" +
+                "\t1 - INFO\n" +
+                "\t2 - DEPOSIT\n" +
+                "\t3 - WITHDRAW\n" +
+                "\t4 or 'EXIT' - EXIT");
         try {
             return Operation.getAllowableOperationByOrdinal(Integer.parseInt(readString()));
         } catch (IllegalArgumentException e){
