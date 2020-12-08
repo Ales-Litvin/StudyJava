@@ -26,5 +26,10 @@
             <surname>Didac</surname>
             <content>Very bigger content</content>
         </dossier>
+        <dossier id="1234">
+            <firstname>Dadef</firstname>
+            <surname>Avnf</surname>
+            <content>Some contents</content>
+        </dossier>
     </dossiersList>
 </dossiers>

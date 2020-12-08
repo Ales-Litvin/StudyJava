@@ -11,7 +11,19 @@ public class Solution {
         System.out.println(isLine(0 ,5 , 0 ,4 ,0 ,6));
     }
 
-    public static boolean isLine(int x1, int y1, int x2, int y2, int x3, int y3){
+    /**
+     * Checks, "Do three points lie on the line?".
+     * @param x1 the x coordinate of the first point
+     * @param y1 the y coordinate of the first point
+     * @param x2 the x coordinate of the second point
+     * @param y2 the y coordinate of the second point
+     * @param x3 the x coordinate of the second point
+     * @param y3 the y coordinate of the second point
+     * @return {@code true} if three points lie on the line.
+     */
+    public static boolean isLine(int x1, int y1,
+                                 int x2, int y2,
+                                 int x3, int y3){
         // y = kx + b
         if (x1 == x2 && x2 == x3 || y1 == y2 && y2 == y3){
             return true;

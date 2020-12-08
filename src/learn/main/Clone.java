@@ -38,14 +38,18 @@ public class Clone implements Cloneable, Comparable<Clone>{
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Clone)) return false;
+
         Clone clone = (Clone) o;
-        return age == clone.age &&
-                Objects.equals(name, clone.name);
+
+        if (age != clone.age) return false;
+        return name != null ? name.equals(clone.name) : clone.name == null;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, age);
+        int result = name != null ? name.hashCode() : 0;
+        result = 31 * result + age;
+        return result;
     }
 
     @Override

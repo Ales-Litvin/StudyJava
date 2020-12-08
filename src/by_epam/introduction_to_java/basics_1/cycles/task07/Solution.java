@@ -2,8 +2,8 @@ package by_epam.introduction_to_java.basics_1.cycles.task07;
 
 /*
  * Условие задачи:
- * 7. Для каждого натурального числа в промежутке от m до n вывести все делители,
- *    кроме единицы и самого числа. m и n вводятся с клавиатуры.
+ * 7. Для каждого натурального числа в промежутке от m до n вывести все
+ *    делители, кроме единицы и самого числа. m и n вводятся с клавиатуры.
  */
 
 import java.io.BufferedReader;
@@ -22,6 +22,11 @@ public class Solution {
         printAllDivisorBetween(m, n);
     }
 
+    /**
+     * Print all divisors for numbers between {@code m} and {@code n}.
+     * @param m an argument.
+     * @param n an another argument.
+     */
     public static void printAllDivisorBetween(int m, int n){
         for (int i = m; i <= n; i++){
             System.out.print("Divider \""+ i + "\" : ");

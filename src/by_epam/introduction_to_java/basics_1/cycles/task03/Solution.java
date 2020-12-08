@@ -9,6 +9,10 @@ public class Solution {
         System.out.println(sumSquaresFirstHundred());
     }
 
+    /**
+     * Calculates sum of squares first hundred numbers.
+     * @return sum of squares first hundred numbers.
+     */
     public static int sumSquaresFirstHundred(){
         int result = 0;
         for (int i = 1; i <= 100; i++){

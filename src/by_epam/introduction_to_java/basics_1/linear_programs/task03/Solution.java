@@ -2,16 +2,24 @@ package by_epam.introduction_to_java.basics_1.linear_programs.task03;
 
 /*
  * Условие задачи:
- * 3. Вычислить значение выражения по формуле (все переменные принимают действительные значения):
- *      (𝑠𝑖𝑛 𝑥 + 𝑐𝑜𝑠 𝑦) / (𝑐𝑜𝑠 𝑥 − 𝑠𝑖𝑛 𝑦) ∗ 𝑡𝑔 𝑥𝑦
+ * 3. Вычислить значение выражения по формуле (все переменные принимают
+ *    действительные значения):
+ *      (sin x + cos y) / (cos x - sin y) * tg xy.
  */
+
 public class Solution {
     public static void main(String[] args) {
-        int x = 1;
-        int y = 1;
+        System.out.println(result(1,1));
+    }
 
-        double z = ((Math.sin(x) + Math.cos(y)) / (Math.cos(x) - Math.sin(y))) * Math.tan(x * y);
-
-        System.out.println(z);
+    /**
+     * Calculates (sin x + cos y) / (cos x - sin y) * tg xy.
+     * @param x an argument.
+     * @param y an another argument.
+     * @return calculating result
+     */
+    public static double result(int x, int y){
+        return ((Math.sin(x) + Math.cos(y)) /
+                (Math.cos(x) - Math.sin(y))) * Math.tan(x * y);
     }
 }

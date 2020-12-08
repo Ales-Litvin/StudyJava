@@ -7,11 +7,17 @@ package by_epam.introduction_to_java.basics_1.linear_programs.task01;
 
 public class Solution {
     public static void main(String[] args) {
-        int a = 2;
-        int b = 3;
-        int c = 4;
+        System.out.println(result(2,3,4));
+    }
 
-        double z = ((a - 3) * ((double) b / 2)) + c;
-        System.out.println(z);
+    /**
+     * Calculates z = ( (a - 3) * b / 2 ) + c.
+     * @param a an argument.
+     * @param b an another argument.
+     * @param c an another argument.
+     * @return calculating result
+     */
+    public static double result(int a, int b, int c){
+        return ((a - 3) * ((double) b / 2)) + c;
     }
 }

@@ -12,15 +12,20 @@ package by_epam.introduction_to_java.basics_1.linear_programs.task06;
  */
 public class Solution {
     public static void main(String[] args) {
-        int x = -2;
-        int y = -2;
+        System.out.println(inRegion(-2,-2));
+        System.out.println(inRegion(4,-2));
+    }
 
+    /**
+     * Checks, "Does points lie in the region?".
+     *      <p><center>Region: <img src="image.PNG"/>
+     * @param x the coordinate x of the point
+     * @param y the coordinate y of the point
+     * @return {@code true} if the point lie in the region.
+     */
+    public static boolean inRegion(int x, int y){
         if (0 <= y && y < 4 && -2 < x && x < 2){
-            System.out.println(true);
-        } else if (0 >= y && y > -3 && -4 < x && x < 4){
-            System.out.println(true);
-        } else {
-            System.out.println(false);
-        }
+            return true;
+        } else return 0 >= y && y > -3 && -4 < x && x < 4;
     }
 }
