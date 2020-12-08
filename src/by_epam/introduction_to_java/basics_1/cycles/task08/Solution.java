@@ -2,7 +2,8 @@ package by_epam.introduction_to_java.basics_1.cycles.task08;
 
 /*
  * Условие задачи:
- * 8. Даны два числа. Определить цифры, входящие в запись как первого так и второго числа.
+ * 8. Даны два числа. Определить цифры, входящие в запись как первого так и
+ *    второго числа.
  */
 
 import java.util.HashSet;
@@ -15,6 +16,11 @@ public class Solution {
         printTheSameNumbers(a, b);
     }
 
+    /**
+     * Prints the same digits numbers {@code a} and {@code b}.
+     * @param a an argument.
+     * @param b  an another argument.
+     */
     public static void printTheSameNumbers(int a, int b){
         Set<Character> set = new HashSet<>();
         for (char c : String.valueOf(a).toCharArray()){

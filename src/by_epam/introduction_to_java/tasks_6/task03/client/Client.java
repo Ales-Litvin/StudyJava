@@ -7,7 +7,6 @@ import by_epam.introduction_to_java.tasks_6.task03.entity.message.Message;
 import by_epam.introduction_to_java.tasks_6.task03.entity.message.MessageType;
 import by_epam.introduction_to_java.tasks_6.task03.entity.user.User;
 
-
 import java.io.IOException;
 import java.net.Socket;
 

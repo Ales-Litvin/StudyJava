@@ -11,6 +11,12 @@ public class Solution {
         System.out.println(isSolution(2));
     }
 
+    /**
+     * Calculates the value of function:
+     * F(x) = x<sup>2</sup>-3x+9, if x &le;3; 1 / (x<sup>3</sup>+6) , if x > 3.
+     * @param x the x
+     * @return the solution.
+     */
     public static int isSolution(int x){
         int result;
         if (x <= 3){
