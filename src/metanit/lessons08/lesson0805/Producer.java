@@ -1,4 +1,4 @@
-package metanit.lesson08.lesson0805;
+package metanit.lessons08.lesson0805;
 
 // класс Производитель
 class Producer implements Runnable{

@@ -1,4 +1,4 @@
-package metanit.lesson08.lesson0804;
+package metanit.lessons08.lesson0804;
 
 class JThread extends Thread {
 

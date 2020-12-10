@@ -1,4 +1,4 @@
-package metanit.lesson08.lesson0807;
+package metanit.lessons08.lesson0807;
 
 import java.util.concurrent.Exchanger;
 
