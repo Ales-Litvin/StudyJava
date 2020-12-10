@@ -1,4 +1,4 @@
-package metanit.lesson08.lesson0806;
+package metanit.lessons08.lesson0806;
 
 import java.util.concurrent.Semaphore;
 
