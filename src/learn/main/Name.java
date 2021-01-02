@@ -30,25 +30,6 @@ class Dog extends Animal {
     }
 }
 
-class Main {
-    public static void main(String[] args) {
-        A a = new B();
-        a.method(42);
-    }
-}
-
-class A {
-    public void method(Object obj) {
-        System.out.println("A");
-    }
-}
-
-class B extends A {
-    public void method(Integer obj) {
-        System.out.println("B");
-    }
-}
-
 class Quest {
     public void method(Number obj) {
         System.out.print("1");
@@ -171,6 +152,16 @@ class GenericClass<T>{
 
         }
     }
+}
 
+abstract class AbstractClass implements Serializable{
+    public static void main(String[] args) {
 
+    }
+
+    public abstract void AbstractMethod();
+
+    public static void JustStaticMethod(){
+
+    }
 }
