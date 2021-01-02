@@ -1,0 +1,13 @@
++---maintask
+|   /---ConsoleHelper.java
+|   /---ElementParser.java
+|   +---entity
+|   |   /---Element.java
+|   /---FolderViewer.java
+|   /---Main.java
+|   /---maintask_structure.txt
+|   /---README.txt
+|   +---view
+|   |   /---AbstractView.java
+|   |   /---View.java
+|   |   /---ViewToFile.java
