@@ -52,11 +52,6 @@ public class Ship {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("Ship{");
-        sb.append(count);
-        sb.append(", ").append(size);
-        sb.append(", ").append(purpose);
-        sb.append('}');
-        return sb.toString();
+        return "Ship{" + count + ", " + size + ", " + purpose + '}';
     }
 }
