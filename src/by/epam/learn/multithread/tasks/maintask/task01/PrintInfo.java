@@ -1,7 +1,5 @@
 package by.epam.learn.multithread.tasks.maintask.task01;
 
-import by.epam.learn.multithread.tasks.maintask.Port;
-
 import java.util.concurrent.TimeUnit;
 
 public class PrintInfo extends Thread{

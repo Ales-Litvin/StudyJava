@@ -1,6 +1,5 @@
-package by.epam.learn.multithread.tasks.maintask;
+package by.epam.learn.multithread.tasks.maintask.task01;
 
-import by.epam.learn.multithread.tasks.maintask.task01.Tunnel;
 import by.epam.learn.multithread.tasks.maintask.task01.ship.Ship;
 import by.epam.learn.multithread.tasks.maintask.task01.ship.ShipPurpose;
 
