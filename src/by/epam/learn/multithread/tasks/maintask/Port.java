@@ -4,94 +4,118 @@ import by.epam.learn.multithread.tasks.maintask.task01.Tunnel;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.ReentrantLock;
 
 // This is resources
-public class Port{
+public class Port {
 
-    private final List<Pier> PIERS;
-    
+    private final List<Pier> piers;
 
-    private static final int MAX_PIERS = 5;
-
+    private static final int MAX_PIERS = 3;
     private static final int MAX_CAPACITY = 500;
 
-    private int count;
+    private int amount;
 
     public Port(Tunnel tunnel) {
-        this.PIERS = new ArrayList<>();
-        for (int i = 0; i < MAX_PIERS; i++){
-            PIERS.add(new Pier(tunnel, this, i));
+        this.piers = new ArrayList<>();
+        this.amount = 300;
+        for (int i = 0; i < MAX_PIERS; i++) {
+            piers.add(new Pier(tunnel, this, i));
         }
     }
 
     public List<Pier> getPiers() {
-        return PIERS;
+        return piers;
     }
 
     // returns true if can take 'containers'
-    public synchronized boolean canTake(){
-        return count < MAX_CAPACITY;
+    public synchronized boolean canTake() {
+        return amount < MAX_CAPACITY;
     }
 
     // returns ture if can give 'containers'
-    public synchronized boolean canGive(){
-        return count != 0;
+    public synchronized boolean canGive() {
+        return amount != 0;
     }
 
-    public synchronized void add(int count){
+    ReentrantLock lock = new ReentrantLock();
+    Condition condition = lock.newCondition();
 
+    // producer
+    public void add(int count) {
         try {
-            if (count < MAX_CAPACITY){
-                notifyAll();
-                this.count += count;
+            lock.lock();
 
-                System.out.printf(
-                        "In the port '%s' containers. " +
-                        "The port take '%s' containers. Thread: %s.\n",
-                        this.count,
-                        count, Thread.currentThread().getName());
-            } else {
-                System.out.printf("No place, in the port '%s' containers.  " +
-                                "Thread: %s.\n",
-                        this.count, Thread.currentThread().getName());
-                wait();
+            while (this.amount >= MAX_CAPACITY) {
+                condition.await();
             }
+
+            // program logic
+            this.amount += count;
+            System.out.printf(
+                    "Port '%d' containers. " +
+                            "From %s to %s '%d' containers.\n",
+                    this.amount,
+                    Thread.currentThread().getName(),
+                    this.getClass().getSimpleName(),
+                    count);
+
         } catch (InterruptedException e) {
             e.printStackTrace();
+            Thread.currentThread().interrupt();
+        } finally {
+            condition.signalAll();
+            lock.unlock();
         }
     }
 
+    // consumer
     // returns count of unloaded products
-    public synchronized int get(int count){
-
+    public int get(int count) {
         try {
-            if (count != 0){
-                notifyAll();
-                if (this.count >= count){
-                    this.count -= count;
-                } else {
-                    count = this.count;
-                    this.count = 0;
-                }
-                System.out.printf(
-                        "In the port '%s' containers. " +
-                        "The port give '%s' containers. Thread: %s.\n",
-                        this.count, count,
-                        Thread.currentThread().getName());
-                return count;
-                }
-                System.out.printf(
-                        "No containers, in the port '%s' containers. " +
-                        "Thread: %s.\n",
-                      this.count,
-                      Thread.currentThread().getName());
+            lock.lock();
 
-                wait();
-
-            } catch (InterruptedException e) {
-            e.printStackTrace();
+            while (this.amount <= 0) {
+                condition.await();
             }
 
+            if (this.amount >= count) {
+                this.amount -= count;
+            } else {
+                count = this.amount;
+                this.amount = 0;
+            }
+
+            System.out.printf(
+                    "Port '%d' containers. " +
+                            "From %s to %s '%d' containers.\n",
+                    this.amount,
+                    this.getClass().getSimpleName(),
+                    Thread.currentThread().getName(),
+                    count);
+
+            return count;
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+            Thread.currentThread().interrupt();
+        } finally {
+            condition.signalAll();
+            lock.unlock();
+        }
         return 0;
+    }
+
+    public String getInfo() {
+        int containers = 0;
+        try {
+            lock.lock();
+            containers = amount;
+        } finally {
+            lock.unlock();
+        }
+        return String.format("%s: '%d' containers.\n",
+                Thread.currentThread().getName(),
+                containers);
     }
 }

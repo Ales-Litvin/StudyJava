@@ -1,8 +1,10 @@
 package by.epam.learn.multithread.tasks.maintask;
 
-import by.epam.introduction_to_java.tasks_6.task04.Tunnel;
-import by.epam.introduction_to_java.tasks_6.task04.ship.Ship;
-import by.epam.introduction_to_java.tasks_6.task04.ship.ShipPurpose;
+import by.epam.learn.multithread.tasks.maintask.task01.Tunnel;
+import by.epam.learn.multithread.tasks.maintask.task01.ship.Ship;
+import by.epam.learn.multithread.tasks.maintask.task01.ship.ShipPurpose;
+
+import java.util.concurrent.TimeUnit;
 
 public class Pier implements Runnable{
     private final int id;
@@ -16,15 +18,13 @@ public class Pier implements Runnable{
         this.id = id;
     }
 
-
     @Override
     public void run() {
-
         while (true){
             try {
                 Thread.currentThread().setName("Pier{" + id + "}");
 
-                Thread.sleep(500);
+                TimeUnit.MILLISECONDS.sleep(300);
 
                 Ship ship = tunnel.get();
 
@@ -36,34 +36,54 @@ public class Pier implements Runnable{
                     } else {
                         unloadShip(ship);
                     }
+                } else {
+                    return;
                 }
             } catch (InterruptedException e){
                 e.printStackTrace();
+                Thread.currentThread().interrupt();
             }
         }
     }
 
     // Loads ship
     private void loadShip(Ship ship) throws InterruptedException {
+        System.out.printf("%s start LOAD to %s:\n",
+                Thread.currentThread().getName(),
+                ship.toString());
+
         while (ship.countCheck()){
-                Thread.sleep(100);
+            TimeUnit.MILLISECONDS.sleep(100);
                 int count = port.get(10);
                 ship.add(count);
                 System.out.printf("%d loaded to %s from %s.\n",
                         count, ship.toString(),
                         Thread.currentThread().getName());
         }
+
+        System.out.printf("%s finish load to %s:\n",
+                Thread.currentThread().getName(),
+                ship.toString());
     }
 
     // Unloads ship
     private void unloadShip(Ship ship) throws InterruptedException {
+        System.out.printf("%s start UNLOAD to %s:\n",
+                Thread.currentThread().getName(),
+                ship.toString());
+
         while (ship.countCheck() && port.canTake()){
-                Thread.sleep(100);
+                TimeUnit.MILLISECONDS.sleep(100);
                 int count = ship.get(10);
                 port.add(count);
                 System.out.printf("%d unloaded from %s to %s.\n",
-                        count, ship.toString(),
-                        Thread.currentThread().getName());
+                        count,
+                        Thread.currentThread().getName(),
+                        ship.toString());
         }
+
+        System.out.printf("%s finish UNLOAD to %s:\n",
+                Thread.currentThread().getName(),
+                ship.toString());
     }
 }

@@ -4,10 +4,12 @@ import by.epam.learn.multithread.tasks.maintask.task01.ship.Ship;
 import by.epam.learn.multithread.tasks.maintask.task01.ship.ShipPurpose;
 import by.epam.learn.multithread.tasks.maintask.task01.ship.Size;
 
+import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
 import java.util.Random;
 
 // This is ship's generator
-public class ShipGenerator implements Runnable{
+public class ShipGenerator implements Runnable {
     private final Tunnel tunnel;
 
     private final int shipCount;
@@ -21,7 +23,7 @@ public class ShipGenerator implements Runnable{
     @Override
     public void run() {
         int count = 0;
-        while (count < shipCount){
+        while (count < shipCount) {
             Thread.currentThread().setName("Generator ship");
             count++;
             tunnel.add(new Ship(getRandomSize(), getRandomPurpose()));
@@ -29,19 +31,27 @@ public class ShipGenerator implements Runnable{
                 Thread.sleep(200);
             } catch (InterruptedException e) {
                 e.printStackTrace();
+                Thread.currentThread().interrupt();
             }
-
         }
     }
 
-    private ShipPurpose getRandomPurpose(){
-        Random random = new Random();
+    private static Random random;
+
+    static {
+        try {
+            random = SecureRandom.getInstanceStrong();
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private ShipPurpose getRandomPurpose() {
         return ShipPurpose.values()[
                 random.nextInt(ShipPurpose.values().length)];
     }
 
     private Size getRandomSize() {
-        Random random = new Random();
         return Size.values()[random.nextInt(Size.values().length)];
     }
 }

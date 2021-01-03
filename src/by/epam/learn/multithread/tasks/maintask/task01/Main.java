@@ -5,6 +5,7 @@ import by.epam.learn.multithread.tasks.maintask.Port;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 /*
  * 1. Порт. Корабли заходят в порт для разгрузки/загрузки контейнеров.
@@ -20,20 +21,32 @@ public class Main {
                 + Runtime.getRuntime().availableProcessors());
 
         Tunnel tunnel = new Tunnel();
-
         ShipGenerator shipGenerator = new ShipGenerator(tunnel, 20);
 
         Port port = new Port(tunnel);
-
         ExecutorService service = Executors.newCachedThreadPool();
-
         service.execute(shipGenerator);
+
+        PrintInfo info = new PrintInfo(port, tunnel);
+        info.start();
+
+        try {
+            TimeUnit.SECONDS.sleep(1);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+            Thread.currentThread().interrupt();
+        }
 
         for(Pier pier : port.getPiers()){
             service.execute(pier);
         }
 
-        service.shutdown();
 
+        try {
+            service.awaitTermination(3, TimeUnit.SECONDS);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+            Thread.currentThread().interrupt();
+        }
     }
 }
