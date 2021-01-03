@@ -1,6 +1,4 @@
-package by.epam.learn.multithread.tasks.maintask;
-
-import by.epam.learn.multithread.tasks.maintask.task01.Tunnel;
+package by.epam.learn.multithread.tasks.maintask.task01;
 
 import java.util.ArrayList;
 import java.util.List;

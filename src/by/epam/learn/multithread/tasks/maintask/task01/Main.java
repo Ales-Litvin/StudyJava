@@ -1,8 +1,5 @@
 package by.epam.learn.multithread.tasks.maintask.task01;
 
-import by.epam.learn.multithread.tasks.maintask.Pier;
-import by.epam.learn.multithread.tasks.maintask.Port;
-
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
