@@ -1,0 +1,4 @@
+it's just test file, for testing textparser.
+there is a lot of letter whose starts with vowel letter.
+words : angle, english, young, old.
+a lot of words with capital letter.
