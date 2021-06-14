@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.example.com/students"
+        xmlns:tns="http://www.example.com/students"
+        elementFormDefault="qualified">
+    <element name="old_cards">
+        <complexType>
+            <sequence>
+                <element name="old_card" type="tns:old_card"
+                         minOccurs="2"
+                         maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+
+    <complexType name="old_card">
+        <sequence>
+            <element name="country" type="string"/>
+            <element name="year" type="gYear"/>
+            <element name="author" type="string"/>
+            <element name="valuable" type="string"/>
+        </sequence>
+
+        <attribute name="theme">
+                <simpleType>
+                    <restriction base="string">
+                        <enumeration value="cityscape"/>
+                        <enumeration value="nature"/>
+                        <enumeration value="people"/>
+                        <enumeration value="sport"/>
+                        <enumeration value="architecture"/>
+                        <enumeration value="religion"/>
+                    </restriction>
+                </simpleType>
+        </attribute>
+
+        <attribute name="typeContent" use="optional" default="usual">
+            <simpleType>
+                <restriction base="string">
+                    <enumeration value="congratulation"/>
+                    <enumeration value="advertising"/>
+                    <enumeration value="usual"/>
+                </restriction>
+            </simpleType>
+        </attribute>
+    </complexType>
+
+    <simpleType name="Valuable">
+        <restriction base="string">
+            <enumeration value="history"/>
+            <enumeration value="collecting"/>
+            <enumeration value="thematic"/>
+        </restriction>
+    </simpleType>
+
+</schema>

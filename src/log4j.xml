@@ -1,13 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Configuration status="INFO">
+<Configuration status="WARN" >
+
+    <Properties>
+        <Property name="name1">value</Property>
+        <Property name="name2" value="value2"/>
+    </Properties>
+
     <Appenders>
         <Console name="Console" target="SYSTEM_OUT">
             <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
         </Console>
+        <Console name="Console_colored" target="SYSTEM_OUT">
+            <PatternLayout pattern="%style{%date{DEFAULT}}{yellow}
+                  %highlight{%-5level}{FATAL=bg__red, ERROR=red, WARN=yellow, INFO=green}
+                  %message"/>
+        </Console>
+
+        <File name="File1" fileName="logs/text.log" bufferedIO="true">
+            <PatternLayout pattern="${pattern_file}"/>
+        </File>
+
+        <RollingFile name="File" fileName="logs/text_log.log" append="true"
+                     filePattern="logs/${date:yyyy-MM-dd}/%d{yyyy-MM-dd_HH-mm}_%i.log">
+            <PatternLayout pattern="${pattern_file}"/>
+            <Policies>
+                <SiezeBasedTriggeringPolicy size="15 KB"/>
+            </Policies>
+            <DfaultRolloverStrategy max="10"/>
+        </RollingFile>
     </Appenders>
+
     <Loggers>
-        <Root level="error">
-            <AppenderRef ref="Console"/>
+        <Logger name="Log_Console" level="debug" additivity="false">
+            <AppenderRe ref="Console"/>
+        </Logger>
+
+        <Logger name="Log_File" level="trace" additivity="false">
+            <AppenderRe ref="File1"/>
+        </Logger>
+
+        <Root level="debug">
+            <AppenderRef ref="RollingFile"/>
+            <AppenderRef ref="File"/>
+            <AppenderRef ref="Console_colored"/>
         </Root>
     </Loggers>
 </Configuration>

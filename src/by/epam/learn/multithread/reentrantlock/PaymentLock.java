@@ -6,8 +6,8 @@ import java.util.concurrent.locks.ReentrantLock;
 
 public class PaymentLock {
     private int amount;
-    private ReentrantLock lock = new ReentrantLock(true);
-    private Condition condition = lock.newCondition();
+    private final ReentrantLock lock = new ReentrantLock(true);
+    private final Condition condition = lock.newCondition();
 
     public void doPayment(){
         try {
@@ -20,16 +20,17 @@ public class PaymentLock {
             System.out.println("Payment is closed");
         }catch (InterruptedException e){
             e.printStackTrace();
+            Thread.currentThread().interrupt();
         } finally {
             lock.unlock();
         }
     }
 
     public synchronized void init(){
-        try {
+        try (Scanner scan = new Scanner(System.in)) {
             lock.lock();
             System.out.println("Init amount:");
-            amount = new Scanner(System.in).nextInt();
+            amount = scan.nextInt();
         } finally {
             condition.signalAll();
             lock.unlock();

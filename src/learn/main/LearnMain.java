@@ -1,5 +1,6 @@
 package learn.main;
 
+import java.nio.charset.Charset;
 import java.util.Arrays;
 import java.util.Objects;
 import java.util.regex.Matcher;
@@ -111,6 +112,9 @@ public class LearnMain {
         //int a3 = new int[](1, 2, 3);
         int a4[] = new int[3];
         //int a5[] = new int[3]{1, 2, 3};*/
+
+        String a = new String(new byte[]{1,2,35,51,1,5},1, 3, Charset.forName("utf-8"));
+        a.intern();
 
         int[] arrMain = {2, 5, 7, 8, 3, 0};
         new Example(arrMain);

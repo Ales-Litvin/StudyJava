@@ -1,7 +1,7 @@
 package by.epam.learn.multithread.exchanger;
 
 public class Item {
-    private int itemId;
+    private final int itemId;
     private double price;
     private String description;
 

@@ -1,0 +1,5 @@
+<?xml version="1.0" econding="UTF-8" standalone="yes" ?> <!-- XML Declaration -->
+<root>
+    <element>Some text</element>
+    <a a="x" b="y" c="z">Some text</a>
+</root>

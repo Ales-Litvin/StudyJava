@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+        <!ELEMENT old_cards (old_card)+>
+        <!ELEMENT old_card (country, year, author, valuable)>
+        <!ATTLIST old_card
+                theme CDATA #REQUIRED
+                typeContent CDATA #REQUIRED>
+        <!ELEMENT country (#PCDATA)>
+        <!ELEMENT year (#PCDATA)>
+        <!ELEMENT author (#PCDATA)>
+        <!ELEMENT valuable (#PCDATA)>
