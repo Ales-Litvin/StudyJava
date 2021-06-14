@@ -1,9 +1,9 @@
 package by.epam.learn.multithread.rwlock;
 
 public class PointThread extends Thread{
-    private PointManager pointManager;
-    private boolean writeStatus;
-    private Point point;
+    private final PointManager pointManager;
+    private final boolean writeStatus;
+    private final Point point;
 
     public PointThread(PointManager pointManager, Point point, boolean writeStatus) {
         this.pointManager = pointManager;

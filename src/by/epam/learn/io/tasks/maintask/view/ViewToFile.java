@@ -28,7 +28,7 @@ public class ViewToFile extends AbstractView {
         StringBuilder sb = null;
         try (BufferedReader reader = new BufferedReader(new FileReader(fileName))){
             sb = new StringBuilder();
-            String data = null;
+            String data;
             while ((data = reader.readLine()) != null){
                 sb.append(data).append("\n");
             }

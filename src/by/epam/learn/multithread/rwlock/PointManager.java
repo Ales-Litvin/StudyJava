@@ -11,8 +11,6 @@ public class PointManager {
     private final Lock readLock = lock.readLock();
     private final Lock writeLock = lock.writeLock();
 
-    public PointManager() { }
-
     public double length(Point point){
         double length = 0;
         try {
@@ -24,6 +22,7 @@ public class PointManager {
             System.out.println(" read lock 2:    " + Thread.currentThread().getName());
         } catch (InterruptedException e){
             e.printStackTrace();
+            Thread.currentThread().interrupt();
         } finally {
             readLock.unlock();
         }
@@ -41,6 +40,7 @@ public class PointManager {
             System.out.println(" writeLock end:    " + Thread.currentThread().getName());
         } catch (InterruptedException e){
             e.printStackTrace();
+            Thread.currentThread().interrupt();
         } finally {
             writeLock.unlock();
         }

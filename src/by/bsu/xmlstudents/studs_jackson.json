@@ -1,0 +1,26 @@
+{
+  "students": [
+    {
+      "login": "gochette",
+      "faculty": "mmf",
+      "name": "Klimenko",
+      "telephone": 2095306,
+      "address": {
+        "city": "Minsk",
+        "country": "BLR",
+        "street": "Skoriny 4"
+      }
+    },
+    {
+      "login": "ivette",
+      "faculty": "mmf",
+      "name": "Teran",
+      "telephone": 2345386,
+      "address": {
+        "city": "Polotesk",
+        "country": "BLR",
+        "street": "Simeona P. 23"
+      }
+    }
+  ]
+}

@@ -12,8 +12,10 @@ public class WaitNotifySignal {
                 wait();
             } catch (InterruptedException e) {
                 e.printStackTrace();
+                Thread.currentThread().interrupt();
             }
             ready = false;
+            notify();
         }
     }
 

@@ -96,10 +96,10 @@ public class Element {
     }
 
     private String getTabulation(int level) {
-        String tabulation = "";
+        StringBuilder tabulation = new StringBuilder();
         for (int i = 0; i < level; i++) {
-            tabulation += "|   ";
+            tabulation.append("|   ");
         }
-        return tabulation;
+        return tabulation.toString();
     }
 }

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="student.xsl"?> <!-- инструкция по обработке -->
+<students>
+    <!-- PCDATA — parsed character data, EMPTY, ANY -->
+    <!DOCTYPE student [
+        <!ATTLIST student
+                login ID#REQUIRED
+                faculty CDATA#REQUIRED>
+    <!ELEMENT student (name, telephone, address)>
+    <!ELEMENT name (#PCDATA)>
+    <!ELEMENT telephone (#PCDATA)>
+    <!ELEMENT country (#PCDATA)>
+    <!ELEMENT city (#PCDATA)>
+    <!ELEMENT street (#PCDATA)>
+    <!ELEMENT address (country, city, street)>
+    ]>
+
+    <student login="MitarAlex7" faculty="mmf">
+        <name>Mitar Alex</name>
+        <telephone>2456474</telephone>
+        <address>
+            <country>Belarus</country>
+            <city>Minsk</city>
+            <street>Kalinovsky 45</street>
+        </address>
+    </student>
+    <student login="Pashkin5" faculty="mmf">
+        <name>Pashkin Alex</name>
+        <telephone>3453789</telephone>
+        <address>
+            <country>Belarus</country>
+            <city>Brest</city>
+            <street>Knorina 56</street>
+        </address>
+    </student>
+    <student login="Ales" faculty="mmf">
+        <name>Ales Litvin</name>
+        <telephone>[!CDATA[some code without special symbol '>>&amp;']]</telephone>
+        <address>
+            <country>Belarus</country>
+            <city>Hrodna</city>
+            <street>Napoleona Ordy 1</street>
+        </address>
+    </student>
+</students>

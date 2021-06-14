@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE old_cards SYSTEM "old_cards.dtd">
+
+<old_cards>
+    <old_card theme="cityscape" typeContent="congratulation">
+        <country>Belarus</country>
+        <year>2020</year>
+        <author>No name</author>
+        <valuable>history</valuable>
+    </old_card>
+
+    <old_card theme="nature" typeContent="advertising">
+        <country>Poland</country>
+        <year>2021</year>
+        <author>No name</author>
+        <valuable>collecting</valuable>
+    </old_card>
+
+    <old_card theme="people" typeContent="usual">
+        <country>Brazil</country>
+        <year>2019</year>
+        <author>Ales</author>
+        <valuable>thematic</valuable>
+    </old_card>
+
+</old_cards>

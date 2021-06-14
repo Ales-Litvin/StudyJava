@@ -24,7 +24,5 @@ public class CreateStreamDemo {
         }
 
         IntStream intStream = "String for creates stream example".chars();
-
-
     }
 }

@@ -3,6 +3,7 @@ package learn.main;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 
 public class Except {
 
@@ -21,5 +22,12 @@ public class Except {
         } finally {
             throw new Throwable();
         }
+    }
+
+    public void cloneArray(){
+        int[] array = new int[]{1, 22, 4, 5,34,43};
+        int[] array2 = array.clone();
+
+        Arrays.copyOf(array, array.length);
     }
 }
