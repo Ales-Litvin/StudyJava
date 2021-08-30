@@ -1,7 +1,5 @@
 package learn.main;
 
-import java.util.Objects;
-
 public class Clone implements Cloneable, Comparable<Clone>{
     public static void main(String[] args) throws CloneNotSupportedException {
         Clone clone = new Clone("Clone 1", 2);

@@ -1,7 +1,5 @@
 package javarush.task.task36.task3606;
 
-import com.sun.org.apache.bcel.internal.Const;
-
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Constructor;
@@ -16,8 +14,8 @@ import java.util.List;
 Осваиваем ClassLoader и Reflection
 */
 public class Solution {
-    private List<Class> hiddenClasses = new ArrayList<>();
-    private String packageName;
+    private final List<Class<?>> hiddenClasses = new ArrayList<>();
+    private final String packageName;
 
     public Solution(String packageName) {
         this.packageName = packageName;
@@ -44,10 +42,10 @@ public class Solution {
     }
 
     public HiddenClass getHiddenClassObjectByKey(String key) {
-        for (Class clazz : hiddenClasses){
+        for (Class<?> clazz : hiddenClasses){
             if (clazz.getSimpleName().toLowerCase().startsWith(key.toLowerCase())) {
                 try {
-                    for (Constructor constructor : clazz.getDeclaredConstructors()){
+                    for (Constructor<?> constructor : clazz.getDeclaredConstructors()){
                         if (constructor.getParameterTypes().length == 0){
                             for (Class interfaced : clazz.getInterfaces()){
                                 if (interfaced.equals(HiddenClass.class)){

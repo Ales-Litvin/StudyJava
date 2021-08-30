@@ -16,6 +16,7 @@ lib
 .idea/workspace.xml
 
  # The output of your project
+/target
 /out
 
 /shelf/

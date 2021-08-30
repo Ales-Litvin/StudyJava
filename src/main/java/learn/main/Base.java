@@ -1,7 +1,5 @@
 package learn.main;
 
-
-
 class Base {
     public static void print() {
         System.out.println("Base");

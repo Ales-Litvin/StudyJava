@@ -1,7 +1,5 @@
 package javarush.task.task34.task3413;
 
-import sun.misc.SoftCache;
-
 /*
 Кеш на основании SoftReference
 */
