@@ -7,6 +7,8 @@ public class Solution {
     public static void main(String[] args) {
         Solution solution = new Solution();
         solution.recurse("sin(2*(-5+1.5*4)+28)", 0); //expected output 0.5 6
+
+
         String s;
         s = "sin(2*(-5+1.5*4)+28)";
         System.out.print(s + " expected output 0.5 6 actually ");
@@ -62,6 +64,9 @@ public class Solution {
         System.out.print(s + " expected output 0 3 actually ");
         solution.recursion(s, 0);
     }
+
+    // целые и дробные числа, скобки (), пробелы, знак отрицания -, возведение в степень ^, sin(x), cos(x), tan(x)
+    // для sin, cos, tan - выражение внутри скобок считать градусами
 
     public void recurse(final String expression, int countOperation) {
         //implement
