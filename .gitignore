@@ -6,3 +6,5 @@
 
  # The output of your project
 out/
+
+*.iml
