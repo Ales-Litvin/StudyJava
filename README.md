@@ -10,5 +10,5 @@ Used courses:
 I'm just trying study programming language 'Java'.
 
 **Note**:
-*  I don't believe, what I can do it.
+*  I don't believe, that I can do it.
 *  I want to be java developer.
